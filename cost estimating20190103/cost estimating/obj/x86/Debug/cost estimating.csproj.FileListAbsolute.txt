@@ -49,3 +49,5 @@ D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_e
 D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
 D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
 D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\我的文档\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\我的文档\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb

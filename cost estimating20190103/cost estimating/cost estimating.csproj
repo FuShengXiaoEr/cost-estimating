@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="111.cs" />
+    <Compile Include="fff.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
