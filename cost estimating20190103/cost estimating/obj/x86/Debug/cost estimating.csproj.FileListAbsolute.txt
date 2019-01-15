@@ -41,3 +41,11 @@ D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating
 D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
 D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
 D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\GitHub\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
