@@ -1,0 +1,41 @@
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\bin\Debug\cost estimating.exe
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\bin\Debug\cost estimating.pdb
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.exe
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181221\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\documents\visual studio 2010\Projects\cost estimating20181221\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\bin\Debug\cost estimating.exe
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\bin\Debug\cost estimating.pdb
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
