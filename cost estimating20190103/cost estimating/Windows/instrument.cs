@@ -79,15 +79,6 @@ namespace cost_estimating
             brand_name.DrawItem += new DrawItemEventHandler(comboBox_DrawItem);
            
             
-        }      
-               
-
-       
-        private void material_name_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-                                    
-       
+        }    
     }
 }

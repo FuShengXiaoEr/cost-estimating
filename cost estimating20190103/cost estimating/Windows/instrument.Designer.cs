@@ -84,7 +84,6 @@
             this.material_name.Name = "material_name";
             this.material_name.Size = new System.Drawing.Size(131, 24);
             this.material_name.TabIndex = 0;
-            this.material_name.SelectedIndexChanged += new System.EventHandler(this.material_name_SelectedIndexChanged);
             // 
             // instrument
             // 

@@ -28,11 +28,6 @@ namespace cost_estimating
              win_i = new instrument();
              win_ng = new numerical_gpbwindows();
         }
-        
-        private void Main_Load(object sender, EventArgs e)
-        {
-             
-        }
         /// <summary>
         /// 导航栏伸展变化-物料选择时，数值计算位置移动以及文本控件的显示
         /// </summary>
@@ -41,12 +36,12 @@ namespace cost_estimating
         /// <returns></returns>
         private bool navbar_material_change(bool navbar_lable,int height_change)
         {
-            if (navbar_lable == true)
+            if (navbar_lable == true)//打开列表
             {               
                 material_listitems.Visible = true;
                 button_numerical_computation.Top += height_change;
                 numerical_listitems.Top += height_change;
-                return navbar_lable = false;
+                navbar_lable = false;
 
             }
             else
@@ -54,9 +49,9 @@ namespace cost_estimating
                 material_listitems.Visible = false;
                 button_numerical_computation.Top -= height_change;
                 numerical_listitems.Top -= height_change;
-                return navbar_lable = true;                
+                navbar_lable = true;                
             }
-           
+            return navbar_lable;
         }
 
         /// <summary>

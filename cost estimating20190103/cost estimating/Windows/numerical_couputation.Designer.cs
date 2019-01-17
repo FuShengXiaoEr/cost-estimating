@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button_toexcel = new System.Windows.Forms.Button();
+            this.btnToExcel = new System.Windows.Forms.Button();
             this.checkBox_selectall = new System.Windows.Forms.CheckBox();
             this.dataGridView_resistance_calculate = new System.Windows.Forms.DataGridView();
-            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.phase_voltage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.three_phase_power = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.single_power = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.electricity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cocontactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.value_of_resistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resistance_power_single = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resistance_value_single = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resistance_number_single = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resistance_num_three = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.square = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,6 +58,19 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Gear_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phase_voltage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.three_phase_power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.single_power = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.electricity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cocontactor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wire = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.value_of_resistance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resistance_power_single = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resistance_value_single = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resistance_number_single = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resistance_num_three = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_resistance_calculate)).BeginInit();
@@ -78,15 +81,15 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 3);
+            this.tabControl1.Location = new System.Drawing.Point(2, -11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1059, 819);
+            this.tabControl1.Size = new System.Drawing.Size(1059, 833);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button_toexcel);
+            this.tabPage1.Controls.Add(this.btnToExcel);
             this.tabPage1.Controls.Add(this.checkBox_selectall);
             this.tabPage1.Controls.Add(this.dataGridView_resistance_calculate);
             this.tabPage1.Controls.Add(this.panel1);
@@ -96,25 +99,26 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1051, 793);
+            this.tabPage1.Size = new System.Drawing.Size(1051, 807);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button_toexcel
+            // btnToExcel
             // 
-            this.button_toexcel.BackColor = System.Drawing.Color.Lime;
-            this.button_toexcel.Location = new System.Drawing.Point(916, 657);
-            this.button_toexcel.Name = "button_toexcel";
-            this.button_toexcel.Size = new System.Drawing.Size(97, 28);
-            this.button_toexcel.TabIndex = 4;
-            this.button_toexcel.Text = "确认";
-            this.button_toexcel.UseVisualStyleBackColor = false;
+            this.btnToExcel.BackColor = System.Drawing.Color.Lime;
+            this.btnToExcel.Location = new System.Drawing.Point(901, 657);
+            this.btnToExcel.Name = "btnToExcel";
+            this.btnToExcel.Size = new System.Drawing.Size(112, 28);
+            this.btnToExcel.TabIndex = 4;
+            this.btnToExcel.Text = "导出Excel文件";
+            this.btnToExcel.UseVisualStyleBackColor = false;
+            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
             // 
             // checkBox_selectall
             // 
             this.checkBox_selectall.AutoSize = true;
-            this.checkBox_selectall.Location = new System.Drawing.Point(89, 122);
+            this.checkBox_selectall.Location = new System.Drawing.Point(103, 142);
             this.checkBox_selectall.Name = "checkBox_selectall";
             this.checkBox_selectall.Size = new System.Drawing.Size(15, 14);
             this.checkBox_selectall.TabIndex = 6;
@@ -123,20 +127,28 @@
             // 
             // dataGridView_resistance_calculate
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView_resistance_calculate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView_resistance_calculate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_resistance_calculate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_resistance_calculate.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_resistance_calculate.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView_resistance_calculate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView_resistance_calculate.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_resistance_calculate.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_resistance_calculate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_resistance_calculate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.check,
+            this.Gear_position,
             this.phase_voltage,
             this.three_phase_power,
             this.single_power,
@@ -148,72 +160,20 @@
             this.resistance_value_single,
             this.resistance_number_single,
             this.resistance_num_three});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_resistance_calculate.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_resistance_calculate.Location = new System.Drawing.Point(8, 112);
             this.dataGridView_resistance_calculate.Name = "dataGridView_resistance_calculate";
             this.dataGridView_resistance_calculate.RowTemplate.Height = 23;
             this.dataGridView_resistance_calculate.Size = new System.Drawing.Size(1027, 530);
             this.dataGridView_resistance_calculate.TabIndex = 5;
             this.dataGridView_resistance_calculate.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_RowPostPaint);
-            // 
-            // check
-            // 
-            this.check.HeaderText = "选择";
-            this.check.Name = "check";
-            // 
-            // phase_voltage
-            // 
-            this.phase_voltage.HeaderText = "相电压";
-            this.phase_voltage.Name = "phase_voltage";
-            // 
-            // three_phase_power
-            // 
-            this.three_phase_power.HeaderText = "三相功率";
-            this.three_phase_power.Name = "three_phase_power";
-            // 
-            // single_power
-            // 
-            this.single_power.HeaderText = "单相功率";
-            this.single_power.Name = "single_power";
-            // 
-            // electricity
-            // 
-            this.electricity.HeaderText = "电流";
-            this.electricity.Name = "electricity";
-            // 
-            // cocontactor
-            // 
-            this.cocontactor.HeaderText = "接触器";
-            this.cocontactor.Name = "cocontactor";
-            // 
-            // wire
-            // 
-            this.wire.HeaderText = "导线";
-            this.wire.Name = "wire";
-            // 
-            // value_of_resistance
-            // 
-            this.value_of_resistance.HeaderText = "阻值";
-            this.value_of_resistance.Name = "value_of_resistance";
-            // 
-            // resistance_power_single
-            // 
-            this.resistance_power_single.HeaderText = "单根电阻管功率";
-            this.resistance_power_single.Name = "resistance_power_single";
-            // 
-            // resistance_value_single
-            // 
-            this.resistance_value_single.HeaderText = "单根电阻管阻值";
-            this.resistance_value_single.Name = "resistance_value_single";
-            // 
-            // resistance_number_single
-            // 
-            this.resistance_number_single.HeaderText = "单相电阻管数量";
-            this.resistance_number_single.Name = "resistance_number_single";
-            // 
-            // resistance_num_three
-            // 
-            this.resistance_num_three.HeaderText = "三相电阻管数量";
-            this.resistance_num_three.Name = "resistance_num_three";
             // 
             // panel1
             // 
@@ -285,6 +245,7 @@
             this.textBox_three_phase_power.Name = "textBox_three_phase_power";
             this.textBox_three_phase_power.Size = new System.Drawing.Size(70, 29);
             this.textBox_three_phase_power.TabIndex = 5;
+            this.textBox_three_phase_power.Text = "1000";
             this.textBox_three_phase_power.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_wire
@@ -294,6 +255,7 @@
             this.textBox_wire.Name = "textBox_wire";
             this.textBox_wire.Size = new System.Drawing.Size(70, 29);
             this.textBox_wire.TabIndex = 5;
+            this.textBox_wire.Text = "1.5";
             this.textBox_wire.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox_cocontactor
@@ -345,7 +307,7 @@
             "7000",
             "8000",
             "9000"});
-            this.comboBox_three_power.Location = new System.Drawing.Point(586, 16);
+            this.comboBox_three_power.Location = new System.Drawing.Point(588, 16);
             this.comboBox_three_power.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.comboBox_three_power.Name = "comboBox_three_power";
             this.comboBox_three_power.Size = new System.Drawing.Size(90, 28);
@@ -550,7 +512,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1045, 787);
+            this.shapeContainer1.Size = new System.Drawing.Size(1045, 801);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
@@ -567,10 +529,76 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1051, 793);
+            this.tabPage2.Size = new System.Drawing.Size(1051, 807);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // check
+            // 
+            this.check.HeaderText = "选择";
+            this.check.Name = "check";
+            this.check.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Gear_position
+            // 
+            this.Gear_position.HeaderText = "档位";
+            this.Gear_position.Name = "Gear_position";
+            // 
+            // phase_voltage
+            // 
+            this.phase_voltage.HeaderText = "相电压";
+            this.phase_voltage.Name = "phase_voltage";
+            // 
+            // three_phase_power
+            // 
+            this.three_phase_power.HeaderText = "三相功率";
+            this.three_phase_power.Name = "three_phase_power";
+            // 
+            // single_power
+            // 
+            this.single_power.HeaderText = "单相功率";
+            this.single_power.Name = "single_power";
+            // 
+            // electricity
+            // 
+            this.electricity.HeaderText = "电流";
+            this.electricity.Name = "electricity";
+            // 
+            // cocontactor
+            // 
+            this.cocontactor.HeaderText = "接触器";
+            this.cocontactor.Name = "cocontactor";
+            // 
+            // wire
+            // 
+            this.wire.HeaderText = "导线";
+            this.wire.Name = "wire";
+            // 
+            // value_of_resistance
+            // 
+            this.value_of_resistance.HeaderText = "阻值";
+            this.value_of_resistance.Name = "value_of_resistance";
+            // 
+            // resistance_power_single
+            // 
+            this.resistance_power_single.HeaderText = "单根电阻管功率";
+            this.resistance_power_single.Name = "resistance_power_single";
+            // 
+            // resistance_value_single
+            // 
+            this.resistance_value_single.HeaderText = "单根电阻管阻值";
+            this.resistance_value_single.Name = "resistance_value_single";
+            // 
+            // resistance_number_single
+            // 
+            this.resistance_number_single.HeaderText = "单相电阻管数量";
+            this.resistance_number_single.Name = "resistance_number_single";
+            // 
+            // resistance_num_three
+            // 
+            this.resistance_num_three.HeaderText = "三相电阻管数量";
+            this.resistance_num_three.Name = "resistance_num_three";
             // 
             // numerical_gpbwindows
             // 
@@ -608,7 +636,7 @@
         private System.Windows.Forms.Label label_cocontactor;
         private System.Windows.Forms.ComboBox comboBox_single_resistance_num;
         private System.Windows.Forms.DataGridView dataGridView_resistance_calculate;
-        private System.Windows.Forms.Button button_toexcel;
+        private System.Windows.Forms.Button btnToExcel;
         private System.Windows.Forms.Label square;
         private System.Windows.Forms.Label KW;
         private System.Windows.Forms.TextBox textBox_wire;
@@ -616,7 +644,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_three_phase_power;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox_selectall;
         private System.Windows.Forms.DataGridViewCheckBoxColumn check;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gear_position;
         private System.Windows.Forms.DataGridViewTextBoxColumn phase_voltage;
         private System.Windows.Forms.DataGridViewTextBoxColumn three_phase_power;
         private System.Windows.Forms.DataGridViewTextBoxColumn single_power;
@@ -628,7 +659,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn resistance_value_single;
         private System.Windows.Forms.DataGridViewTextBoxColumn resistance_number_single;
         private System.Windows.Forms.DataGridViewTextBoxColumn resistance_num_three;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox_selectall;
     }
 }
