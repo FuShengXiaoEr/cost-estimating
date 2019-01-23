@@ -59,3 +59,4 @@ E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache

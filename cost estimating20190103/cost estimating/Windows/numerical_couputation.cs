@@ -12,6 +12,9 @@ namespace cost_estimating
 {
     public partial class numerical_gpbwindows : UserControl
     {
+        private DataGridViewRowCollection t;
+        private RLC.Resistance resistance;//电阻管
+
         public numerical_gpbwindows()
         {
             InitializeComponent();
@@ -20,10 +23,8 @@ namespace cost_estimating
             comboBox_phase_voltage.Items.Insert(0,"-请选择-");
             comboBox_single_resistance_num.SelectedText="请选择";
             comboBox_cocontactor.SelectedText="请选择";
-            dataGridView_resistance_calculate.AllowUserToAddRows = false;
-            dataGridView_resistance_calculate.AllowUserToDeleteRows = false;
 
-            //this.dataGridView_resistance_calculate.DataSource = DataBindingByList1();
+            //this.dataGridView_Resistance.DataSource = DataBindingByList1();
         }
 
         
@@ -41,24 +42,10 @@ namespace cost_estimating
         private List<string[]> DataBindingByList1()
         {
             List<string[]> Al = new List<string[]>();
-            Al.Add(new string[]{"1","2","3","4","5","6","7","8","9"});
-            Al.Add(new string[] { "3", "", "6" });
+            Al.Add(new string[]{"check","1","2","3","4","5","6","7","8","9"});
+            Al.Add(new string[] { "true","3", "", "6" });
             return Al;
         } 
-
-
-        private int n_phase_voltage;//相电压
-        private int n_three_phase_power;//三相功率
-        private float n_single_phase_power;//单相功率
-        private float n_electricity;//电流
-        private string n_cocontactor;//接触器
-        private string n_wire;//导线
-        private float n_value_of_resistance;//阻值
-        private float n_resistance_power_single;//单根电阻功率
-        private float n_resistance_value_single;//单根电阻管阻值
-        private int  n_resistance_num_single;//单相电阻管数量
-        private int n_resistance_num_three;//三相电阻管数量
-        private DataGridViewRowCollection t;
 
 
         /// <summary>
@@ -75,35 +62,21 @@ namespace cost_estimating
         }
 
         /// <summary>
-        /// 电阻计算公式
+        /// 得到电阻参数数组
         /// </summary>
-        private void ResistanceCalculate()
-        {           
-            //相电压
-            n_phase_voltage = ParseInt(comboBox_phase_voltage.SelectedItem.ToString());      
-            //三相功率
-            n_three_phase_power = ParseInt(textBox_three_phase_power.Text);
-            //单相功率
-            n_single_phase_power = (float)Math.Round((decimal)n_three_phase_power / 3, 4);
-            //电流 = 单相功率 / 相电压
-            if (n_phase_voltage == 0)
-                n_electricity = 0;
-            else
-                n_electricity = (float)Math.Round((decimal)n_single_phase_power / n_phase_voltage, 4);
-            //接触器
-            n_cocontactor = comboBox_cocontactor.SelectedItem.ToString();
-            //导线
-            n_wire = textBox_wire.Text;
-            //电阻的阻值 = 相电压的平方 / 单相功率
-            n_value_of_resistance = (float)Math.Round((float)Math.Pow(n_phase_voltage, 2) / n_single_phase_power, 4);
-            //单相电阻管数量
-            n_resistance_num_single = ParseInt(comboBox_single_resistance_num.SelectedItem.ToString());
-            //单根电阻管的功率=单相功率/单相电阻管数量
-            n_resistance_power_single = n_single_phase_power / n_resistance_num_single;
-            //单相电阻管阻值 = 电阻的阻值 / 单相电阻管数量
-            n_resistance_value_single = n_value_of_resistance / n_resistance_num_single;
-            //三相电阻管数量
-            n_resistance_num_three = n_resistance_num_single * 3;
+        /// <param name="i_phase_voltage">相电压</param>
+        /// <param name="d_three_phase_power">三相功率</param>
+        /// <param name="cocontactor">接触器</param>
+        /// <param name="wireSize">导线大小</param>
+        /// <param name="RNumber">单相电阻管数量</param>
+        /// <returns>返回电阻参数数组</returns>
+        private string[] ResistanceCalculate(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        {
+            resistance = RLC.Resistance.GetResistance(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
+            string[] param = resistance.ToStringArr();
+            int len=param.Length+1;
+            string[] row=new string[]{"false"};
+            return row.Concat(param).ToArray();//连接row和param
         }
 
         /// <summary>
@@ -115,12 +88,12 @@ namespace cost_estimating
         {
             Rectangle rectangle = new Rectangle(e.RowBounds.Location.X,
                 e.RowBounds.Location.Y,
-                dataGridView_resistance_calculate.RowHeadersWidth - 4,
+                dataGridView_Resistance.RowHeadersWidth - 4,
                 e.RowBounds.Height);
             TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1).ToString(),
-                dataGridView_resistance_calculate.RowHeadersDefaultCellStyle.Font,
+                dataGridView_Resistance.RowHeadersDefaultCellStyle.Font,
                 rectangle,
-                dataGridView_resistance_calculate.RowHeadersDefaultCellStyle.ForeColor,
+                dataGridView_Resistance.RowHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
         }
 
@@ -131,44 +104,49 @@ namespace cost_estimating
         /// <param name="e"></param>
         private void button_add_Click(object sender, EventArgs e)
         {
-            ResistanceCalculate();
-            string[] row = {    
-                            "false",
-                            "1",//还需要修改为档位排序
-                            n_phase_voltage.ToString(),
-                            n_three_phase_power.ToString(),
-                            n_single_phase_power.ToString(),
-                            n_electricity.ToString(),
-                            n_cocontactor,
-                            n_wire,
-                            n_value_of_resistance.ToString(),
-                            n_resistance_power_single.ToString(),
-                            n_resistance_value_single.ToString(),
-                            n_resistance_num_single.ToString(),                         
-                            n_resistance_num_three.ToString()
-                        };
-            dataGridView_resistance_calculate.Rows.Add(row);
-            
+            try
+            {
+                int phaseVoltage = ParseInt(comboBox_phase_voltage.SelectedItem.ToString());
+                double threePhasePower = ParseInt(textBox_three_phase_power.Text);
+                //接触器
+                string cocontactor = comboBox_cocontactor.SelectedItem.ToString();
+                string wireSize = textBox_wire.Text;
+                int SingeRNum = ParseInt(comboBox_single_resistance_num.SelectedItem.ToString());
+
+                string[] row = ResistanceCalculate(phaseVoltage, threePhasePower, cocontactor, wireSize, SingeRNum);
+                dataGridView_Resistance.Rows.Add(row);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("参数填写错误："+ex.Message, "警告");
+            }
         }
 
         /// <summary>
-        /// 删除一行
+        /// 删除
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button_delete_Click(object sender, EventArgs e)
         {
             List<int> index = new List<int>();
+            int power = 0;//三相功率
+            double current = 0;//电流
+            int num = 0;//三相电阻/电抗/电容总数量
                       
-            if (dataGridView_resistance_calculate.Rows.Count > 0)
+            if (dataGridView_Resistance.Rows.Count > 0)
             {
-                for (int i = 0; i < dataGridView_resistance_calculate.Rows.Count; i++)
+                for (int i = 0; i < dataGridView_Resistance.Rows.Count; i++)
                 {
-                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_resistance_calculate.Rows[i].Cells["check"];                    
+                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_Resistance.Rows[i].Cells["check"];                    
                     Boolean flak = Convert.ToBoolean(checkcell.EditedFormattedValue);                   
                     if (flak)
                     {                        
                         index.Add(checkcell.RowIndex);
+                        power = ParseInt(dataGridView_Resistance.Rows[i].Cells["three_phase_power"].Value.ToString());
+                        current = Convert.ToDouble(dataGridView_Resistance.Rows[i].Cells["electricity"].Value.ToString());
+                        num = ParseInt(dataGridView_Resistance.Rows[i].Cells["resistance_num_three"].Value.ToString());
+                        resistance.DelectRLC(new RLC.BaseRLC(power,current,num));//减已经统计了的总功率、总电流、总数量
                     }
                 }
             }
@@ -180,7 +158,7 @@ namespace cost_estimating
             int[] index_item = index.ToArray();            
             for (int i = index_item.Length-1; 0 <= i; i--)
             {                          
-                dataGridView_resistance_calculate.Rows.RemoveAt(index_item[i]);                
+                dataGridView_Resistance.Rows.RemoveAt(index_item[i]);                
             }
         }
 
@@ -193,17 +171,17 @@ namespace cost_estimating
         {
             if (checkBox_selectall.CheckState == CheckState.Checked)
             {
-                for (int i = 0; i < dataGridView_resistance_calculate.RowCount; i++)
+                for (int i = 0; i < dataGridView_Resistance.RowCount; i++)
                 {
-                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_resistance_calculate.Rows[i].Cells["check"];
+                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_Resistance.Rows[i].Cells["check"];
                     checkcell.Value = true;
                 }
             }
             else
             {
-                for (int i = 0; i < dataGridView_resistance_calculate.RowCount; i++)
+                for (int i = 0; i < dataGridView_Resistance.RowCount; i++)
                 {
-                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_resistance_calculate.Rows[i].Cells["check"];
+                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_Resistance.Rows[i].Cells["check"];
                     checkcell.Value = false;
                 }
             }
@@ -217,7 +195,7 @@ namespace cost_estimating
         private void btnToExcel_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Before:"+DateTime.Now.ToString("HH:mm:ss.fff"));
-            string[,] data=(string[,])ReadDataGridView(this.dataGridView_resistance_calculate);
+            string[,] data=(string[,])ReadDataGridView(this.dataGridView_Resistance);
             if ( data != null)
             {
                 string filePath = SelectFilePath();
@@ -241,26 +219,28 @@ namespace cost_estimating
             try
             {
                 int rows = dataGridView.Rows.Count;//不包括表头
-                int columns = dataGridView.Columns.Count-1;//不读取第一列
+                int columns = dataGridView.Columns.Count;//不保存第一列的选择，添加档位顺序
                 string[,] data = new string[rows+1, columns];
                 //读取表头
-                for (int i = 0; i < columns; i++)
+                data[0, 0] = "档位";
+                for (int i = 1; i < columns; i++)
                 {
-                    data[0, i] = dataGridView.Columns[i+1].HeaderText;
+                    data[0, i] = dataGridView.Columns[i].HeaderText;
                 }
                 //读取表的数据
                 for (int i = 0; i < rows; i++)
                 {
-                    for (int j = 0; j < columns; j++)
+                    data[i+1, 0] = (i+1).ToString();//档位
+                    for (int j = 1; j < columns; j++)
                     {
-                        if (dataGridView[j+1, i].ValueType == typeof(string))
+                        if (dataGridView[j, i].ValueType == typeof(string))
                         {
                             //在obj.ToString()前加单引号是为了防止自动转化格式 
-                            data[i + 1, j] = "'" + dataGridView[j+1, i].Value.ToString();
+                            data[i+1, j] = "'" + dataGridView[j, i].Value.ToString();
                         }
                         else
                         {
-                            data[i + 1, j] = dataGridView[j+1, i].Value.ToString();
+                            data[i+1, j] = dataGridView[j, i].Value.ToString();
                         }
                     }
                 }
@@ -275,7 +255,10 @@ namespace cost_estimating
                 return null;
             }
         }
-
+        /// <summary>
+        /// 选择保存excel文件的路径
+        /// </summary>
+        /// <returns></returns>
         private string SelectFilePath()
         {
             string filePath = "";
@@ -309,7 +292,7 @@ namespace cost_estimating
         /// <param name="data">数据</param>
         private void WriteToExcel(string filePath, object[,] data)
         {
-            ReportExcel excel = new ReportExcel();
+            ToExcel excel = new ToExcel();
             try
             {
                 excel.CreateExcel();

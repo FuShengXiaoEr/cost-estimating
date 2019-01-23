@@ -7,14 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace cost_estimating
 {
-    public class ReportExcel
+    public class ToExcel
     {
         private Application xlApp;//引用Excel对象
         private _Workbook xlWorkBook;//Excel工作薄文件
         private _Worksheet xlWorkSheet;//一个Excel工作表
         object misValue = System.Reflection.Missing.Value;
 
-        public ReportExcel() { }
+        public ToExcel() { }
 
         #region 创建Excel
         /// <summary>
