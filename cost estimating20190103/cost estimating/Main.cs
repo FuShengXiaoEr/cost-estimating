@@ -26,7 +26,6 @@ namespace cost_estimating
              material_selection = navbar_material_change(material_selection, material_height);              
              numercial_computation = navbar_numerical_change(numercial_computation, numerical_height);
              win_i = new instrument();
-             win_ng = new numerical_gpbwindows();
         }
         /// <summary>
         /// 导航栏伸展变化-物料选择时，数值计算位置移动以及文本控件的显示
@@ -102,13 +101,49 @@ namespace cost_estimating
         private void button_numerical_computation_Click(object sender, EventArgs e)
         {   
             //win_ng = new numerical_gpbwindows();
-            win_ng.Show();         
+            //win_ng.Show();         
             numercial_computation = navbar_numerical_change(numercial_computation, numerical_height);            
             gpbwindows.Controls.Clear();
-            gpbwindows.Controls.Add(win_ng);
+            //gpbwindows.Controls.Add(win_ng);
         }
 
-      
-                 
+        private void label_resistance_Click(object sender, EventArgs e)
+        {
+            win_ngShow(RLC.Resistance.GetInstance());
+        }
+
+        private void label_capacitance_Click(object sender, EventArgs e)
+        {
+            win_ngShow(RLC.Capacitance.GetInstance());
+        }
+
+        private void label_reactance_Click(object sender, EventArgs e)
+        {
+            win_ngShow(RLC.Inductance.GetInstance());
+        }
+        private readonly object _mylock = new object();//防止多创建win_ng窗体
+        /// <summary>
+        /// 显示win_ng
+        /// </summary>
+        private void win_ngShow(RLC.BaseRLC baseRLC)
+        {
+            lock (_mylock)
+            {
+                if (win_ng == null || win_ng.IsDisposed)
+                {
+                    win_ng = new numerical_gpbwindows(baseRLC);
+                }
+                else
+                {
+                    win_ng.BaseRLC = baseRLC;
+                }
+            }
+            if (!gpbwindows.Controls.Contains(win_ng))
+            {
+                win_ng.Show();
+                gpbwindows.Controls.Clear();
+                gpbwindows.Controls.Add(win_ng);
+            }
+        }     
     }
 }

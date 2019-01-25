@@ -20,10 +20,14 @@ namespace cost_estimating.RLC
         public double capacitanceValue { get; set; }
 
         private static Capacitance capacitance;
+        private static readonly object _lock = new object();
         /// <summary>
         /// 私有构造函数，防止外部直接创建实例
         /// </summary>
-        private Capacitance() { }
+        private Capacitance() 
+        {
+            this.culomnsName = new string[] { "相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "容抗", "电容值", "单相电容数量", "三相电容数量" };
+        }
 
         /// <summary>
         /// 得到电容的实例
@@ -34,14 +38,16 @@ namespace cost_estimating.RLC
         /// <param name="wireSize">导线大小</param>
         /// <param name="RNumber">单相电阻管数量</param>
         /// <returns></returns>
-        public static Capacitance GetCapacitance(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public static Capacitance GetInstance()
         {
-            if (capacitance == null)
+            lock (_lock)
             {
-                capacitance = new Capacitance();
+                if (capacitance == null)
+                {
+                    capacitance = new Capacitance();
+                }
+                return capacitance;
             }
-            capacitance.CalculatingCapacitance(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
-            return capacitance;
         }
         /// <summary>
         /// 计算电容值
@@ -51,18 +57,18 @@ namespace cost_estimating.RLC
         /// <param name="cocontactor">接触器</param>
         /// <param name="wireSize">导线大小</param>
         /// <param name="RNumber">单相电阻管数量</param>
-        public void CalculatingCapacitance(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
         {
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             //容抗（Ω）=相电压*相电压/单相功率
             this.capacitiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
-            this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000);
+            this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
         }
         /// <summary>
         /// 得到电容参数数组
         /// </summary>
         /// <returns></returns>
-        public string[] ToStringArr()
+        public override string[] ToStringArr()
         {
             string[] strArr ={
                                  i_phase_voltage.ToString(),

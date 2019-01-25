@@ -38,21 +38,21 @@
             // 
             this.电阻ToolStripMenuItem1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.电阻ToolStripMenuItem1.Name = "电阻ToolStripMenuItem1";
-            this.电阻ToolStripMenuItem1.Size = new System.Drawing.Size(152, 30);
+            this.电阻ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
             this.电阻ToolStripMenuItem1.Text = "电阻";
             // 
             // 电容ToolStripMenuItem1
             // 
             this.电容ToolStripMenuItem1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.电容ToolStripMenuItem1.Name = "电容ToolStripMenuItem1";
-            this.电容ToolStripMenuItem1.Size = new System.Drawing.Size(152, 30);
+            this.电容ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
             this.电容ToolStripMenuItem1.Text = "电容";
             // 
             // 电抗ToolStripMenuItem1
             // 
             this.电抗ToolStripMenuItem1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.电抗ToolStripMenuItem1.Name = "电抗ToolStripMenuItem1";
-            this.电抗ToolStripMenuItem1.Size = new System.Drawing.Size(152, 30);
+            this.电抗ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
             this.电抗ToolStripMenuItem1.Text = "电抗";
             // 
             // 数值计算ToolStripMenuItem
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 516);
+            this.ClientSize = new System.Drawing.Size(676, 398);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

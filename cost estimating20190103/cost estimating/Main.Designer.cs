@@ -59,9 +59,9 @@
             this.panel2.Controls.Add(this.button_numerical_computation);
             this.panel2.Controls.Add(this.button_material);
             this.panel2.Controls.Add(this.shapeContainer1);
-            this.panel2.Location = new System.Drawing.Point(0, -3);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(212, 830);
+            this.panel2.Size = new System.Drawing.Size(212, 827);
             this.panel2.TabIndex = 1;
             // 
             // material_listitems
@@ -179,6 +179,7 @@
             this.label_reactance.Size = new System.Drawing.Size(47, 19);
             this.label_reactance.TabIndex = 1;
             this.label_reactance.Text = "电抗";
+            this.label_reactance.Click += new System.EventHandler(this.label_reactance_Click);
             // 
             // label_capacitance
             // 
@@ -189,6 +190,7 @@
             this.label_capacitance.Size = new System.Drawing.Size(47, 19);
             this.label_capacitance.TabIndex = 1;
             this.label_capacitance.Text = "电容";
+            this.label_capacitance.Click += new System.EventHandler(this.label_capacitance_Click);
             // 
             // label_resistance
             // 
@@ -199,6 +201,7 @@
             this.label_resistance.Size = new System.Drawing.Size(47, 19);
             this.label_resistance.TabIndex = 1;
             this.label_resistance.Text = "电阻";
+            this.label_resistance.Click += new System.EventHandler(this.label_resistance_Click);
             // 
             // button_numerical_computation
             // 
@@ -231,7 +234,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(212, 830);
+            this.shapeContainer1.Size = new System.Drawing.Size(212, 827);
             this.shapeContainer1.TabIndex = 2;
             this.shapeContainer1.TabStop = false;
             // 
@@ -245,9 +248,9 @@
             // 
             // gpbwindows
             // 
-            this.gpbwindows.Location = new System.Drawing.Point(218, -17);
+            this.gpbwindows.Location = new System.Drawing.Point(218, -12);
             this.gpbwindows.Name = "gpbwindows";
-            this.gpbwindows.Size = new System.Drawing.Size(1065, 839);
+            this.gpbwindows.Size = new System.Drawing.Size(1065, 834);
             this.gpbwindows.TabIndex = 2;
             this.gpbwindows.TabStop = false;
             this.gpbwindows.Text = "gpbwindows";

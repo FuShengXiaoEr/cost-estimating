@@ -19,19 +19,25 @@ namespace cost_estimating.RLC
         /// </summary>
         public double inductanceValue { get; set; }
         private static Inductance inductance;
-        private Inductance() { }
-
-        public static Inductance GetInductance(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        private static readonly object _lock = new object();
+        private Inductance() 
         {
-            if (inductance == null)
-            {
-                inductance = new Inductance();
-            }
-            inductance.CalculatingInductance(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
-            return inductance;
+            this.culomnsName = new string[] { "相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "感抗", "电感值", "单相电抗数量", "三相电抗数量" };
         }
 
-        public void CalculatingInductance(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public static Inductance GetInstance()
+        {
+            lock (_lock)
+            {
+                if (inductance == null)
+                {
+                    inductance = new Inductance();
+                }
+                return inductance;
+            }
+        }
+
+        public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
         {
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             this.inductiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
@@ -42,7 +48,7 @@ namespace cost_estimating.RLC
         /// 得到电容参数数组
         /// </summary>
         /// <returns></returns>
-        public string[] ToStringArr()
+        public override string[] ToStringArr()
         {
             string[] strArr ={
                                  i_phase_voltage.ToString(),

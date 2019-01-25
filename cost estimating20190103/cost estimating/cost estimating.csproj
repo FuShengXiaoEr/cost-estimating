@@ -66,7 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertTo\ConvertTo.cs" />
+    <Compile Include="dataTableOption\DataTableOption.cs" />
     <Compile Include="Excel\ToExcel.cs" />
+    <Compile Include="Excel\WriteToExcel.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +86,12 @@
     <Compile Include="RLC\Capacitance.cs" />
     <Compile Include="RLC\Inductance.cs" />
     <Compile Include="RLC\Resistance.cs" />
+    <Compile Include="Windows\DataGridViewWithCheck.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\DataGridViewWithCheck.designer.cs">
+      <DependentUpon>DataGridViewWithCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\numerical_couputation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\DataGridViewWithCheck.resx">
+      <DependentUpon>DataGridViewWithCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\numerical_couputation.resx">
       <DependentUpon>numerical_couputation.cs</DependentUpon>

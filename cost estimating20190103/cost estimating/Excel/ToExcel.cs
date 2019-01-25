@@ -95,6 +95,18 @@ namespace cost_estimating
             xlApp = null;
             return true;
         }
+        /// <summary>
+        /// 不保存直接退出
+        /// </summary>
+        /// <returns></returns>
+        public bool CloseWithoutSave()
+        {
+            xlApp.ActiveWorkbook.Saved = true;//放弃存盘
+            xlWorkBook.Close(misValue, misValue, misValue);
+            xlApp.Quit();//这一句非常重要，否则Excel对象不能从内存中退出
+            xlApp = null;
+            return true;
+        }
 
         #endregion
 

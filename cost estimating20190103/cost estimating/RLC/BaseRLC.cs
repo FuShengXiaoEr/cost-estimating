@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace cost_estimating.RLC
 {
     /// <summary>
     /// 电阻/电抗/电容的基类
     /// </summary>
-    public class BaseRLC
+    public abstract class BaseRLC
     {
+        public string[] culomnsName=null;
+        public DataTable dt;//显示的表格
         /// <summary>
         /// 相电压
         /// </summary>
@@ -32,6 +35,10 @@ namespace cost_estimating.RLC
         public static int iTotalNumber { get; set; }//总电阻/电抗/电容个数
 
         public BaseRLC() { }
+
+        public abstract string[] ToStringArr();
+        public abstract void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber);
+
 
         /// <summary>
         /// 构造函数，删除时用
@@ -93,6 +100,14 @@ namespace cost_estimating.RLC
                                iTotalNumber.ToString()
                            };
             return arr;
+        }
+
+        public void DelectRLC(int power, double current, int num)
+        {
+            dTotalPower -= power;
+            dTotalSinglePhasePower = dTotalPower / 3;
+            dTotalCurrent -= current;
+            iTotalNumber -= num;
         }
 
         /// <summary>

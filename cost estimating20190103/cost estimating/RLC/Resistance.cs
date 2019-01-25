@@ -15,12 +15,14 @@ namespace cost_estimating.RLC
         public double dResistanceValueSingle { get; set; }//单根电阻管阻值
 
         private static Resistance resistance;
+        private static readonly object _lock = new object();
 
         /// <summary>
         /// 私有构造函数，防止外部直接创建实例
         /// </summary>
         private Resistance()
         {
+            this.culomnsName = new string[] {"相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "阻值", "单根电阻管功率", "单根电阻管阻值", "单相电阻管数量", "三相电阻管数量" };
         }
         /// <summary>
         /// 得到电阻实例
@@ -31,14 +33,16 @@ namespace cost_estimating.RLC
         /// <param name="wireSize">导线大小</param>
         /// <param name="RNumber">单相电阻管数量</param>
         /// <returns></returns>
-        public static Resistance GetResistance(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public static Resistance GetInstance()
         {
-            if (resistance == null)
+            lock (_lock)
             {
-                resistance = new Resistance();
+                if (resistance == null)
+                {
+                    resistance = new Resistance();
+                }
+                return resistance;
             }
-            resistance.CalculatingResistance(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
-            return resistance;
         }
         /// <summary>
         /// 计算电阻参数
@@ -48,7 +52,7 @@ namespace cost_estimating.RLC
         /// <param name="cocontactor">接触器</param>
         /// <param name="wireSize">导线大小</param>
         /// <param name="RNumber">单相电阻管数量</param>
-        public void CalculatingResistance(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
         {
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             //阻值（Ω）=相电压*相电压/单相功率
@@ -62,7 +66,7 @@ namespace cost_estimating.RLC
         /// 得到电阻参数数组
         /// </summary>
         /// <returns></returns>
-        public string[] ToStringArr()
+        public override string[] ToStringArr()
         {
             string[] strArr ={
                                  i_phase_voltage.ToString(),
