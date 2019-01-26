@@ -73,7 +73,6 @@ namespace cost_estimating
             {
                 throw new Exception("打开excel模板出错：" + e.ToString());
             }
-
         }
         #endregion
 
@@ -267,7 +266,7 @@ namespace cost_estimating
         /// <param name="text">合并后Range的值</param>
         public void MergeCells(int beginRowIndex, int beginColumnIndex, int endRowIndex, int endColumnIndex, string text)
         {
-            Range range = xlWorkSheet.get_Range(xlWorkSheet.Cells[beginRowIndex, beginColumnIndex], xlWorkSheet.Cells[endRowIndex, endColumnIndex]);
+            Range range = xlWorkSheet.Range[xlWorkSheet.Cells[beginRowIndex, beginColumnIndex], xlWorkSheet.Cells[endRowIndex, endColumnIndex]];
 
             range.ClearContents(); //先把Range内容清除，合并才不会出错
             range.MergeCells = true;
@@ -346,10 +345,28 @@ namespace cost_estimating
         /// <param name="color">颜色索引</param>
         public void SetCellsBackColor(int startRow, int startColumn, int endRow, int endColumn, ColorIndex color)
         {
-            Range range = xlApp.get_Range(xlApp.Cells[startRow, startColumn], xlApp.Cells[endRow, endColumn]);
+            Range range = xlWorkSheet.Range[xlWorkSheet.Cells[startRow, startColumn], xlWorkSheet.Cells[endRow, endColumn]];
             range.Interior.ColorIndex = color;
         }
-
+        /// <summary>
+        /// 单元格边框格式
+        /// </summary>
+        /// <param name="startRow">开始行号</param>
+        /// <param name="startColumn">开始列号</param>
+        /// <param name="endRow">结束行号</param>
+        /// <param name="endColumn">结束列号</param>
+        public void setBorders(int startRow, int startColumn, int endRow, int endColumn)
+        {
+            //选取指定的单元格
+            //Range RowAll = xlWorkSheet.get_Range(xlWorkSheet.Cells[startRow, startColumn], xlWorkSheet.Cells[endRow, endColumn]);
+            Range RowAll = xlWorkSheet.Range[xlWorkSheet.Cells[startRow, startColumn], xlWorkSheet.Cells[endRow, endColumn]];
+            //指定对齐
+            RowAll.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            //指定文字大小
+            RowAll.Font.Size = 11;
+            //指定边框
+            RowAll.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous; 
+        }
         #endregion
 
         #region 杀进程释放资源

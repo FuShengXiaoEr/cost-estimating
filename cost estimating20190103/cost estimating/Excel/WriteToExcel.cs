@@ -93,7 +93,8 @@ namespace cost_estimating
             {
                 Console.WriteLine("Before WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
                 excel.CreateExcel();
-                excel.ArrayToExcel(data, 1, 1);
+                excel.ArrayToExcel(data, 3, 1);
+                excel.setBorders(3, 1, 3 + data.GetLength(0), 1 + data.GetLength(1));
                 excel.SaveAsExcel(filePath);
                 Console.WriteLine("After WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
             }
@@ -113,10 +114,14 @@ namespace cost_estimating
         {
             try
             {
+                int startRow=2;
+                int startCloumn=1;
                 Console.WriteLine("Before WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
                 excel.CreateExcel();
-                excel.ArrayToExcel(data, 1, 1);
-                _semaphore.WaitOne();//阻塞线程，当有新元素插入才执行后面命令
+                excel.MergeCells(startRow, startCloumn, startRow, startCloumn + data.GetLength(1) - 1, "R载部分 " + "");
+                excel.ArrayToExcel(data, startRow + 1, startCloumn);
+                excel.setBorders(startRow, startCloumn, 3 + data.GetLength(0) - 1, 1 + data.GetLength(1) - 1);
+                _semaphore.WaitOne();//阻塞线程，当_semaphore.Release(1);才执行后面命令
                 if (filePath != "")
                 {
                     excel.SaveAsExcel(filePath);
@@ -130,9 +135,8 @@ namespace cost_estimating
             }
             catch (Exception e)
             {
-                //MessageBox.Show(e.Message, "警告");
                 excel.Quit();
-                throw e;
+                MessageBox.Show(e.Message, "写Excel文件出错");
             }
         }
         /// <summary>
@@ -179,6 +183,51 @@ namespace cost_estimating
                 dataGridView.ReadOnly = false;
                 Console.WriteLine("ReadDataGridView:" + e.ToString());
                 MessageBox.Show("ReadDataGridView:" + e.Message, "警告");
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 读取DataGridView表格数据
+        /// </summary>
+        /// <param name="dataGridView">DataGridView控件名</param>
+        /// <returns></returns>
+        private object[,] ReadDataTable(DataTable dt)
+        {
+            try
+            {
+                int rows = dt.Rows.Count;//不包括表头
+                int columns = dt.Columns.Count;//要添加档位顺序列
+                string[,] data = new string[rows + 1, columns+1];
+                //读取表头
+                data[0, 0] = "档位";
+                for (int i = 0; i < columns; i++)
+                {
+                    data[0, i+1] = dt.Columns[i].ColumnName;
+                }
+                //读取表的数据
+                for (int i = 0; i < rows; i++)
+                {
+                    data[i + 1, 0] = (i + 1).ToString();//档位
+                    for (int j = 0; j < columns; j++)
+                    {
+                        if (dt.Columns[j].DataType.GetType() == typeof(string))
+                        {
+                            //在obj.ToString()前加单引号是为了防止自动转化格式 
+                            data[i + 1, j + 1] = "'" + dt.Rows[i][j];
+                        }
+                        else
+                        {
+                            data[i + 1, j + 1] = dt.Rows[i][j].ToString();
+                        }
+                    }
+                }
+                return data;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("ReadDataTable:" + e.ToString());
+                MessageBox.Show("ReadDataTable:" + e.Message, "警告");
                 return null;
             }
         }

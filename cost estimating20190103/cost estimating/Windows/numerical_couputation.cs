@@ -149,7 +149,14 @@ namespace cost_estimating
         /// <param name="e"></param>
         private void btnToExcel_Click(object sender, EventArgs e)
         {
-            WriteToExcel.getInstance().start(this.dataGridView_Resistance);
+            try
+            {
+                WriteToExcel.getInstance().start(this.dataGridView_Resistance);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "操作错误");
+            }
         }
 
     }       
