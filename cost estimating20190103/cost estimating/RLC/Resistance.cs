@@ -13,6 +13,10 @@ namespace cost_estimating.RLC
         public double dValueOfResistance{ get; set; }//阻值
         public double dResistancePowerSingle { get; set; }//单根电阻功率
         public double dResistanceValueSingle { get; set; }//单根电阻管阻值
+        /// <summary>
+        /// 总总功率、总单相功率、总电流、总个数的类
+        /// </summary>
+        BaseRLCStaticVariables<Resistance> total = new BaseRLCStaticVariables<Resistance>();
 
         private static Resistance resistance;
         private static readonly object _lock = new object();
@@ -61,6 +65,8 @@ namespace cost_estimating.RLC
             
             this.dResistancePowerSingle = this.d_single_phase_power / iNumSingle;//单根电阻管的功率=单相功率/单相电阻管数量
             this.dResistanceValueSingle = this.dValueOfResistance / iNumSingle;//单相电阻管阻值 = 电阻的阻值 / 单相电阻管数量
+
+            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
 
         /// <summary>
@@ -83,6 +89,16 @@ namespace cost_estimating.RLC
                                  iNumThree.ToString()
                             };
             return strArr;
+        }
+
+        public override string[] GetTotalStringArr()
+        {
+            return total.GetTotalStringArr();
+        }
+
+        public override void DelectRLC(int power, double current, int num)
+        {
+            total.DelectRLC(power, current, num);
         }
     }
 }

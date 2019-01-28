@@ -18,11 +18,11 @@ namespace cost_estimating.RLC
         /// 电感值，= 感抗/3.14*10
         /// </summary>
         public double inductanceValue { get; set; }
+        /// <summary>
+        /// 总总功率、总单相功率、总电流、总个数的类
+        /// </summary>
+        BaseRLCStaticVariables<Inductance> total = new BaseRLCStaticVariables<Inductance>();
 
-        public static double dTotalPower { get; set; }//总功率
-        public static double dTotalSinglePhasePower { get; set; }//总单相功率
-        public static double dTotalCurrent { get; set; }//总电流
-        public static int iTotalNumber { get; set; }//总电阻/电抗/电容个数
         private static Inductance inductance;
         private static readonly object _lock = new object();
         private Inductance() 
@@ -48,6 +48,7 @@ namespace cost_estimating.RLC
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             this.inductiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
             this.inductanceValue = Math.Round(inductiveReactance / 3.14 * 10);
+            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
 
         /// <summary>
@@ -70,5 +71,15 @@ namespace cost_estimating.RLC
                             };
             return strArr;
         }
+        public override string[] GetTotalStringArr()
+        {
+            return total.GetTotalStringArr();
+        }
+
+        public override void DelectRLC(int power, double current, int num)
+        {
+            total.DelectRLC(power, current, num);
+        }
+
     }
 }

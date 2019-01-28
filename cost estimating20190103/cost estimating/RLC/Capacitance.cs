@@ -18,6 +18,10 @@ namespace cost_estimating.RLC
         /// 电容值，电容值（uF）=(1/(容抗*3.14))*10000
         /// </summary>
         public double capacitanceValue { get; set; }
+        /// <summary>
+        /// 总总功率、总单相功率、总电流、总个数的类
+        /// </summary>
+        BaseRLCStaticVariables<Capacitance> total = new BaseRLCStaticVariables<Capacitance>();
 
         private static Capacitance capacitance;
         private static readonly object _lock = new object();
@@ -64,6 +68,7 @@ namespace cost_estimating.RLC
             //容抗（Ω）=相电压*相电压/单相功率
             this.capacitiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
             this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
+            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
         /// <summary>
         /// 得到电容参数数组
@@ -84,6 +89,15 @@ namespace cost_estimating.RLC
                                  iNumThree.ToString()
                             };
             return strArr;
+        }
+        public override string[] GetTotalStringArr()
+        {
+            return total.GetTotalStringArr();
+        }
+
+        public override void DelectRLC(int power, double current, int num)
+        {
+            total.DelectRLC(power, current, num);
         }
     }
 }

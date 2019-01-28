@@ -30,29 +30,11 @@ namespace cost_estimating.RLC
         public int iNumSingle { get; set; }//单相电阻管数量(电容/电抗默认为1)
         public int iNumThree { get; set; }//三相电阻管数量
 
-        public static double dTotalPower { get; set; }//总功率
-        public static double dTotalSinglePhasePower { get; set; }//总单相功率
-        public static double dTotalCurrent { get; set; }//总电流
-        public static int iTotalNumber { get; set; }//总电阻/电抗/电容个数
 
         public BaseRLC() { }
 
         public abstract string[] ToStringArr();
         public abstract void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber);
-
-
-        /// <summary>
-        /// 构造函数，删除时用
-        /// </summary>
-        /// <param name="power">三相功率</param>
-        /// <param name="current">电流</param>
-        /// <param name="num">三相电阻/电抗/电容数量</param>
-        public BaseRLC(int power, double current, int num)
-        {
-            this.d_three_phase_power = power;
-            this.d_Current = current;
-            this.iNumThree = num;
-        }
 
         /// <summary>
         /// 计算电阻/电容/电感公共参数
@@ -82,48 +64,19 @@ namespace cost_estimating.RLC
             iNumSingle = RNumber;//单相电阻管数量
             this.iNumThree = this.iNumSingle * 3;
 
-            dTotalPower += d_three_phase_power;
-            dTotalSinglePhasePower += d_single_phase_power;
-            dTotalCurrent += d_Current;
-            iTotalNumber += iNumThree;
         }
         /// <summary>
         /// 得到电阻/电抗/电容的总功率、总单相功率、总电流、总个数的string数组
         /// </summary>
         /// <returns></returns>
-        public string[] GetTotalStringArr()
-        {
-            string[] arr = {
-                               "总功率",
-                               dTotalPower.ToString(),
-                               "总单相功率",
-                               dTotalSinglePhasePower.ToString(),
-                               "总电流",
-                               dTotalCurrent.ToString(),
-                               "总个数",
-                               iTotalNumber.ToString()
-                           };
-            return arr;
-        }
-
-        public void DelectRLC(int power, double current, int num)
-        {
-            dTotalPower -= power;
-            dTotalSinglePhasePower = dTotalPower / 3;
-            dTotalCurrent -= current;
-            iTotalNumber -= num;
-        }
+        public abstract string[] GetTotalStringArr();
 
         /// <summary>
         /// 删除电阻/电抗/电容
         /// </summary>
-        /// <param name="baseRLC">电阻/电抗/电容</param>
-        public void DelectRLC(BaseRLC baseRLC)
-        {
-            dTotalPower -= baseRLC.d_three_phase_power;
-            dTotalSinglePhasePower = dTotalPower / 3;
-            dTotalCurrent -= baseRLC.d_Current;
-            iTotalNumber -= baseRLC.iNumThree;
-        }
+        /// <param name="power">总功率</param>
+        /// <param name="current">总电流</param>
+        /// <param name="num">总个数</param>
+        public abstract void DelectRLC(int power, double current, int num);
     }
 }
