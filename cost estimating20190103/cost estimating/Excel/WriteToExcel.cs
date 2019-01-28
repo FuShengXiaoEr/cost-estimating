@@ -15,7 +15,6 @@ namespace cost_estimating
         private static WriteToExcel instance;
         private static readonly object _lock = new object();
         private Semaphore _semaphore = new Semaphore(0, 256);
-        DataTable dt;
         string[,] data;
         string filePath;
 

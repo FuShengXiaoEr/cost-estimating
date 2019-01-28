@@ -18,11 +18,16 @@ namespace cost_estimating.RLC
         /// 电感值，= 感抗/3.14*10
         /// </summary>
         public double inductanceValue { get; set; }
+
+        public static double dTotalPower { get; set; }//总功率
+        public static double dTotalSinglePhasePower { get; set; }//总单相功率
+        public static double dTotalCurrent { get; set; }//总电流
+        public static int iTotalNumber { get; set; }//总电阻/电抗/电容个数
         private static Inductance inductance;
         private static readonly object _lock = new object();
         private Inductance() 
         {
-            this.culomnsName = new string[] { "相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "感抗", "电感值", "单相电抗数量", "三相电抗数量" };
+            this.culomnsName = new string[] { "相电压(V)", "三相功率(var)", "单相功率(var)", "电流(A)", "接触器", "导线", "感抗(Ω)", "电感值(mH)", "单相电抗数量", "三相电抗数量" };
             this.projectName = "L载部分 ";
         }
 
