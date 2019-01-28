@@ -27,6 +27,7 @@ namespace cost_estimating.RLC
         private Capacitance() 
         {
             this.culomnsName = new string[] { "相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "容抗", "电容值", "单相电容数量", "三相电容数量" };
+            this.projectName = "C载部分 ";
         }
 
         /// <summary>

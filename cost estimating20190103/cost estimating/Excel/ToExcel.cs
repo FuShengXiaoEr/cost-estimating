@@ -129,6 +129,19 @@ namespace cost_estimating
             xlWorkSheet.Columns.EntireColumn.AutoFit();//列宽自适应
         }
 
+        /// <summary>
+        /// 将一维数组数据写入Excel文件
+        /// </summary>
+        /// <param name="arr">一维数组</param>
+        /// <param name="top">开始行</param>
+        /// <param name="left">开始列</param>
+        public void ArrayToExcel(object[] arr, int top, int left)
+        {
+            Range range = (Range)xlWorkSheet.Cells[top, left];
+            range = range.get_Resize(1, arr.Length);
+            range.FormulaArray = arr;
+        }
+
         #endregion
 
         #region 行操作

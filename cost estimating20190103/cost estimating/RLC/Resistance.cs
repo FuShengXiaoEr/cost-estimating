@@ -23,6 +23,7 @@ namespace cost_estimating.RLC
         private Resistance()
         {
             this.culomnsName = new string[] {"相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "阻值", "单根电阻管功率", "单根电阻管阻值", "单相电阻管数量", "三相电阻管数量" };
+            this.projectName = "R载部分 ";
         }
         /// <summary>
         /// 得到电阻实例

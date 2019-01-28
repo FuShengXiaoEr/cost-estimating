@@ -39,19 +39,12 @@ namespace cost_estimating
 
         public void start(DataGridView dataGridView)
         {
-            Console.WriteLine("Before ReadDataGridView:" + DateTime.Now.ToString("HH:mm:ss.fff"));
-            data = (string[,])ReadDataGridView(dataGridView);
-            Console.WriteLine("After ReadDataGridView:" + DateTime.Now.ToString("HH:mm:ss.fff"));
-            if (data != null)
-            {
-                Thread thread = new Thread(WriteToFile);
-                thread.IsBackground = true;
-                thread.Name = "导出excel文件";
-                thread.Start();
-                filePath = SelectFilePath();
-                _semaphore.Release(1);
-            }
-            Console.WriteLine("end:" + DateTime.Now.ToString("HH:mm:ss.fff"));
+            Thread thread = new Thread(WriteToFile);
+            thread.IsBackground = true;
+            thread.Name = "导出excel文件";
+            thread.Start();
+            filePath = SelectFilePath();
+            _semaphore.Release(1);
         }
         /// <summary>
         /// 选择保存excel文件的路径
@@ -91,12 +84,12 @@ namespace cost_estimating
         {
             try
             {
-                Console.WriteLine("Before WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
+                int startRow = 3;
+                int startCloumn = 1;
                 excel.CreateExcel();
-                excel.ArrayToExcel(data, 3, 1);
-                excel.setBorders(3, 1, 3 + data.GetLength(0), 1 + data.GetLength(1));
+                excel.ArrayToExcel(data, startRow, startCloumn);
+                excel.setBorders(startRow, startCloumn, startRow + data.GetLength(0)-1, startCloumn + data.GetLength(1)-1);
                 excel.SaveAsExcel(filePath);
-                Console.WriteLine("After WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
             }
             catch (Exception e)
             {
@@ -114,14 +107,17 @@ namespace cost_estimating
         {
             try
             {
-                int startRow=2;
-                int startCloumn=1;
                 Console.WriteLine("Before WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
-                excel.CreateExcel();
-                excel.MergeCells(startRow, startCloumn, startRow, startCloumn + data.GetLength(1) - 1, "R载部分 " + "");
-                excel.ArrayToExcel(data, startRow + 1, startCloumn);
-                excel.setBorders(startRow, startCloumn, 3 + data.GetLength(0) - 1, 1 + data.GetLength(1) - 1);
+                excel.CreateExcel();//创建文件
+                //写数据
+                //excel.ArrayToExcel(data, startRow + 1, startCloumn);
+                int result=WriteDataToExcel();
+                //保存文件
                 _semaphore.WaitOne();//阻塞线程，当_semaphore.Release(1);才执行后面命令
+                if (result == 0)
+                {
+                    throw new Exception("无数据写入excel");
+                }
                 if (filePath != "")
                 {
                     excel.SaveAsExcel(filePath);
@@ -139,6 +135,60 @@ namespace cost_estimating
                 MessageBox.Show(e.Message, "写Excel文件出错");
             }
         }
+
+        /// <summary>
+        /// 写电阻、电容、电抗表格到excel文件
+        /// </summary>
+        /// <returns>写入的行数</returns>
+        private int WriteDataToExcel()
+        {
+            try
+            {
+                int startRow = 2;
+                int startColumn = 1;
+                RLC.Resistance R= RLC.Resistance.GetInstance();
+                RLC.Capacitance C = RLC.Capacitance.GetInstance();
+                RLC.Inductance L = RLC.Inductance.GetInstance();
+                if (R.dt!=null&&R.dt.Rows.Count > 0)
+                {
+                    int optRows= WriteDataTable(R, startRow, startColumn);
+                    startRow = startRow + optRows + 5;
+                }
+                if (C.dt!=null&&C.dt.Rows.Count > 0)
+                {
+                    int optRows = WriteDataTable(C, startRow, startColumn);
+                    startRow = startRow + optRows + 5;
+                }
+                if (L.dt!=null&&L.dt.Rows.Count > 0)
+                {
+                    int optRows = WriteDataTable(L, startRow, startColumn);
+                    startRow = startRow + optRows + 5;
+                }
+                return startRow - 2;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("写数据到excel出错:"+e.Message,e);
+            }
+        }
+        /// <summary>
+        /// 写电阻/电容/电抗的表格数据到excel
+        /// </summary>
+        /// <param name="rlc">电阻/电容/电抗</param>
+        /// <param name="startRow">开始行</param>
+        /// <param name="startColumn">开始列</param>
+        /// <returns>操作的行数</returns>
+        private int WriteDataTable(RLC.BaseRLC rlc, int startRow, int startColumn)
+        {
+            string[,] rlcData = (string[,])ReadDataTable(rlc.dt);
+            excel.MergeCells(startRow, startColumn, startRow, startColumn + rlcData.GetLength(1)-1, rlc.projectName);
+            excel.ArrayToExcel(rlcData, startRow + 1, startColumn);
+            excel.MergeCells(startRow + rlcData.GetLength(0) + 1, startColumn, startRow + rlcData.GetLength(0) + 1, startColumn + rlcData.GetLength(1) - 1, "");
+            excel.ArrayToExcel(rlc.GetTotalStringArr(), startRow + rlcData.GetLength(0) + 2, startColumn);
+            excel.setBorders(startRow, startColumn, startRow + rlcData.GetLength(0) + 2, startColumn + rlcData.GetLength(1) - 1);
+            return rlcData.GetLength(0) + 2;
+        }
+
         /// <summary>
         /// 读取DataGridView表格数据
         /// </summary>
@@ -196,6 +246,8 @@ namespace cost_estimating
         {
             try
             {
+                if (dt.Rows.Count < 1)
+                    return null;
                 int rows = dt.Rows.Count;//不包括表头
                 int columns = dt.Columns.Count;//要添加档位顺序列
                 string[,] data = new string[rows + 1, columns+1];
@@ -211,7 +263,7 @@ namespace cost_estimating
                     data[i + 1, 0] = (i + 1).ToString();//档位
                     for (int j = 0; j < columns; j++)
                     {
-                        if (dt.Columns[j].DataType.GetType() == typeof(string))
+                        if (dt.Columns[j].DataType == typeof(string))
                         {
                             //在obj.ToString()前加单引号是为了防止自动转化格式 
                             data[i + 1, j + 1] = "'" + dt.Rows[i][j];

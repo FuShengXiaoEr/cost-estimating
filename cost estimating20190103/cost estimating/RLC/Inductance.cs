@@ -23,6 +23,7 @@ namespace cost_estimating.RLC
         private Inductance() 
         {
             this.culomnsName = new string[] { "相电压", "三相功率", "单相功率", "电流", "接触器", "导线", "感抗", "电感值", "单相电抗数量", "三相电抗数量" };
+            this.projectName = "L载部分 ";
         }
 
         public static Inductance GetInstance()

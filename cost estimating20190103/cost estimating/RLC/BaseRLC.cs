@@ -12,6 +12,7 @@ namespace cost_estimating.RLC
     public abstract class BaseRLC
     {
         public string[] culomnsName=null;
+        public string projectName = null;
         public DataTable dt;//显示的表格
         /// <summary>
         /// 相电压
@@ -86,7 +87,6 @@ namespace cost_estimating.RLC
             dTotalCurrent += d_Current;
             iTotalNumber += iNumThree;
         }
-
         /// <summary>
         /// 得到电阻/电抗/电容的总功率、总单相功率、总电流、总个数的string数组
         /// </summary>
@@ -94,9 +94,13 @@ namespace cost_estimating.RLC
         public string[] GetTotalStringArr()
         {
             string[] arr = {
+                               "总功率",
                                dTotalPower.ToString(),
+                               "总单相功率",
                                dTotalSinglePhasePower.ToString(),
+                               "总电流",
                                dTotalCurrent.ToString(),
+                               "总个数",
                                iTotalNumber.ToString()
                            };
             return arr;
