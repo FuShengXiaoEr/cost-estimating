@@ -49,12 +49,12 @@ namespace cost_estimating.RLC
             this.i_phase_voltage = i_phase_voltage;//相电压
             this.d_three_phase_power = d_three_phase_power;//三相功率
             //单相功率（W）=三相功率（W）/3
-            this.d_single_phase_power = Math.Round((double)d_three_phase_power / 3, 4);
+            this.d_single_phase_power = Math.Round((double)d_three_phase_power / 3, 2);
             //电流（A）=单相功率（W）/相电压（V）
             if (i_phase_voltage == 0)
                 d_Current = 0;
             else
-                d_Current = Math.Round(d_single_phase_power / i_phase_voltage, 4);
+                d_Current = Math.Round(d_single_phase_power / i_phase_voltage, 2);
             this.str_cocontactor = cocontactor;//接触器
             this.str_wire = wireSize;//导线大小
             //阻值（Ω）=相电压*相电压/单相功率
@@ -63,7 +63,6 @@ namespace cost_estimating.RLC
                 RNumber = 1;
             iNumSingle = RNumber;//单相电阻管数量
             this.iNumThree = this.iNumSingle * 3;
-
         }
         /// <summary>
         /// 得到电阻/电抗/电容的总功率、总单相功率、总电流、总个数的string数组
@@ -78,5 +77,29 @@ namespace cost_estimating.RLC
         /// <param name="current">总电流</param>
         /// <param name="num">总个数</param>
         public abstract void DelectRLC(int power, double current, int num);
+        /// <summary>
+        /// 删除DataTable里面所选择的行
+        /// </summary>
+        /// <param name="indexs">选择的行号</param>
+        public void DelectSelectRows(int[] indexs)
+        {
+            int power = 0;//三相功率
+            double current = 0;//电流
+            int num = 0;//三相电阻/电抗/电容总数量
+            //int index_d_three_phase_powers=dt.Columns[]
+
+            /*这里采用逆序删除元素，因为每删除一个元素，datagridview表格自身的索引会重新进行一次排列，这就导致了索引在不停的变化。但是需要删除的
+            行的索引已经确定了。
+            那么若是从最后的行开始删则保证了前面的行的索引不会受到影响。
+             * */
+            for (int i = indexs.Length - 1; 0 <= i; i--)
+            {
+                power = ConvertTo.ParseInt(dt.Rows[indexs[i]][culomnsName[1]].ToString());
+                current = Convert.ToDouble(dt.Rows[indexs[i]]["电流(A)"].ToString());
+                num = ConvertTo.ParseInt(dt.Rows[i][culomnsName[culomnsName.Length-1]].ToString());
+                this.DelectRLC(power, current, num);//减已经统计了的总功率、总电流、总数量       
+                dt.Rows.RemoveAt(indexs[i]);
+            }
+        }
     }
 }

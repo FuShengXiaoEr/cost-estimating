@@ -66,7 +66,7 @@ namespace cost_estimating.RLC
         {
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             //容抗（Ω）=相电压*相电压/单相功率
-            this.capacitiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
+            this.capacitiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 2);
             this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
             total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }

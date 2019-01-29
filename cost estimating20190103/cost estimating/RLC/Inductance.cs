@@ -46,8 +46,8 @@ namespace cost_estimating.RLC
         public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
         {
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
-            this.inductiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
-            this.inductanceValue = Math.Round(inductiveReactance / 3.14 * 10);
+            this.inductiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 2);
+            this.inductanceValue = Math.Round(inductiveReactance / 3.14 * 10,2);
             total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
 

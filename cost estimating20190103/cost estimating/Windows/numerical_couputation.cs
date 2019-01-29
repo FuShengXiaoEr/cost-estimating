@@ -109,36 +109,9 @@ namespace cost_estimating
         /// <param name="e"></param>
         private void button_delete_Click(object sender, EventArgs e)
         {
-            List<int> index = new List<int>();
-            int power = 0;//三相功率
-            double current = 0;//电流
-            int num = 0;//三相电阻/电抗/电容总数量
-
-            if (this.baseRLC.dt.Rows.Count > 0)
-            {
-                for (int i = 0; i < this.baseRLC.dt.Rows.Count; i++)
-                {
-                    DataGridViewCheckBoxCell checkcell = (DataGridViewCheckBoxCell)dataGridView_Resistance.Rows[i].Cells["check"];                    
-                    Boolean flak = Convert.ToBoolean(checkcell.EditedFormattedValue);                   
-                    if (flak)
-                    {                        
-                        index.Add(checkcell.RowIndex);
-                        power = ConvertTo.ParseInt(dataGridView_Resistance.Rows[i].Cells["三相功率"].Value.ToString());
-                        current = Convert.ToDouble(dataGridView_Resistance.Rows[i].Cells["电流"].Value.ToString());
-                        num = ConvertTo.ParseInt(dataGridView_Resistance.Rows[i].Cells[this.baseRLC.dt.Columns.Count].Value.ToString());
-                        baseRLC.DelectRLC(power,current,num);//减已经统计了的总功率、总电流、总数量
-                    }
-                }
-            }
-            /*这里采用逆序删除元素，因为每删除一个元素，datagridview表格自身的索引会重新进行一次排列，这就导致了索引在不停的变化。但是需要删除的
-            行的索引已经确定了。
-            那么若是从最后的行开始删则保证了前面的行的索引不会受到影响。
-             * */
-             int[] index_item = index.ToArray();            
-             for (int i = index_item.Length-1; 0 <= i; i--)
-             {                          
-                 dataGridView_Resistance.Rows.RemoveAt(index_item[i]);                
-             }
+             int[] index = this.dataGridView_Resistance.selectRows();
+             baseRLC.DelectSelectRows(index);
+             
         }
 
 
@@ -158,6 +131,5 @@ namespace cost_estimating
                 MessageBox.Show(ex.Message, "操作错误");
             }
         }
-
     }       
 }

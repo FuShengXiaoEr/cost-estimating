@@ -38,7 +38,7 @@ namespace cost_estimating
 
         public void start(DataGridView dataGridView)
         {
-            Thread thread = new Thread(WriteToFile);
+            Thread thread = new Thread(WriteToFile);//新建线程写数据到excel表格
             thread.IsBackground = true;
             thread.Name = "导出excel文件";
             thread.Start();
@@ -120,7 +120,6 @@ namespace cost_estimating
                 if (filePath != "")
                 {
                     excel.SaveAsExcel(filePath);
-                    //filePath = "";
                 }
                 else
                 {

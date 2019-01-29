@@ -149,10 +149,12 @@ namespace cost_estimating
             bool status = (sender as CheckBox).CheckState == CheckState.Checked;
             checkHeader_OnCheckBoxClicked(status);
         }
+
         /// <summary>
-        /// 删除所选
+        /// 返回选择的行号
         /// </summary>
-        public void delectRows()
+        /// <returns></returns>
+        public int[] selectRows()
         {
             List<int> index = new List<int>();
             if (this.Rows.Count > 0)
@@ -167,19 +169,26 @@ namespace cost_estimating
                     }
                 }
             }
-
+            int[] index_item = index.ToArray();
+            if (this.checkBox1.CheckState == CheckState.Checked)
+            {
+                this.checkBox1.CheckState = CheckState.Unchecked;
+            }
+            return index_item;
+        }
+        /// <summary>
+        /// 删除所选
+        /// </summary>
+        public void delectRows()
+        {
             /*这里采用逆序删除元素，因为每删除一个元素，datagridview表格自身的索引会重新进行一次排列，这就导致了索引在不停的变化。但是需要删除的
             行的索引已经确定了。
             那么若是从最后的行开始删则保证了前面的行的索引不会受到影响。
              * */
-            int[] index_item = index.ToArray();
+            int[] index_item = selectRows();
             for (int i = index_item.Length - 1; 0 <= i; i--)
             {
                 this.Rows.RemoveAt(index_item[i]);
-            }
-            if (this.checkBox1.CheckState == CheckState.Checked)
-            {
-                this.checkBox1.CheckState = CheckState.Unchecked;
             }
         }
     }

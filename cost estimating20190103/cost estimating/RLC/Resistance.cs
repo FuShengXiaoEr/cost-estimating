@@ -61,7 +61,7 @@ namespace cost_estimating.RLC
         {
             base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             //阻值（Ω）=相电压*相电压/单相功率
-            this.dValueOfResistance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 4);
+            this.dValueOfResistance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 2);
             
             this.dResistancePowerSingle = this.d_single_phase_power / iNumSingle;//单根电阻管的功率=单相功率/单相电阻管数量
             this.dResistanceValueSingle = this.dValueOfResistance / iNumSingle;//单相电阻管阻值 = 电阻的阻值 / 单相电阻管数量
