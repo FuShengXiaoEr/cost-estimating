@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new cost_estimating.PanelEnhanced();
+            this.btnMinBox = new cost_estimating.controlPlus.buttonPlus();
+            this.btnCloseBox = new cost_estimating.controlPlus.buttonPlus();
+            this.childForm = new System.Windows.Forms.Panel();
+            this.menuPanel = new System.Windows.Forms.Panel();
             this.material_listitems = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,23 +50,92 @@
             this.button_material = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.gpbwindows = new System.Windows.Forms.GroupBox();
-            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             this.material_listitems.SuspendLayout();
             this.numerical_listitems.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.material_listitems);
-            this.panel2.Controls.Add(this.numerical_listitems);
-            this.panel2.Controls.Add(this.button_numerical_computation);
-            this.panel2.Controls.Add(this.button_material);
-            this.panel2.Controls.Add(this.shapeContainer1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(212, 827);
-            this.panel2.TabIndex = 1;
+            this.panel1.BackgroundImage = global::cost_estimating.Properties.Resources.背景6;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnMinBox);
+            this.panel1.Controls.Add(this.btnCloseBox);
+            this.panel1.Controls.Add(this.childForm);
+            this.panel1.Controls.Add(this.menuPanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1288, 826);
+            this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.form_MouseUp);
+            // 
+            // btnMinBox
+            // 
+            this.btnMinBox.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinBox.DownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMinBox.DownForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMinBox.FlatAppearance.BorderSize = 0;
+            this.btnMinBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinBox.Font = new System.Drawing.Font("新宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMinBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnMinBox.Location = new System.Drawing.Point(1211, 8);
+            this.btnMinBox.MoveBackColor = System.Drawing.Color.Silver;
+            this.btnMinBox.MoveForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMinBox.Name = "btnMinBox";
+            this.btnMinBox.NormalBackColor = System.Drawing.Color.Transparent;
+            this.btnMinBox.NormalForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnMinBox.Size = new System.Drawing.Size(30, 30);
+            this.btnMinBox.TabIndex = 6;
+            this.btnMinBox.Text = "▬";
+            this.btnMinBox.UseVisualStyleBackColor = false;
+            this.btnMinBox.Click += new System.EventHandler(this.btnMinBox_Click);
+            // 
+            // btnCloseBox
+            // 
+            this.btnCloseBox.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseBox.DownBackColor = System.Drawing.SystemColors.Control;
+            this.btnCloseBox.DownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
+            this.btnCloseBox.FlatAppearance.BorderSize = 0;
+            this.btnCloseBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseBox.Font = new System.Drawing.Font("新宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCloseBox.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCloseBox.Location = new System.Drawing.Point(1246, 8);
+            this.btnCloseBox.MoveBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(236)))));
+            this.btnCloseBox.MoveForeColor = System.Drawing.Color.LightCoral;
+            this.btnCloseBox.Name = "btnCloseBox";
+            this.btnCloseBox.NormalBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseBox.NormalForeColor = System.Drawing.Color.Maroon;
+            this.btnCloseBox.Size = new System.Drawing.Size(30, 30);
+            this.btnCloseBox.TabIndex = 5;
+            this.btnCloseBox.Text = "✘";
+            this.btnCloseBox.UseVisualStyleBackColor = false;
+            this.btnCloseBox.Click += new System.EventHandler(this.btnCloseBox_Click);
+            // 
+            // childForm
+            // 
+            this.childForm.BackColor = System.Drawing.Color.Transparent;
+            this.childForm.Location = new System.Drawing.Point(217, 44);
+            this.childForm.Name = "childForm";
+            this.childForm.Size = new System.Drawing.Size(1071, 783);
+            this.childForm.TabIndex = 4;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.BackColor = System.Drawing.Color.Transparent;
+            this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.menuPanel.Controls.Add(this.material_listitems);
+            this.menuPanel.Controls.Add(this.numerical_listitems);
+            this.menuPanel.Controls.Add(this.button_numerical_computation);
+            this.menuPanel.Controls.Add(this.button_material);
+            this.menuPanel.Controls.Add(this.shapeContainer1);
+            this.menuPanel.Location = new System.Drawing.Point(1, 44);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(212, 783);
+            this.menuPanel.TabIndex = 3;
             // 
             // material_listitems
             // 
@@ -234,7 +307,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(212, 827);
+            this.shapeContainer1.Size = new System.Drawing.Size(208, 779);
             this.shapeContainer1.TabIndex = 2;
             this.shapeContainer1.TabStop = false;
             // 
@@ -246,25 +319,17 @@
             this.lineShape1.Y1 = 3;
             this.lineShape1.Y2 = 713;
             // 
-            // gpbwindows
-            // 
-            this.gpbwindows.Location = new System.Drawing.Point(218, -12);
-            this.gpbwindows.Name = "gpbwindows";
-            this.gpbwindows.Size = new System.Drawing.Size(1065, 834);
-            this.gpbwindows.TabIndex = 2;
-            this.gpbwindows.TabStop = false;
-            this.gpbwindows.Text = "gpbwindows";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1288, 826);
-            this.Controls.Add(this.gpbwindows);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
             this.Text = "Main";
-            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.menuPanel.ResumeLayout(false);
             this.material_listitems.ResumeLayout(false);
             this.material_listitems.PerformLayout();
             this.numerical_listitems.ResumeLayout(false);
@@ -275,25 +340,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel childForm;
+        private System.Windows.Forms.Panel menuPanel;
+        private System.Windows.Forms.Panel material_listitems;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Button button_material;
-        public System.Windows.Forms.Button button_numerical_computation;
-        private System.Windows.Forms.GroupBox gpbwindows;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.Label label_resistance;
+        private System.Windows.Forms.Panel numerical_listitems;
         private System.Windows.Forms.Label label_reactance;
         private System.Windows.Forms.Label label_capacitance;
-        private System.Windows.Forms.Panel numerical_listitems;
-        private System.Windows.Forms.Panel material_listitems;
+        private System.Windows.Forms.Label label_resistance;
+        public System.Windows.Forms.Button button_numerical_computation;
+        public System.Windows.Forms.Button button_material;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private PanelEnhanced panel1;
+        private controlPlus.buttonPlus btnMinBox;
+        private controlPlus.buttonPlus btnCloseBox;
+
 
 
     }

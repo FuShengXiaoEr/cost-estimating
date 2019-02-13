@@ -124,7 +124,7 @@ namespace cost_estimating
         {
             try
             {
-                WriteToExcel.getInstance().start(this.dataGridView_Resistance);
+                WriteToExcel.getInstance().start();
             }
             catch (Exception ex)
             {

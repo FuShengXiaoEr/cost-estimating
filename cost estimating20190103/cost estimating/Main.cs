@@ -18,6 +18,10 @@ namespace cost_estimating
  
         public instrument win_i;   //定义仪表选择窗口
         public numerical_gpbwindows win_ng;//定义单击数值计算切换窗口
+
+        bool isFormMove = false;//窗体是否移动
+        Point formPoint;//记录窗体的位置
+
         public Main()
         {
              InitializeComponent();          
@@ -88,13 +92,13 @@ namespace cost_estimating
         private void label1_Click(object sender, EventArgs e)
         {
             //win_i = new instrument();            
-            gpbwindows.Controls.Clear();//清空之前加载的窗体
+            childForm.Controls.Clear();//清空之前加载的窗体
             win_i.Show();
-            gpbwindows.Controls.Add(win_i);
+            childForm.Controls.Add(win_i);
         }
 
         /// <summary>
-        /// 打击数值计算导航栏
+        /// 点击数值计算导航栏
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -103,7 +107,7 @@ namespace cost_estimating
             //win_ng = new numerical_gpbwindows();
             //win_ng.Show();         
             numercial_computation = navbar_numerical_change(numercial_computation, numerical_height);            
-            gpbwindows.Controls.Clear();
+            childForm.Controls.Clear();
             //gpbwindows.Controls.Add(win_ng);
         }
 
@@ -138,12 +142,64 @@ namespace cost_estimating
                     win_ng.BaseRLC = baseRLC;
                 }
             }
-            if (!gpbwindows.Controls.Contains(win_ng))
+            if (!childForm.Controls.Contains(win_ng))
             {
                 win_ng.Show();
-                gpbwindows.Controls.Clear();
-                gpbwindows.Controls.Add(win_ng);
+                childForm.Controls.Clear();
+                childForm.Controls.Add(win_ng);
             }
+        }
+
+        private void btnMinBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCloseBox_Click(object sender, EventArgs e)
+        {
+            /*if (modbusThread != null)
+            {
+                modbusThread.stop();
+            }*/
+            //this.Close();
+            Application.Exit();
+        }
+
+        private void form_MouseDown(object sender, MouseEventArgs e)//鼠标按下
+        {
+            formPoint = new Point();
+            int xOffset;
+            int yOffset;
+            if (e.Button == MouseButtons.Left)
+            {
+                xOffset = -e.X - SystemInformation.FrameBorderSize.Width;
+                yOffset = -e.Y - SystemInformation.CaptionHeight - SystemInformation.FrameBorderSize.Height;
+                formPoint = new Point(xOffset, yOffset);
+                isFormMove = true;//开始移动
+            }
+        }
+        private void form_MouseMove(object sender, MouseEventArgs e)//鼠标移动
+        {
+            if (isFormMove == true)
+            {
+                Point mousePos = Control.MousePosition;
+                mousePos.Offset(formPoint.X, formPoint.Y);
+                Location = mousePos;
+            }
+        }
+
+        private void form_MouseUp(object sender, MouseEventArgs e)//鼠标松开
+        {
+            if (e.Button == MouseButtons.Left)//按下的是鼠标左键
+            {
+                isFormMove = false;//停止移动
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 testForm = new Form1();
+            testForm.Show();
         }     
     }
 }
