@@ -60,7 +60,7 @@ namespace cost_estimating.controlPlus
         /// <summary>
         /// 鼠标移过控件时按钮的颜色
         /// </summary>
-        [CategoryAttribute("自定义"), DescriptionAttribute("鼠标指针移过控件时字体的颜色")]
+        [CategoryAttribute("自定义"), DescriptionAttribute("鼠标指针移过控件时按钮的颜色")]
         public Color MoveBackColor
         {
             get { return _moveBackColor; }
@@ -103,7 +103,7 @@ namespace cost_estimating.controlPlus
         /// <summary>
         /// 鼠标移过控件时字体的颜色
         /// </summary>
-        [CategoryAttribute("自定义"), DescriptionAttribute("鼠标指针移过控件时按钮的颜色")]
+        [CategoryAttribute("自定义"), DescriptionAttribute("鼠标指针移过控件时字体的颜色")]
         public Color MoveForeColor
         {
             get { return _moveForeColor; }

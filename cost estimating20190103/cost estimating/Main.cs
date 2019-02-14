@@ -11,8 +11,8 @@ namespace cost_estimating
 {
     public partial class Main : Form
     {       
-        bool material_selection;   //根据bool状态用if来确认打开还是收缩  
-        bool numercial_computation;
+        bool material_selection;   //根据bool状态用if来确认打开还是收缩  物料选择的flag
+        bool numercial_computation;//数值计算的收缩flag
         int material_height = 249; //物料选择时下放空间需要改变的高度
         int numerical_height = 0;//对数字计算控件高度进行递增递减
  
@@ -24,27 +24,29 @@ namespace cost_estimating
 
         public Main()
         {
-             InitializeComponent();          
+             InitializeComponent();
+             material_height = this.material_listitems.Height;
              material_selection = false;
              numercial_computation = false;             
-             material_selection = navbar_material_change(material_selection, material_height);              
-             numercial_computation = navbar_numerical_change(numercial_computation, numerical_height);
+             navbar_material_change(material_height);              
+             navbar_numerical_change(numerical_height);
              win_i = new instrument();
         }
         /// <summary>
         /// 导航栏伸展变化-物料选择时，数值计算位置移动以及文本控件的显示
         /// </summary>
-        /// <param name="navbar_lable">判断物料选择导航栏是打开还是闭合 true:缩 false:伸</param>
+        /// <param name="material_selection">判断物料选择导航栏是打开还是闭合 true:缩 false:伸</param>
         /// <param name="height_change">打开和闭合时，下放导航栏的变化</param>
         /// <returns></returns>
-        private bool navbar_material_change(bool navbar_lable,int height_change)
+        private void navbar_material_change(int height_change)
         {
-            if (navbar_lable == true)//打开列表
+            if (material_selection == true)//打开列表
             {               
                 material_listitems.Visible = true;
                 button_numerical_computation.Top += height_change;
                 numerical_listitems.Top += height_change;
-                navbar_lable = false;
+                button_material.Text = "ˇ数值计算";
+                material_selection = false;
 
             }
             else
@@ -52,41 +54,54 @@ namespace cost_estimating
                 material_listitems.Visible = false;
                 button_numerical_computation.Top -= height_change;
                 numerical_listitems.Top -= height_change;
-                navbar_lable = true;                
+                button_material.Text = "›数值计算";
+                material_selection = true;                
             }
-            return navbar_lable;
         }
 
         /// <summary>
         /// 导航栏伸展变化-数值计算时，数值计算位置移动以及文本控件的显示
         /// </summary>
-        /// <param name="navbar_lable">判断数值计算导航栏是打开还是闭合</param>
+        /// <param name="numercial_computation">判断数值计算导航栏是打开还是闭合</param>
         /// <param name="height_change">打开和闭合时，下放导航栏的变化</param>
         /// <returns></returns>
-        private bool navbar_numerical_change(bool navbar_lable, int height_change)
+        private void navbar_numerical_change(int height_change)
         {
-            if (navbar_lable == false)
+            if (numercial_computation == false)
             {
                 numerical_listitems.Visible = false;
-                navbar_lable = true;
+                button_numerical_computation.Text = "›物料选择";
+                numercial_computation = true;
             }
             else
             {
                 numerical_listitems.Visible = true;
-                navbar_lable = false;
+                button_numerical_computation.Text = "ˇ物料选择";
+                numercial_computation = false;
  
             }
-            return navbar_lable;
         }   
-
+        /// <summary>
+        /// 物料选择按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_material_Click(object sender, EventArgs e)
-        {                       
-            button_material.Visible = true;
-            button_numerical_computation.Visible = true;
-            material_selection = navbar_material_change(material_selection,material_height); 
+        {  
+            navbar_material_change(material_height); 
                         
         }
 
+        /// <summary>
+        /// 数值计算按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_numerical_computation_Click(object sender, EventArgs e)
+        {
+            navbar_numerical_change(numerical_height);
+            //childForm.Controls.Clear();
+        }
         
 
         private void label1_Click(object sender, EventArgs e)
@@ -97,31 +112,18 @@ namespace cost_estimating
             childForm.Controls.Add(win_i);
         }
 
-        /// <summary>
-        /// 点击数值计算导航栏
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button_numerical_computation_Click(object sender, EventArgs e)
-        {   
-            //win_ng = new numerical_gpbwindows();
-            //win_ng.Show();         
-            numercial_computation = navbar_numerical_change(numercial_computation, numerical_height);            
-            childForm.Controls.Clear();
-            //gpbwindows.Controls.Add(win_ng);
-        }
 
-        private void label_resistance_Click(object sender, EventArgs e)
+        private void btnResistance_Click(object sender, EventArgs e)
         {
             win_ngShow(RLC.Resistance.GetInstance());
         }
 
-        private void label_capacitance_Click(object sender, EventArgs e)
+        private void btnCapacitance_Click(object sender, EventArgs e)
         {
             win_ngShow(RLC.Capacitance.GetInstance());
         }
 
-        private void label_reactance_Click(object sender, EventArgs e)
+        private void btnReactance_Click(object sender, EventArgs e)
         {
             win_ngShow(RLC.Inductance.GetInstance());
         }

@@ -188,9 +188,20 @@
   <ItemGroup>
     <None Include="image\pic5259.jpg" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\背景6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\pictureBox3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\btnNormal%28已去底%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
