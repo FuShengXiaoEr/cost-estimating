@@ -45,7 +45,7 @@ namespace cost_estimating
                 material_listitems.Visible = true;
                 button_numerical_computation.Top += height_change;
                 numerical_listitems.Top += height_change;
-                button_material.Text = "ˇ数值计算";
+                button_material.Text = "ˇ物料选择";
                 material_selection = false;
 
             }
@@ -54,7 +54,7 @@ namespace cost_estimating
                 material_listitems.Visible = false;
                 button_numerical_computation.Top -= height_change;
                 numerical_listitems.Top -= height_change;
-                button_material.Text = "›数值计算";
+                button_material.Text = "›物料选择";
                 material_selection = true;                
             }
         }
@@ -70,13 +70,13 @@ namespace cost_estimating
             if (numercial_computation == false)
             {
                 numerical_listitems.Visible = false;
-                button_numerical_computation.Text = "›物料选择";
+                button_numerical_computation.Text = "›数值计算";
                 numercial_computation = true;
             }
             else
             {
                 numerical_listitems.Visible = true;
-                button_numerical_computation.Text = "ˇ物料选择";
+                button_numerical_computation.Text = "ˇ数值计算";
                 numercial_computation = false;
  
             }

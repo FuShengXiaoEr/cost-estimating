@@ -49,17 +49,20 @@
             this.label_three_phase_power = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_single_resistance_num = new System.Windows.Forms.ComboBox();
-            this.button_delete = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridView_Resistance = new cost_estimating.DataGridViewWithCheck();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
             this.btnToExcel = new cost_estimating.controlPlus.buttonPlus();
+            this.dataGridView_Resistance = new cost_estimating.DataGridViewWithCheck();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).BeginInit();
@@ -77,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1065, 825);
+            this.panel1.Size = new System.Drawing.Size(965, 625);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -101,9 +104,9 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.comboBox_single_resistance_num);
             this.panel2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel2.Location = new System.Drawing.Point(180, 18);
+            this.panel2.Location = new System.Drawing.Point(159, 21);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(857, 103);
+            this.panel2.Size = new System.Drawing.Size(787, 103);
             this.panel2.TabIndex = 10;
             // 
             // square
@@ -397,31 +400,6 @@
             this.comboBox_single_resistance_num.TabIndex = 3;
             this.comboBox_single_resistance_num.Text = "1";
             // 
-            // button_delete
-            // 
-            this.button_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_delete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_delete.Location = new System.Drawing.Point(101, 75);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(64, 31);
-            this.button_delete.TabIndex = 9;
-            this.button_delete.Text = "删除";
-            this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
-            // 
-            // button_add
-            // 
-            this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
-            this.button_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
-            this.button_add.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_add.Location = new System.Drawing.Point(17, 75);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(64, 31);
-            this.button_add.TabIndex = 8;
-            this.button_add.Text = "添加";
-            this.button_add.UseVisualStyleBackColor = false;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
-            // 
             // shapeContainer2
             // 
             this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
@@ -429,7 +407,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(1065, 825);
+            this.shapeContainer2.Size = new System.Drawing.Size(965, 625);
             this.shapeContainer2.TabIndex = 11;
             this.shapeContainer2.TabStop = false;
             // 
@@ -458,6 +436,101 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            this.dataGridViewCheckBoxColumn5.HeaderText = "";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            this.dataGridViewCheckBoxColumn5.Width = 492;
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.HeaderText = "";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.Width = 328;
+            // 
+            // dataGridViewCheckBoxColumn8
+            // 
+            this.dataGridViewCheckBoxColumn8.HeaderText = "";
+            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
+            this.dataGridViewCheckBoxColumn8.Width = 328;
+            // 
+            // dataGridViewCheckBoxColumn9
+            // 
+            this.dataGridViewCheckBoxColumn9.HeaderText = "";
+            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
+            this.dataGridViewCheckBoxColumn9.Width = 328;
+            // 
+            // dataGridViewCheckBoxColumn10
+            // 
+            this.dataGridViewCheckBoxColumn10.HeaderText = "";
+            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
+            this.dataGridViewCheckBoxColumn10.Width = 328;
+            // 
+            // button_delete
+            // 
+            this.button_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button_delete.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
+            this.button_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_delete.FlatAppearance.BorderSize = 0;
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_delete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_delete.Image = global::cost_estimating.Properties.Resources.round_remove26x26;
+            this.button_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_delete.Location = new System.Drawing.Point(51, 85);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(75, 31);
+            this.button_delete.TabIndex = 9;
+            this.button_delete.Text = "删除";
+            this.button_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_add
+            // 
+            this.button_add.BackColor = System.Drawing.Color.Transparent;
+            this.button_add.BackgroundImage = global::cost_estimating.Properties.Resources.btnBlue;
+            this.button_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_add.FlatAppearance.BorderSize = 0;
+            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_add.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_add.Image = global::cost_estimating.Properties.Resources.add;
+            this.button_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_add.Location = new System.Drawing.Point(51, 36);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(75, 31);
+            this.button_add.TabIndex = 8;
+            this.button_add.Text = "添加";
+            this.button_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_add.UseVisualStyleBackColor = false;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
+            // btnToExcel
+            // 
+            this.btnToExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
+            this.btnToExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToExcel.DownBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.DownForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.FlatAppearance.BorderSize = 0;
+            this.btnToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToExcel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnToExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.Image = global::cost_estimating.Properties.Resources.report1;
+            this.btnToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToExcel.Location = new System.Drawing.Point(792, 577);
+            this.btnToExcel.MoveBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.MoveForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnToExcel.Name = "btnToExcel";
+            this.btnToExcel.NormalBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.NormalForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.Size = new System.Drawing.Size(131, 30);
+            this.btnToExcel.TabIndex = 14;
+            this.btnToExcel.Text = "导出excel文件";
+            this.btnToExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnToExcel.UseVisualStyleBackColor = true;
+            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
+            // 
             // dataGridView_Resistance
             // 
             this.dataGridView_Resistance.AllowUserToAddRows = false;
@@ -481,10 +554,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_Resistance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Resistance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Resistance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn4});
             this.dataGridView_Resistance.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView_Resistance.Location = new System.Drawing.Point(17, 141);
+            this.dataGridView_Resistance.Location = new System.Drawing.Point(10, 141);
             this.dataGridView_Resistance.Name = "dataGridView_Resistance";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -495,46 +566,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_Resistance.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_Resistance.RowTemplate.Height = 23;
-            this.dataGridView_Resistance.Size = new System.Drawing.Size(1027, 566);
+            this.dataGridView_Resistance.Size = new System.Drawing.Size(945, 430);
             this.dataGridView_Resistance.TabIndex = 12;
-            // 
-            // dataGridViewCheckBoxColumn4
-            // 
-            this.dataGridViewCheckBoxColumn4.HeaderText = "";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            // 
-            // dataGridViewCheckBoxColumn5
-            // 
-            this.dataGridViewCheckBoxColumn5.HeaderText = "";
-            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
-            this.dataGridViewCheckBoxColumn5.Width = 492;
-            // 
-            // btnToExcel
-            // 
-            this.btnToExcel.BackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
-            this.btnToExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnToExcel.DownBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.DownForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.FlatAppearance.BorderSize = 0;
-            this.btnToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToExcel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnToExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.Image = global::cost_estimating.Properties.Resources.report1;
-            this.btnToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToExcel.Location = new System.Drawing.Point(887, 727);
-            this.btnToExcel.MoveBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.MoveForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnToExcel.Name = "btnToExcel";
-            this.btnToExcel.NormalBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.NormalForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.Size = new System.Drawing.Size(131, 30);
-            this.btnToExcel.TabIndex = 14;
-            this.btnToExcel.Text = "导出excel文件";
-            this.btnToExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnToExcel.UseVisualStyleBackColor = true;
-            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
             // 
             // numerical_gpbwindows
             // 
@@ -542,7 +575,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "numerical_gpbwindows";
-            this.Size = new System.Drawing.Size(1065, 825);
+            this.Size = new System.Drawing.Size(965, 625);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -580,8 +613,11 @@
         private DataGridViewWithCheck dataGridView_Resistance;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private controlPlus.buttonPlus btnToExcel;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
 
     }
 }
