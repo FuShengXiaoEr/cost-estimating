@@ -60,3 +60,16 @@ E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll

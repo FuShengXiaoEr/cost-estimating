@@ -22,7 +22,7 @@ namespace cost_estimating.RLC
         /// 总总功率、总单相功率、总电流、总个数的类
         /// </summary>
         BaseRLCStaticVariables<Capacitance> total = new BaseRLCStaticVariables<Capacitance>();
-
+       
         private static Capacitance capacitance;
         private static readonly object _lock = new object();
         /// <summary>

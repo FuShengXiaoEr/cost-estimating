@@ -11,17 +11,23 @@ namespace cost_estimating
 {
     public partial class instrument : UserControl
     {
+        private Database.DBConnect dbcon;
         public instrument()
         {
-            InitializeComponent();          
-
+            InitializeComponent();
+            //创建数据库连接对象
+            dbcon = new Database.DBConnect();
+            dataGridViewWithCheck_instruDesc.Columns[0].FillWeight = 80;
+            dataGridViewWithCheck_instruDesc.Columns[1].FillWeight = 10;
+            dataGridViewWithCheck_instruDesc.Columns[2].FillWeight = 10;
+            //dataGridViewWithCheck_instruDesc.Columns[3].FillWeight = 10;
         }
 
         public void combobox_Item(ComboBox combobox,string[] items)
         {
             //允许代码重新绘制,固定大小
             combobox.DrawMode = DrawMode.OwnerDrawFixed;
-            combobox.SelectedText = "--请选择--" ;            
+            //combobox.SelectedText = "--请选择--" ;            
             combobox.Items.AddRange(items);
         }
 
@@ -59,26 +65,43 @@ namespace cost_estimating
 
         private void instrument_Load(object sender, EventArgs e)
         {
-           
-            //物料名称           
-            string[] material_items = { 
-                                        "多功能仪表",
-                                        "温控器",
-                                        "电流互感器"
-                                        };
-            combobox_Item(material_name, material_items);
-            material_name.DrawItem += new DrawItemEventHandler(comboBox_DrawItem);
-
-            //品牌名称
-            string[] brand_items = {
-                                        "欧姆龙",
-                                        "安科瑞",
-                                        "正泰"
-                                    };
-            combobox_Item(brand_name, brand_items);
-            brand_name.DrawItem += new DrawItemEventHandler(comboBox_DrawItem);
-           
             
-        }    
+            string[] list = dbcon.loadIngredient().ToArray();
+            //负载组成
+            combobox_Item(comboBox_load,list);
+            comboBox_load.DrawItem += new DrawItemEventHandler(comboBox_DrawItem);
+            
+        }
+
+        private void comboBox_load_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selecttext = comboBox_load.SelectedItem.ToString();
+            material_name.Items.Clear();
+            string[] list = dbcon.instrument(selecttext).ToArray();
+            combobox_Item(material_name, list);
+            material_name.DrawItem += new DrawItemEventHandler(comboBox_DrawItem);
+        }
+
+        private void material_name_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selecttext = material_name.SelectedItem.ToString();
+            brand_name.Items.Clear();
+            string[] list = dbcon.getBrandName(selecttext).ToArray();
+            combobox_Item(brand_name, list);
+            brand_name.DrawItem += new DrawItemEventHandler(comboBox_DrawItem);
+        }
+
+      
+        
+
+       /* private void material_name_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            dbcon = new Database.DBConnect();
+
+            list = dbcon.loadIngredient();
+
+        }*/
+
     }
 }
