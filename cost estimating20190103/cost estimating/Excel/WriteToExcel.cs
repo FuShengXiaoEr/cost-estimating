@@ -36,7 +36,7 @@ namespace cost_estimating
 
         private WriteToExcel() { }
 
-        public void start(DataGridView dataGridView)
+        public void start()
         {
             Thread thread = new Thread(WriteToFile);//新建线程写数据到excel表格
             thread.IsBackground = true;

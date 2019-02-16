@@ -70,6 +70,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controlPlus\buttonPlus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controlPlus\buttonPlus.Designer.cs">
+      <DependentUpon>buttonPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controlPlus\PanelEnhanced.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ConvertTo\ConvertTo.cs" />
     <Compile Include="Database\DBConnect.cs" />
     <Compile Include="Database\sqlhelper.cs" />
@@ -82,21 +91,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RLC\BaseRLC.cs" />
     <Compile Include="RLC\BaseRLCStaticVariables.cs" />
     <Compile Include="RLC\Capacitance.cs" />
     <Compile Include="RLC\Inductance.cs" />
     <Compile Include="RLC\Resistance.cs" />
-    <Compile Include="Windows\DataGridViewWithCheck.cs">
+    <Compile Include="controlPlus\DataGridViewWithCheck.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Windows\DataGridViewWithCheck.designer.cs">
+    <Compile Include="controlPlus\DataGridViewWithCheck.designer.cs">
       <DependentUpon>DataGridViewWithCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\numerical_couputation.cs">
@@ -116,10 +136,13 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\DataGridViewWithCheck.resx">
+    <EmbeddedResource Include="controlPlus\DataGridViewWithCheck.resx">
       <DependentUpon>DataGridViewWithCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\numerical_couputation.resx">
@@ -130,13 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,6 +187,45 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\4079807_5776509.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\pic5259.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\背景6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\pictureBox3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\btnBlue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\btnAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\btnMove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\round_add26x26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\round_remove126x26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\round_remove26x26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
