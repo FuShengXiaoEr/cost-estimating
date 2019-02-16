@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnToExcel = new System.Windows.Forms.Button();
+            this.btnToExcel = new controlPlus.buttonPlus();
             this.panel2 = new System.Windows.Forms.Panel();
             this.square = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();

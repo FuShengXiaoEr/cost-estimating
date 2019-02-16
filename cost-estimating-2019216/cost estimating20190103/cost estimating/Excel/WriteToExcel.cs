@@ -15,10 +15,10 @@ namespace cost_estimating
         private static WriteToExcel instance;
         private static readonly object _lock = new object();
         private Semaphore _semaphore = new Semaphore(0, 256);
-        string[,] data;
+        
         string filePath;
 
-        /// <summary>
+        /// <summary> 
         /// 得到实例
         /// </summary>
         /// <returns></returns>

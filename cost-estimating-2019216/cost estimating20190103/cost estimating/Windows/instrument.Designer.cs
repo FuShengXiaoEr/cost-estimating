@@ -196,7 +196,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 
             this.BackColor = System.Drawing.Color.Transparent;
-
             this.Controls.Add(this.panel1);
             this.Name = "instrument";
             this.Size = new System.Drawing.Size(1065, 825);
