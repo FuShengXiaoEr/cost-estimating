@@ -207,25 +207,7 @@
     <None Include="image\report1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="image\btnBlue.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\btnAdd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\btnMove.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\round_add26x26.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\round_remove126x26.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\round_remove26x26.png" />
+    <None Include="image\btnNormal%28已去底%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
