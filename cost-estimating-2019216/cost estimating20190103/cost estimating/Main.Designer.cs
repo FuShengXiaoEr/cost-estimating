@@ -76,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1288, 826);
+            this.panel1.Size = new System.Drawing.Size(1188, 726);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.form_MouseMove);
@@ -113,7 +113,7 @@
             this.btnMinBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinBox.Font = new System.Drawing.Font("新宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnMinBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMinBox.Location = new System.Drawing.Point(1211, 8);
+            this.btnMinBox.Location = new System.Drawing.Point(1111, 8);
             this.btnMinBox.MoveBackColor = System.Drawing.Color.Silver;
             this.btnMinBox.MoveForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnMinBox.Name = "btnMinBox";
@@ -134,7 +134,7 @@
             this.btnCloseBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseBox.Font = new System.Drawing.Font("新宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCloseBox.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCloseBox.Location = new System.Drawing.Point(1246, 8);
+            this.btnCloseBox.Location = new System.Drawing.Point(1146, 8);
             this.btnCloseBox.MoveBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(220)))), ((int)(((byte)(236)))));
             this.btnCloseBox.MoveForeColor = System.Drawing.Color.LightCoral;
             this.btnCloseBox.Name = "btnCloseBox";
@@ -152,13 +152,13 @@
             this.childForm.Controls.Add(this.pictureBox2);
             this.childForm.Location = new System.Drawing.Point(215, 44);
             this.childForm.Name = "childForm";
-            this.childForm.Size = new System.Drawing.Size(1073, 783);
+            this.childForm.Size = new System.Drawing.Size(973, 683);
             this.childForm.TabIndex = 4;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::cost_estimating.Properties.Resources.pictureBox3;
-            this.pictureBox2.Location = new System.Drawing.Point(835, 705);
+            this.pictureBox2.Location = new System.Drawing.Point(735, 605);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(224, 65);
             this.pictureBox2.TabIndex = 0;
@@ -503,7 +503,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1288, 826);
+            this.shapeContainer1.Size = new System.Drawing.Size(1188, 726);
             this.shapeContainer1.TabIndex = 8;
             this.shapeContainer1.TabStop = false;
             // 
@@ -522,7 +522,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 826);
+            this.ClientSize = new System.Drawing.Size(1188, 726);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";

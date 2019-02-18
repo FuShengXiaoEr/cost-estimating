@@ -38,7 +38,6 @@ namespace cost_estimating
             this.checkColumn.HeaderText = "";
             this.checkColumn.Name = "check";
             this.Columns.Insert(0,checkColumn);
-            this.checkColumn.Width = 100;
         }
 
         private void CreateCheckBox()

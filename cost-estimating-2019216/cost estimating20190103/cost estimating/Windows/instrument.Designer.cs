@@ -38,11 +38,11 @@
             this.brand_name = new System.Windows.Forms.ComboBox();
             this.comboBox_load = new System.Windows.Forms.ComboBox();
             this.material_name = new System.Windows.Forms.ComboBox();
+            this.search = new System.Windows.Forms.Button();
             this.dataGridViewWithCheck_instruDesc = new cost_estimating.DataGridViewWithCheck();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unit_pirce = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.search = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWithCheck_instruDesc)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +120,16 @@
             this.material_name.TabIndex = 0;
             this.material_name.SelectedIndexChanged += new System.EventHandler(this.material_name_SelectedIndexChanged);
             // 
+            // search
+            // 
+            this.search.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.search.Location = new System.Drawing.Point(266, 707);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(123, 37);
+            this.search.TabIndex = 2;
+            this.search.Text = "搜索";
+            this.search.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewWithCheck_instruDesc
             // 
             this.dataGridViewWithCheck_instruDesc.AllowUserToAddRows = false;
@@ -180,21 +190,10 @@
             this.unit_pirce.HeaderText = "单价";
             this.unit_pirce.Name = "unit_pirce";
             // 
-            // search
-            // 
-            this.search.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.search.Location = new System.Drawing.Point(266, 707);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(123, 37);
-            this.search.TabIndex = 2;
-            this.search.Text = "搜索";
-            this.search.UseVisualStyleBackColor = true;
-            // 
             // instrument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
             this.Name = "instrument";

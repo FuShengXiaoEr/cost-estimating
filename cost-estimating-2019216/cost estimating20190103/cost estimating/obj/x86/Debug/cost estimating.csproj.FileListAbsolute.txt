@@ -73,29 +73,55 @@ D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\
 D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
 D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
 D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
-C:\Users\rd42\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
-C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\bin\Debug\zh-Hans\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\cost-estimating-bb6f99f4ff242defa096c729f42079f6dd743f01\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CopyComplete
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\bin\Debug\zh-Hans\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojAssemblyReference.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CoreCompileInputs.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CopyComplete
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\zh-Hans\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojAssemblyReference.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CoreCompileInputs.cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CopyComplete
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
