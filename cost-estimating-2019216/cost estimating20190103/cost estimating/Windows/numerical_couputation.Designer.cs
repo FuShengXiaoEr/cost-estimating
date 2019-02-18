@@ -32,23 +32,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnToExcel = new cost_estimating.controlPlus.buttonPlus();
-            this.dataGridView_Resistance = new cost_estimating.DataGridViewWithCheck();
             this.panel2 = new System.Windows.Forms.Panel();
             this.square = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.KW = new System.Windows.Forms.Label();
             this.textBox_three_phase_power = new System.Windows.Forms.TextBox();
             this.textBox_wire = new System.Windows.Forms.TextBox();
             this.comboBox_cocontactor = new System.Windows.Forms.ComboBox();
-            this.comboBox_three_power = new System.Windows.Forms.ComboBox();
             this.comboBox_phase_voltage = new System.Windows.Forms.ComboBox();
             this.label_resistance_num = new System.Windows.Forms.Label();
             this.label_wire = new System.Windows.Forms.Label();
             this.label_cocontactor = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label_three_phase_power = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_single_resistance_num = new System.Windows.Forms.ComboBox();
             this.button_delete = new System.Windows.Forms.Button();
@@ -62,9 +57,11 @@
             this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnToExcel = new cost_estimating.controlPlus.buttonPlus();
+            this.dataGridView_Resistance = new cost_estimating.DataGridViewWithCheck();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,71 +79,6 @@
             this.panel1.Size = new System.Drawing.Size(965, 680);
             this.panel1.TabIndex = 0;
             // 
-            // btnToExcel
-            // 
-            this.btnToExcel.BackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
-            this.btnToExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnToExcel.DownBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.DownForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.FlatAppearance.BorderSize = 0;
-            this.btnToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToExcel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnToExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.Image = global::cost_estimating.Properties.Resources.report1;
-            this.btnToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToExcel.Location = new System.Drawing.Point(792, 637);
-            this.btnToExcel.MoveBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.MoveForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnToExcel.Name = "btnToExcel";
-            this.btnToExcel.NormalBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.NormalForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.Size = new System.Drawing.Size(131, 30);
-            this.btnToExcel.TabIndex = 14;
-            this.btnToExcel.Text = "导出excel文件";
-            this.btnToExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnToExcel.UseVisualStyleBackColor = true;
-            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
-            // 
-            // dataGridView_Resistance
-            // 
-            this.dataGridView_Resistance.AllowUserToAddRows = false;
-            this.dataGridView_Resistance.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView_Resistance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_Resistance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Resistance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView_Resistance.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_Resistance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView_Resistance.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Resistance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_Resistance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Resistance.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView_Resistance.Location = new System.Drawing.Point(10, 141);
-            this.dataGridView_Resistance.Name = "dataGridView_Resistance";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Resistance.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_Resistance.RowTemplate.Height = 23;
-            this.dataGridView_Resistance.Size = new System.Drawing.Size(945, 490);
-            this.dataGridView_Resistance.TabIndex = 12;
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -154,17 +86,14 @@
             this.panel2.Controls.Add(this.square);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.KW);
             this.panel2.Controls.Add(this.textBox_three_phase_power);
             this.panel2.Controls.Add(this.textBox_wire);
             this.panel2.Controls.Add(this.comboBox_cocontactor);
-            this.panel2.Controls.Add(this.comboBox_three_power);
             this.panel2.Controls.Add(this.comboBox_phase_voltage);
             this.panel2.Controls.Add(this.label_resistance_num);
             this.panel2.Controls.Add(this.label_wire);
             this.panel2.Controls.Add(this.label_cocontactor);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label_three_phase_power);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.comboBox_single_resistance_num);
             this.panel2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -202,16 +131,6 @@
             this.label3.Size = new System.Drawing.Size(26, 21);
             this.label3.TabIndex = 6;
             this.label3.Text = "W";
-            // 
-            // KW
-            // 
-            this.KW.AutoSize = true;
-            this.KW.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.KW.Location = new System.Drawing.Point(678, 22);
-            this.KW.Name = "KW";
-            this.KW.Size = new System.Drawing.Size(26, 21);
-            this.KW.TabIndex = 6;
-            this.KW.Text = "W";
             // 
             // textBox_three_phase_power
             // 
@@ -253,46 +172,6 @@
             this.comboBox_cocontactor.Size = new System.Drawing.Size(90, 29);
             this.comboBox_cocontactor.TabIndex = 3;
             this.comboBox_cocontactor.Text = "LC1D09";
-            // 
-            // comboBox_three_power
-            // 
-            this.comboBox_three_power.DropDownHeight = 100;
-            this.comboBox_three_power.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox_three_power.FormattingEnabled = true;
-            this.comboBox_three_power.IntegralHeight = false;
-            this.comboBox_three_power.Items.AddRange(new object[] {
-            "10",
-            "20",
-            "30",
-            "40",
-            "50",
-            "60",
-            "70",
-            "80",
-            "90",
-            "100",
-            "200",
-            "300",
-            "400",
-            "500",
-            "600",
-            "700",
-            "800",
-            "900",
-            "1000",
-            "2000",
-            "3000",
-            "4000",
-            "5000",
-            "6000",
-            "7000",
-            "8000",
-            "9000"});
-            this.comboBox_three_power.Location = new System.Drawing.Point(588, 18);
-            this.comboBox_three_power.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.comboBox_three_power.Name = "comboBox_three_power";
-            this.comboBox_three_power.Size = new System.Drawing.Size(90, 29);
-            this.comboBox_three_power.TabIndex = 3;
             // 
             // comboBox_phase_voltage
             // 
@@ -368,21 +247,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "三相功率";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_three_phase_power
-            // 
-            this.label_three_phase_power.AutoSize = true;
-            this.label_three_phase_power.BackColor = System.Drawing.Color.Silver;
-            this.label_three_phase_power.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_three_phase_power.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_three_phase_power.Location = new System.Drawing.Point(504, 15);
-            this.label_three_phase_power.Margin = new System.Windows.Forms.Padding(0);
-            this.label_three_phase_power.Name = "label_three_phase_power";
-            this.label_three_phase_power.Padding = new System.Windows.Forms.Padding(5, 7, 5, 6);
-            this.label_three_phase_power.Size = new System.Drawing.Size(84, 34);
-            this.label_three_phase_power.TabIndex = 2;
-            this.label_three_phase_power.Text = "三相功率";
-            this.label_three_phase_power.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -466,17 +330,17 @@
             // 
             // button_delete
             // 
-            this.button_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button_delete.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
+            this.button_delete.BackColor = System.Drawing.Color.Transparent;
             this.button_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_delete.FlatAppearance.BorderSize = 0;
-            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_delete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_delete.Font = new System.Drawing.Font("华文琥珀", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_delete.ForeColor = System.Drawing.Color.MediumOrchid;
             this.button_delete.Image = global::cost_estimating.Properties.Resources.round_remove26x26;
             this.button_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_delete.Location = new System.Drawing.Point(51, 85);
+            this.button_delete.Location = new System.Drawing.Point(44, 85);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 31);
+            this.button_delete.Size = new System.Drawing.Size(82, 31);
             this.button_delete.TabIndex = 9;
             this.button_delete.Text = "删除";
             this.button_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -486,16 +350,17 @@
             // button_add
             // 
             this.button_add.BackColor = System.Drawing.Color.Transparent;
-            this.button_add.BackgroundImage = global::cost_estimating.Properties.Resources.btnBlue;
             this.button_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button_add.FlatAppearance.BorderSize = 0;
-            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_add.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
+            this.button_add.FlatAppearance.BorderSize = 2;
+            this.button_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_add.Font = new System.Drawing.Font("华文琥珀", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_add.ForeColor = System.Drawing.Color.MediumOrchid;
             this.button_add.Image = global::cost_estimating.Properties.Resources.add;
             this.button_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_add.Location = new System.Drawing.Point(51, 36);
+            this.button_add.Location = new System.Drawing.Point(44, 36);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(75, 31);
+            this.button_add.Size = new System.Drawing.Size(82, 31);
             this.button_add.TabIndex = 8;
             this.button_add.Text = "添加";
             this.button_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -563,6 +428,71 @@
             this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
             this.dataGridViewCheckBoxColumn10.Width = 328;
             // 
+            // btnToExcel
+            // 
+            this.btnToExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
+            this.btnToExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToExcel.DownBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.DownForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.FlatAppearance.BorderSize = 0;
+            this.btnToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToExcel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnToExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.Image = global::cost_estimating.Properties.Resources.report1;
+            this.btnToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToExcel.Location = new System.Drawing.Point(792, 637);
+            this.btnToExcel.MoveBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.MoveForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnToExcel.Name = "btnToExcel";
+            this.btnToExcel.NormalBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.NormalForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.Size = new System.Drawing.Size(131, 30);
+            this.btnToExcel.TabIndex = 14;
+            this.btnToExcel.Text = "导出excel文件";
+            this.btnToExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnToExcel.UseVisualStyleBackColor = true;
+            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
+            // 
+            // dataGridView_Resistance
+            // 
+            this.dataGridView_Resistance.AllowUserToAddRows = false;
+            this.dataGridView_Resistance.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView_Resistance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Resistance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Resistance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_Resistance.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_Resistance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView_Resistance.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Resistance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Resistance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Resistance.GridColor = System.Drawing.Color.Gray;
+            this.dataGridView_Resistance.Location = new System.Drawing.Point(10, 141);
+            this.dataGridView_Resistance.Name = "dataGridView_Resistance";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Resistance.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_Resistance.RowTemplate.Height = 23;
+            this.dataGridView_Resistance.Size = new System.Drawing.Size(945, 490);
+            this.dataGridView_Resistance.TabIndex = 12;
+            // 
             // numerical_gpbwindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -571,9 +501,9 @@
             this.Name = "numerical_gpbwindows";
             this.Size = new System.Drawing.Size(965, 680);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -585,17 +515,14 @@
         private System.Windows.Forms.Label square;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label KW;
         private System.Windows.Forms.TextBox textBox_three_phase_power;
         private System.Windows.Forms.TextBox textBox_wire;
         private System.Windows.Forms.ComboBox comboBox_cocontactor;
-        private System.Windows.Forms.ComboBox comboBox_three_power;
         private System.Windows.Forms.ComboBox comboBox_phase_voltage;
         private System.Windows.Forms.Label label_resistance_num;
         private System.Windows.Forms.Label label_wire;
         private System.Windows.Forms.Label label_cocontactor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label_three_phase_power;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_single_resistance_num;
         private System.Windows.Forms.Button button_delete;

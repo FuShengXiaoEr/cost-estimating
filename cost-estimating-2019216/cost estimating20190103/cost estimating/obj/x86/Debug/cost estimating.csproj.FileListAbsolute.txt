@@ -110,9 +110,6 @@ E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\
 E:\yanXM\VStest\RLCCostEstimationSystem\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
-E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\zh-Hans\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll
-E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojAssemblyReference.cache
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
@@ -121,7 +118,5 @@ E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.cache
-E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CoreCompileInputs.cache
-E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.CopyComplete
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb

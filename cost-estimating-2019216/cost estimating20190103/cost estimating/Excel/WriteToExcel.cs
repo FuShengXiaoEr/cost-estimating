@@ -105,7 +105,7 @@ namespace cost_estimating
         {
             try
             {
-                Console.WriteLine("Before WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
+                //Console.WriteLine("Before WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
                 excel.CreateExcel();//创建文件
                 //写数据
                 //excel.ArrayToExcel(data, startRow + 1, startCloumn);
@@ -119,12 +119,13 @@ namespace cost_estimating
                 if (filePath != "")
                 {
                     excel.SaveAsExcel(filePath);
+                    MessageBox.Show("导出文件成功！", "提示");
                 }
                 else
                 {
                     excel.CloseWithoutSave();
                 }
-                Console.WriteLine("After WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
+                //Console.WriteLine("After WriteToFile:" + DateTime.Now.ToString("HH:mm:ss.fff"));
             }
             catch (Exception e)
             {
