@@ -30,7 +30,9 @@ namespace cost_estimating.RLC
         /// </summary>
         private Capacitance() 
         {
-            this.culomnsName = new string[] { "线电压(V)", "相电压(V)", "三相功率(var)", "单相功率(var)", "电流(A)", "接触器", "导线(mm²)", "容抗(Ω)", "电容值(uF)", "单相电容数量", "三相电容数量" };
+            this.culomnsName_ACthree = new string[] { "线电压(V)", "相电压(V)", "三相功率(var)", "单相功率(var)", "单相电流(A)", "接触器", "导线(mm²)", "容抗(Ω)", "电容值(uF)", "单相电容数量", "三相电容数量" };
+            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(var)", "电流(A)", "线径(mm²)", "接触器", "容抗(Ω)", "电容值(uF)", "电容数量" };
+            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(var)", "电流(A)", "线径(mm²)", "接触器", "容抗(Ω)", "电容值(uF)", "电容数量" };
             this.projectName = "C载部分 ";
             this.name = "电容";
         }
@@ -76,7 +78,7 @@ namespace cost_estimating.RLC
         /// 得到电容参数数组
         /// </summary>
         /// <returns></returns>
-        public override string[] ToStringArr()
+        public override string[] ToStringArr_ACthree()
         {
             string[] strArr ={
                                  d_Line_voltage.ToString(),
@@ -90,6 +92,21 @@ namespace cost_estimating.RLC
                                  capacitanceValue.ToString(),
                                  iNumSingle.ToString(),
                                  iNumThree.ToString()
+                            };
+            return strArr;
+        }
+
+        public override string[] ToStringArr_DC()
+        {
+            string[] strArr ={
+                                 d_phase_voltage.ToString(),
+                                 d_single_phase_power.ToString(),
+                                 d_Current.ToString(),
+                                 str_cocontactor,
+                                 str_wire,
+                                 capacitiveReactance.ToString(),
+                                 capacitanceValue.ToString(),
+                                 iNumSingle.ToString()
                             };
             return strArr;
         }

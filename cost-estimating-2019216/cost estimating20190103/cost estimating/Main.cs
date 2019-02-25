@@ -21,7 +21,6 @@ namespace cost_estimating
 
         bool isFormMove = false;//窗体是否移动
         Point formPoint;//记录窗体的位置
-
         public Main()
         {
              InitializeComponent();

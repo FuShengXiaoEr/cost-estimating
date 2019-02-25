@@ -58,7 +58,9 @@ namespace cost_estimating.RLC
         /// </summary>
         private Resistance()
         {
-            this.culomnsName = new string[] { "线电压(V)", "相电压(V)", "三相功率(W)", "单相功率(W)", "单相电流(A)", "接触器", "导线(mm²)", "单相阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "单相电阻管数量", "三相电阻管数量", "串联数量", "并联数量" };
+            this.culomnsName_ACthree = new string[] { "线电压(V)", "相电压(V)", "三相功率(W)", "单相功率(W)", "单相电流(A)", "接触器", "导线(mm²)", "单相阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "单相电阻管数量", "三相电阻管数量", "串联数量", "并联数量" };
+            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(W)", "电流(A)", "线径(mm²)", "接触器", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "电阻管数量", "串联数量", "并联数量" };
+            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(W)", "电流(A)", "线径(mm²)", "接触器", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "电阻管数量", "串联数量", "并联数量" };
             this.projectName = "R载部分 ";
             this.name = "电阻管";
         }
@@ -106,7 +108,7 @@ namespace cost_estimating.RLC
         /// 得到电阻参数数组
         /// </summary>
         /// <returns></returns>
-        public override string[] ToStringArr()
+        public override string[] ToStringArr_ACthree()
         {
             string[] strArr ={
                                  d_Line_voltage.ToString(),
@@ -121,6 +123,24 @@ namespace cost_estimating.RLC
                                  dResistanceValueSingle.ToString(),
                                  iNumSingle.ToString(),
                                  iNumThree.ToString(),
+                                 seriesNum.ToString(),
+                                 parallelingNum.ToString(),
+                            };
+            return strArr;
+        }
+
+        public override string[] ToStringArr_DC()
+        {
+            string[] strArr ={
+                                 d_phase_voltage.ToString(),
+                                 d_single_phase_power.ToString(),
+                                 d_Current.ToString(),
+                                 str_cocontactor,
+                                 str_wire,
+                                 dValueOfResistance.ToString(),
+                                 dResistancePowerSingle.ToString(),
+                                 dResistanceValueSingle.ToString(),
+                                 iNumSingle.ToString(),
                                  seriesNum.ToString(),
                                  parallelingNum.ToString(),
                             };

@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="RLC\BaseRLC.cs" />
     <Compile Include="RLC\BaseRLCStaticVariables.cs" />
+    <Compile Include="RLC\CalculatedWire.cs" />
     <Compile Include="RLC\Capacitance.cs" />
     <Compile Include="RLC\Inductance.cs" />
     <Compile Include="RLC\Resistance.cs" />

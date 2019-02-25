@@ -26,8 +26,8 @@ namespace cost_estimating
                 this.baseRLC = value;
                 if (this.baseRLC.dt == null)
                 {
-                    this.baseRLC.dt = ConvertTo.ConvertToDataTable(baseRLC.culomnsName, null);
-                    this.baseRLC.preDt = ConvertTo.ConvertToDataTable(baseRLC.culomnsName, null);
+                    this.baseRLC.dt = ConvertTo.ConvertToDataTable(baseRLC.culomnsName_ACthree, null);
+                    this.baseRLC.preDt = ConvertTo.ConvertToDataTable(baseRLC.culomnsName_ACthree, null);
                 }
                 changeParam();//改变界面显示值
             }
@@ -39,15 +39,21 @@ namespace cost_estimating
         {
             this.dataGridView_Resistance.DataSource = this.baseRLC.dt;
             this.dataGridView_preview.DataSource = this.baseRLC.preDt;
+            previewView();
             this.RLCtype = baseRLC.name;
             this.cBox_U.SelectedItem = baseRLC.UType;
             this.cBox_electricityType.SelectedItem = baseRLC.ElectricityType;
             this.textBox_phase_voltage.Text = baseRLC.Voltage.ToString();
             this.textBox_three_phase_power.Text = baseRLC.D_three_phase_power.ToString();
             this.textBox_singlePhaseNumber.Text = baseRLC.iNumSingle.ToString();
-            this.textBox_series.Text = this.baseRLC.getSeriesNum().ToString();
+            int seriesNum = this.baseRLC.getSeriesNum();
+            if (cBoxSeriesType.SelectedIndex == 1)
+            {
+                seriesNum = this.baseRLC.iNumSingle / seriesNum;
+            }
+            this.textBox_series.Text = seriesNum.ToString();
             this.textBox_wire.Text = this.baseRLC.str_wire;
-            this.cBox_cocontactor.SelectedItem = this.baseRLC.str_cocontactor;
+            this.textBox_cocontactor.Text = this.baseRLC.str_cocontactor;
         }
         /// <summary>
         /// 预留，直接修改RLCtype的值改变label_resistance_num.Text
@@ -61,7 +67,25 @@ namespace cost_estimating
             set
             {
                 rlcType = value;
-                this.label_resistance_num.Text = "单相" + rlcType + "数量";
+                if (value == "电阻管")
+                {
+                    this.label3.Text = "W";
+                }
+                else
+                {
+                    this.label3.Text = "var";
+                }
+
+                if (this.baseRLC.ElectricityType == this.baseRLC.eleTypeArr[2] || this.baseRLC.ElectricityType == this.baseRLC.eleTypeArr[3])
+                {
+                    this.label_resistance_num.Text = this.baseRLC.name + "数量";
+                    this.labelPower.Text = "功率";
+                }
+                else
+                {
+                    this.label_resistance_num.Text = "单相" + this.baseRLC.name + "数量";
+                    this.labelPower.Text = "三相功率";
+                }
             }
         }
 
@@ -69,10 +93,15 @@ namespace cost_estimating
         {
             InitializeComponent();
             this.BaseRLC = baseRLC;
+            initForm();
+        }
+        private void initForm()
+        {
             this.cBox_U.Items.AddRange(baseRLC.UTypeArr);
             this.cBox_U.SelectedIndex = 0;
             this.cBox_electricityType.Items.AddRange(baseRLC.eleTypeArr);
             this.cBox_electricityType.SelectedIndex = 0;
+            this.cBoxSeriesType.SelectedIndex = 0;
         }
         
 
@@ -87,7 +116,6 @@ namespace cost_estimating
         /// <returns>返回电阻参数数组</returns>
         private string[] RLCParamCalculate()
         {
-            //baseRLC = RLC.BaseRLC.GetInstance(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             baseRLC.CalculatingParam();
             string[] param = baseRLC.ToStringArr();
             return param;
@@ -102,14 +130,6 @@ namespace cost_estimating
         {
             try
             {
-                int phaseVoltage = ConvertTo.ParseInt(textBox_phase_voltage.Text.ToString());
-                double threePhasePower = ConvertTo.ParseInt(textBox_three_phase_power.Text);
-                //接触器
-                string cocontactor = comboBox_cocontactor.SelectedItem.ToString();
-                string wireSize = textBox_wire.Text;
-                int SingeRNum = ConvertTo.ParseInt(this.textBox_singlePhaseNumber.Text.Trim());
-                int seriesNumber=ConvertTo.ParseInt(this.textBox_series.Text.Trim());
-                //string[] row = RLCParamCalculate(phaseVoltage, threePhasePower, cocontactor, wireSize, SingeRNum, seriesNumber);
                 string[] row = RLCParamCalculate();
                 this.baseRLC.dt.Rows.Add(row);
             }
@@ -171,6 +191,8 @@ namespace cost_estimating
                 if (dr == DialogResult.OK)
                 {
                     baseRLC.ElectricityType = baseRLC.eleTypeArr[(sender as ComboBox).SelectedIndex];
+                    this.previewView();
+                    changeParam();
                 }
                 else
                 {
@@ -185,7 +207,16 @@ namespace cost_estimating
         /// <param name="e"></param>
         private void cBox_U_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.baseRLC.UType = baseRLC.UTypeArr[(sender as ComboBox).SelectedIndex];
+            try
+            {
+                int index = (sender as ComboBox).SelectedIndex;
+                this.baseRLC.UType = baseRLC.UTypeArr[index];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "警告");
+                (sender as ComboBox).SelectedItem = this.baseRLC.UType;
+            }
         }
         /// <summary>
         /// 三相功率值改变
@@ -201,6 +232,7 @@ namespace cost_estimating
                     double d_three_phase_power = Convert.ToDouble((sender as TextBox).Text.Trim());
                     this.baseRLC.D_three_phase_power = d_three_phase_power;
                     previewView();
+                    this.textBox_wire.Text = this.baseRLC.str_wire;
                 }
             }
             catch (Exception ex)
@@ -234,6 +266,7 @@ namespace cost_estimating
                     double voltage = Convert.ToDouble((sender as TextBox).Text.Trim());
                     this.baseRLC.Voltage = voltage;
                     previewView();
+                    this.textBox_wire.Text = this.baseRLC.str_wire;
                 }
                 //(sender as TextBox).Text = this.baseRLC.Voltage.ToString();
             }
@@ -266,7 +299,6 @@ namespace cost_estimating
                 if ((sender as TextBox).Text.Trim() != "")
                 {
                     this.baseRLC.iNumSingle = ConvertTo.ParseInt((sender as TextBox).Text.Trim());
-                    (sender as TextBox).Text = this.baseRLC.iNumSingle.ToString();//防止出错
                     previewView();
                 }
             }
@@ -299,8 +331,11 @@ namespace cost_estimating
                 if ((sender as TextBox).Text.Trim() != "")
                 {
                     int value = ConvertTo.ParseInt((sender as TextBox).Text.Trim());
+                    if (cBoxSeriesType.SelectedIndex == 1)//并联数量
+                    {
+                        value = this.baseRLC.iNumSingle / value;
+                    }
                     this.baseRLC.setSeriesNum(value);
-                    (sender as TextBox).Text = this.baseRLC.getSeriesNum().ToString();//防止出错
                     previewView();
                 }
             }
@@ -343,6 +378,24 @@ namespace cost_estimating
             if ((sender as TextBox).Text.Trim() == "")
             {
                 (sender as TextBox).Text = this.baseRLC.str_wire;
+            }
+        }
+
+        private void cBoxSeriesType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((sender as ComboBox).SelectedIndex == 0)
+                {
+                    this.textBox_series.Text = this.baseRLC.getSeriesNum().ToString();
+                }
+                else
+                {
+                    this.textBox_series.Text = (this.baseRLC.iNumSingle/this.baseRLC.getSeriesNum()).ToString();
+                }
+            }
+            catch(Exception ex)
+            {
             }
         }
     }       

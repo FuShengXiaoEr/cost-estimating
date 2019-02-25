@@ -158,7 +158,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::cost_estimating.Properties.Resources.pictureBox3;
-            this.pictureBox2.Location = new System.Drawing.Point(735, 605);
+            this.pictureBox2.Location = new System.Drawing.Point(862, 605);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(224, 65);
             this.pictureBox2.TabIndex = 0;

@@ -28,32 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnToExcel = new cost_estimating.controlPlus.buttonPlus();
-            this.dataGridView_Resistance = new cost_estimating.DataGridViewWithCheck();
             this.dataGridView_preview = new System.Windows.Forms.DataGridView();
             this.preview = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cBoxSeriesType = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label_resistance_num = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.labelPower = new System.Windows.Forms.Button();
             this.textBox_singlePhaseNumber = new System.Windows.Forms.TextBox();
             this.textBox_series = new System.Windows.Forms.TextBox();
             this.cBox_U = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label_cocontactor = new System.Windows.Forms.Label();
-            this.label_wire = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cBox_cocontactor = new System.Windows.Forms.ComboBox();
             this.textBox_phase_voltage = new System.Windows.Forms.TextBox();
-            this.comboBox_cocontactor = new System.Windows.Forms.ComboBox();
             this.cBox_electricityType = new System.Windows.Forms.ComboBox();
             this.textBox_wire = new System.Windows.Forms.TextBox();
-            this.label_resistance_num = new System.Windows.Forms.Label();
             this.textBox_three_phase_power = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.square = new System.Windows.Forms.Label();
@@ -63,10 +58,13 @@
             this.button_add = new System.Windows.Forms.Button();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.textBox_cocontactor = new System.Windows.Forms.TextBox();
+            this.btnToExcel = new cost_estimating.controlPlus.buttonPlus();
+            this.dataGridView_Resistance = new cost_estimating.DataGridViewWithCheck();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_preview)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,71 +83,6 @@
             this.panel1.Size = new System.Drawing.Size(1100, 680);
             this.panel1.TabIndex = 0;
             // 
-            // btnToExcel
-            // 
-            this.btnToExcel.BackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
-            this.btnToExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnToExcel.DownBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.DownForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.FlatAppearance.BorderSize = 0;
-            this.btnToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToExcel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnToExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.Image = global::cost_estimating.Properties.Resources.report1;
-            this.btnToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToExcel.Location = new System.Drawing.Point(792, 637);
-            this.btnToExcel.MoveBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.MoveForeColor = System.Drawing.SystemColors.GrayText;
-            this.btnToExcel.Name = "btnToExcel";
-            this.btnToExcel.NormalBackColor = System.Drawing.Color.Transparent;
-            this.btnToExcel.NormalForeColor = System.Drawing.Color.Black;
-            this.btnToExcel.Size = new System.Drawing.Size(131, 30);
-            this.btnToExcel.TabIndex = 14;
-            this.btnToExcel.Text = "导出excel文件";
-            this.btnToExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnToExcel.UseVisualStyleBackColor = true;
-            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
-            // 
-            // dataGridView_Resistance
-            // 
-            this.dataGridView_Resistance.AllowUserToAddRows = false;
-            this.dataGridView_Resistance.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView_Resistance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridView_Resistance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_Resistance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView_Resistance.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_Resistance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView_Resistance.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Resistance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridView_Resistance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Resistance.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView_Resistance.Location = new System.Drawing.Point(10, 180);
-            this.dataGridView_Resistance.Name = "dataGridView_Resistance";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Resistance.RowsDefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridView_Resistance.RowTemplate.Height = 23;
-            this.dataGridView_Resistance.Size = new System.Drawing.Size(1087, 490);
-            this.dataGridView_Resistance.TabIndex = 12;
-            // 
             // dataGridView_preview
             // 
             this.dataGridView_preview.AllowUserToAddRows = false;
@@ -159,37 +92,37 @@
             this.dataGridView_preview.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_preview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView_preview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_preview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_preview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_preview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_preview.ColumnHeadersVisible = false;
             this.dataGridView_preview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.preview});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_preview.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_preview.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_preview.GridColor = System.Drawing.Color.Gray;
             this.dataGridView_preview.Location = new System.Drawing.Point(10, 141);
             this.dataGridView_preview.Name = "dataGridView_preview";
             this.dataGridView_preview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.LimeGreen;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView_preview.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView_preview.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_preview.RowTemplate.Height = 23;
             this.dataGridView_preview.Size = new System.Drawing.Size(1087, 31);
             this.dataGridView_preview.TabIndex = 15;
@@ -203,20 +136,18 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.cBoxSeriesType);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.label_resistance_num);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.labelPower);
             this.panel2.Controls.Add(this.textBox_singlePhaseNumber);
             this.panel2.Controls.Add(this.textBox_series);
             this.panel2.Controls.Add(this.cBox_U);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label_cocontactor);
-            this.panel2.Controls.Add(this.label_wire);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cBox_cocontactor);
+            this.panel2.Controls.Add(this.textBox_cocontactor);
             this.panel2.Controls.Add(this.textBox_phase_voltage);
-            this.panel2.Controls.Add(this.comboBox_cocontactor);
             this.panel2.Controls.Add(this.cBox_electricityType);
             this.panel2.Controls.Add(this.textBox_wire);
-            this.panel2.Controls.Add(this.label_resistance_num);
             this.panel2.Controls.Add(this.textBox_three_phase_power);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.square);
@@ -227,6 +158,72 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 103);
             this.panel2.TabIndex = 10;
+            // 
+            // cBoxSeriesType
+            // 
+            this.cBoxSeriesType.BackColor = System.Drawing.Color.Silver;
+            this.cBoxSeriesType.DropDownHeight = 100;
+            this.cBoxSeriesType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxSeriesType.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cBoxSeriesType.FormattingEnabled = true;
+            this.cBoxSeriesType.IntegralHeight = false;
+            this.cBoxSeriesType.Items.AddRange(new object[] {
+            "串联数量",
+            "并联数量"});
+            this.cBoxSeriesType.Location = new System.Drawing.Point(718, 62);
+            this.cBoxSeriesType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.cBoxSeriesType.Name = "cBoxSeriesType";
+            this.cBoxSeriesType.Size = new System.Drawing.Size(136, 29);
+            this.cBoxSeriesType.TabIndex = 15;
+            this.cBoxSeriesType.SelectedIndexChanged += new System.EventHandler(this.cBoxSeriesType_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Silver;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(294, 60);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(92, 32);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "接触器";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label_resistance_num
+            // 
+            this.label_resistance_num.BackColor = System.Drawing.Color.Silver;
+            this.label_resistance_num.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label_resistance_num.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_resistance_num.Location = new System.Drawing.Point(718, 10);
+            this.label_resistance_num.Name = "label_resistance_num";
+            this.label_resistance_num.Size = new System.Drawing.Size(136, 33);
+            this.label_resistance_num.TabIndex = 16;
+            this.label_resistance_num.Text = "单相电阻管数量";
+            this.label_resistance_num.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Silver;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.Location = new System.Drawing.Point(504, 60);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(89, 32);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "导线";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // labelPower
+            // 
+            this.labelPower.BackColor = System.Drawing.Color.Silver;
+            this.labelPower.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.labelPower.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPower.Location = new System.Drawing.Point(504, 12);
+            this.labelPower.Name = "labelPower";
+            this.labelPower.Size = new System.Drawing.Size(89, 32);
+            this.labelPower.TabIndex = 16;
+            this.labelPower.Text = "三相功率";
+            this.labelPower.UseVisualStyleBackColor = false;
             // 
             // textBox_singlePhaseNumber
             // 
@@ -243,7 +240,7 @@
             // textBox_series
             // 
             this.textBox_series.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_series.Location = new System.Drawing.Point(854, 63);
+            this.textBox_series.Location = new System.Drawing.Point(854, 62);
             this.textBox_series.Name = "textBox_series";
             this.textBox_series.Size = new System.Drawing.Size(77, 29);
             this.textBox_series.TabIndex = 17;
@@ -267,102 +264,6 @@
             this.cBox_U.TabIndex = 15;
             this.cBox_U.SelectedIndexChanged += new System.EventHandler(this.cBox_U_SelectedIndexChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Silver;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(509, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(5, 7, 5, 6);
-            this.label2.Size = new System.Drawing.Size(84, 34);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "三相功率";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Silver;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(304, 60);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(7, 7, 7, 6);
-            this.label7.Size = new System.Drawing.Size(72, 34);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "接触器";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_cocontactor
-            // 
-            this.label_cocontactor.AutoSize = true;
-            this.label_cocontactor.BackColor = System.Drawing.Color.Silver;
-            this.label_cocontactor.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_cocontactor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_cocontactor.Location = new System.Drawing.Point(304, 59);
-            this.label_cocontactor.Margin = new System.Windows.Forms.Padding(0);
-            this.label_cocontactor.Name = "label_cocontactor";
-            this.label_cocontactor.Padding = new System.Windows.Forms.Padding(7, 7, 7, 6);
-            this.label_cocontactor.Size = new System.Drawing.Size(72, 34);
-            this.label_cocontactor.TabIndex = 2;
-            this.label_cocontactor.Text = "接触器";
-            this.label_cocontactor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_wire
-            // 
-            this.label_wire.AutoSize = true;
-            this.label_wire.BackColor = System.Drawing.Color.Silver;
-            this.label_wire.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_wire.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_wire.Location = new System.Drawing.Point(509, 59);
-            this.label_wire.Margin = new System.Windows.Forms.Padding(0);
-            this.label_wire.Name = "label_wire";
-            this.label_wire.Padding = new System.Windows.Forms.Padding(21, 7, 21, 6);
-            this.label_wire.Size = new System.Drawing.Size(84, 34);
-            this.label_wire.TabIndex = 2;
-            this.label_wire.Text = "导线";
-            this.label_wire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Silver;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(738, 60);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(5, 7, 5, 6);
-            this.label5.Size = new System.Drawing.Size(116, 34);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "单相串联数量";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cBox_cocontactor
-            // 
-            this.cBox_cocontactor.DropDownHeight = 100;
-            this.cBox_cocontactor.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cBox_cocontactor.FormattingEnabled = true;
-            this.cBox_cocontactor.IntegralHeight = false;
-            this.cBox_cocontactor.Items.AddRange(new object[] {
-            "--请选择--",
-            "LC1D09",
-            "LC1D18",
-            "LC1D25",
-            "LC1D32",
-            "LC1D45",
-            "LC1D50",
-            "其他"});
-            this.cBox_cocontactor.Location = new System.Drawing.Point(376, 63);
-            this.cBox_cocontactor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.cBox_cocontactor.Name = "cBox_cocontactor";
-            this.cBox_cocontactor.Size = new System.Drawing.Size(90, 29);
-            this.cBox_cocontactor.TabIndex = 3;
-            this.cBox_cocontactor.Text = "LC1D09";
-            // 
             // textBox_phase_voltage
             // 
             this.textBox_phase_voltage.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -374,28 +275,6 @@
             this.textBox_phase_voltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_phase_voltage.TextChanged += new System.EventHandler(this.textBox_phase_voltage_TextChanged);
             this.textBox_phase_voltage.Leave += new System.EventHandler(this.textBox_phase_voltage_Leave);
-            // 
-            // comboBox_cocontactor
-            // 
-            this.comboBox_cocontactor.DropDownHeight = 100;
-            this.comboBox_cocontactor.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox_cocontactor.FormattingEnabled = true;
-            this.comboBox_cocontactor.IntegralHeight = false;
-            this.comboBox_cocontactor.Items.AddRange(new object[] {
-            "--请选择--",
-            "LC1D09",
-            "LC1D18",
-            "LC1D25",
-            "LC1D32",
-            "LC1D45",
-            "LC1D50",
-            "其他"});
-            this.comboBox_cocontactor.Location = new System.Drawing.Point(376, 62);
-            this.comboBox_cocontactor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.comboBox_cocontactor.Name = "comboBox_cocontactor";
-            this.comboBox_cocontactor.Size = new System.Drawing.Size(90, 29);
-            this.comboBox_cocontactor.TabIndex = 3;
-            this.comboBox_cocontactor.Text = "LC1D09";
             // 
             // cBox_electricityType
             // 
@@ -423,20 +302,6 @@
             this.textBox_wire.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_wire.TextChanged += new System.EventHandler(this.textBox_wire_TextChanged);
             this.textBox_wire.Leave += new System.EventHandler(this.textBox_wire_Leave);
-            // 
-            // label_resistance_num
-            // 
-            this.label_resistance_num.BackColor = System.Drawing.Color.Silver;
-            this.label_resistance_num.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_resistance_num.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_resistance_num.Location = new System.Drawing.Point(710, 10);
-            this.label_resistance_num.Margin = new System.Windows.Forms.Padding(0);
-            this.label_resistance_num.Name = "label_resistance_num";
-            this.label_resistance_num.Padding = new System.Windows.Forms.Padding(5, 7, 5, 6);
-            this.label_resistance_num.Size = new System.Drawing.Size(144, 34);
-            this.label_resistance_num.TabIndex = 2;
-            this.label_resistance_num.Text = "单相电阻管数量";
-            this.label_resistance_num.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_three_phase_power
             // 
@@ -553,6 +418,83 @@
             this.lineShape1.Y1 = 130;
             this.lineShape1.Y2 = 130;
             // 
+            // textBox_cocontactor
+            // 
+            this.textBox_cocontactor.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_cocontactor.Location = new System.Drawing.Point(386, 62);
+            this.textBox_cocontactor.Name = "textBox_cocontactor";
+            this.textBox_cocontactor.Size = new System.Drawing.Size(101, 29);
+            this.textBox_cocontactor.TabIndex = 15;
+            this.textBox_cocontactor.Text = "0";
+            this.textBox_cocontactor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_cocontactor.Leave += new System.EventHandler(this.textBox_phase_voltage_Leave);
+            // 
+            // btnToExcel
+            // 
+            this.btnToExcel.BackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.BackgroundImage = global::cost_estimating.Properties.Resources.btnNormal;
+            this.btnToExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnToExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnToExcel.DownBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.DownForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.FlatAppearance.BorderSize = 0;
+            this.btnToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToExcel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnToExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.Image = global::cost_estimating.Properties.Resources.report1;
+            this.btnToExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToExcel.Location = new System.Drawing.Point(880, 636);
+            this.btnToExcel.MoveBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.MoveForeColor = System.Drawing.SystemColors.GrayText;
+            this.btnToExcel.Name = "btnToExcel";
+            this.btnToExcel.NormalBackColor = System.Drawing.Color.Transparent;
+            this.btnToExcel.NormalForeColor = System.Drawing.Color.Black;
+            this.btnToExcel.Size = new System.Drawing.Size(131, 30);
+            this.btnToExcel.TabIndex = 14;
+            this.btnToExcel.Text = "导出excel文件";
+            this.btnToExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnToExcel.UseVisualStyleBackColor = true;
+            this.btnToExcel.Click += new System.EventHandler(this.btnToExcel_Click);
+            // 
+            // dataGridView_Resistance
+            // 
+            this.dataGridView_Resistance.AllowUserToAddRows = false;
+            this.dataGridView_Resistance.AllowUserToDeleteRows = false;
+            this.dataGridView_Resistance.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView_Resistance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Resistance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Resistance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_Resistance.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_Resistance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView_Resistance.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Resistance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Resistance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Resistance.GridColor = System.Drawing.Color.Gray;
+            this.dataGridView_Resistance.Location = new System.Drawing.Point(10, 180);
+            this.dataGridView_Resistance.Name = "dataGridView_Resistance";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Resistance.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_Resistance.RowTemplate.Height = 23;
+            this.dataGridView_Resistance.Size = new System.Drawing.Size(1087, 450);
+            this.dataGridView_Resistance.TabIndex = 12;
+            // 
             // numerical_gpbwindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -561,10 +503,10 @@
             this.Name = "numerical_gpbwindows";
             this.Size = new System.Drawing.Size(1100, 680);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_preview)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resistance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -578,10 +520,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_three_phase_power;
         private System.Windows.Forms.TextBox textBox_wire;
-        private System.Windows.Forms.ComboBox comboBox_cocontactor;
-        private System.Windows.Forms.Label label_wire;
-        private System.Windows.Forms.Label label_cocontactor;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_add;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
@@ -594,11 +532,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView_preview;
         private System.Windows.Forms.DataGridViewTextBoxColumn preview;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_series;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cBox_cocontactor;
         private System.Windows.Forms.TextBox textBox_singlePhaseNumber;
-        private System.Windows.Forms.Label label_resistance_num;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button label_resistance_num;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button labelPower;
+        private System.Windows.Forms.ComboBox cBoxSeriesType;
+        private System.Windows.Forms.TextBox textBox_cocontactor;
     }
 }

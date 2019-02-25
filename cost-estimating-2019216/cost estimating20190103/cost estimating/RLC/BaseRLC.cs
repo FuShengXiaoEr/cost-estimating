@@ -11,17 +11,39 @@ namespace cost_estimating.RLC
     /// </summary>
     public abstract class BaseRLC
     {
-        public string[] culomnsName = null;
+        public string[] culomnsName_ACthree = null;//交流三相列名
+        public string[] culomnsName_ACSingle = null;//交流单相列名
+        public string[] culomnsName_DC = null;//直流列名
         public string projectName = null;
         public string name = null;
         public DataTable dt;//显示的表格
         public DataTable preDt;//预览的表格
 
-        public string[] UTypeArr = { "线电压", "相电压", "直流电压" };
-        public string UType = "线电压";//默认线电压
+        public string[] UTypeArr = { "线电压", "相电压", "直流电压","交流单相" };//直流电压和交流单相是一样的计算
+        public string uType = "线电压";//默认线电压
+        public string UType
+        {
+            get
+            {
+                return uType;
+            }
+            set
+            {
+                if (value == UTypeArr[2] && ElectricityType == eleTypeArr[2]
+                    || value == UTypeArr[3] && ElectricityType == eleTypeArr[3]
+                    || (value == UTypeArr[0] || value == UTypeArr[1]) && (ElectricityType == eleTypeArr[0] || ElectricityType == eleTypeArr[1]))
+                {
+                    this.uType = value;
+                }
+                else
+                {
+                    throw new Exception("选择出错");
+                }
+            }
+        }
     
 
-        public string[] eleTypeArr = { "交流三相(星形接法)", "交流三相(三角形接法)", "直流单相" };
+        public string[] eleTypeArr = { "交流三相(星形接法)", "交流三相(三角形接法)", "直流单相","交流单相" };
         private string eleType = "交流三相(星形接法)";//默认星形接法
         public string ElectricityType
         {
@@ -32,6 +54,24 @@ namespace cost_estimating.RLC
                 {
                     this.eleType = value;
                     clearDataTable();
+                    if (eleType == eleTypeArr[2])//直流
+                    {
+                        this.UType = UTypeArr[2];
+                        this.dt = ConvertTo.ConvertToDataTable(this.culomnsName_DC, null, this.dt);
+                        this.preDt = ConvertTo.ConvertToDataTable(this.culomnsName_DC, null, this.preDt);
+                    }
+                    else if (eleType == eleTypeArr[3])//交流单相
+                    {
+                        this.UType = UTypeArr[3];
+                        this.dt = ConvertTo.ConvertToDataTable(this.culomnsName_ACSingle, null, this.dt);
+                        this.preDt = ConvertTo.ConvertToDataTable(this.culomnsName_ACSingle, null, this.preDt);
+                    }
+                    else
+                    {
+                        this.UType = UTypeArr[0];
+                        this.dt = ConvertTo.ConvertToDataTable(this.culomnsName_ACthree, null, this.dt);
+                        this.preDt = ConvertTo.ConvertToDataTable(this.culomnsName_ACthree, null, this.preDt);
+                    }
                 }
             }
         }
@@ -46,13 +86,9 @@ namespace cost_estimating.RLC
                 {
                     return this.d_Line_voltage;
                 }
-                else if (UType == UTypeArr[1])//相电压
+                else//相电压//直流电压，交流单相
                 {
                     return this.d_phase_voltage;
-                }
-                else //直流电压
-                {
-                    return 0;
                 }
             }
             set
@@ -70,15 +106,12 @@ namespace cost_estimating.RLC
                         this.d_Line_voltage = Math.Round(value * 1.732, 2);
                     }
                 }
-                else if (ElectricityType == eleTypeArr[1])//"交流三相(三角形接法)"
+                else//直流单相，交流单相，//"交流三相(三角形接法)"
                 {
                     this.d_Line_voltage = value;
                     this.d_phase_voltage = value;
                 }
-                else//直流单相
-                {
-
-                }
+                setCurrent();
             }
         }
 
@@ -91,24 +124,49 @@ namespace cost_estimating.RLC
         public double d_three_phase_power = 0;//三相功率
         public double d_single_phase_power = 0;//单相功率
         public double d_Current = 0;//电流
-
+        /// <summary>
+        /// 三相功率
+        /// </summary>
         public double D_three_phase_power
         {
             get
             {
-                return this.d_three_phase_power;
+                if (ElectricityType == eleTypeArr[0] || ElectricityType == eleTypeArr[1])
+                {
+                    return this.d_three_phase_power;
+                }
+                else
+                {
+                    return this.d_single_phase_power;
+                }
             }
             set
             {
-                this.d_three_phase_power = value;//三相功率
-                //单相功率（W）=三相功率（W）/3
-                this.d_single_phase_power = Math.Round((double)value / 3, 2);
-                //电流（A）=单相功率（W）/相电压（V）
-                if (d_phase_voltage == 0)
-                    d_Current = 0;
+                if (ElectricityType == eleTypeArr[0] || ElectricityType == eleTypeArr[1])
+                {
+                    this.d_three_phase_power = value;//三相功率
+                    //单相功率（W）=三相功率（W）/3
+                    this.d_single_phase_power = Math.Round((double)value / 3, 2);
+                }
                 else
-                    d_Current = Math.Round(d_single_phase_power / d_phase_voltage, 2);
+                {
+                    this.d_single_phase_power = value;
+                    this.d_three_phase_power = value * 3;
+                }
+                setCurrent();
             }
+        }
+        /// <summary>
+        /// 计算电流
+        /// </summary>
+        public void setCurrent()
+        {
+            //电流（A）=单相功率（W）/相电压（V）
+            if (d_phase_voltage == 0)
+                d_Current = 0;
+            else
+                d_Current = Math.Round(d_single_phase_power / d_phase_voltage, 2);
+            this.str_wire = CalculatedWire.CalculatedWireSize(d_Current);
         }
         public string str_cocontactor = "LC1D09";//接触器,默认LC1D09
         public string str_wire = "1.5";//导线,默认1.5mm2
@@ -122,6 +180,7 @@ namespace cost_estimating.RLC
                     value = 1;
                 numSingle = value;//单相电阻管数量
                 this.iNumThree = this.numSingle * 3;
+                setSeriesNum(getSeriesNum());//刷新串联数量，因为更改单相数量没有自动改变串联数量
             }
         }//单相电阻管数量(电容/电抗默认为1)
         public int iNumThree = 3;//三相电阻管数量
@@ -129,8 +188,20 @@ namespace cost_estimating.RLC
 
 
         public BaseRLC() { }
+        public string[] ToStringArr()
+        {
+            if (this.ElectricityType == eleTypeArr[0] || this.ElectricityType == eleTypeArr[1])
+            {
+                return this.ToStringArr_ACthree();
+            }
+            else
+            {
+                return this.ToStringArr_DC();
+            }
+        }
 
-        public abstract string[] ToStringArr();
+        public abstract string[] ToStringArr_ACthree();
+        public abstract string[] ToStringArr_DC();
         public abstract void CalculatingParam();
         /// <summary>
         /// 清除静态变量(总档位的记录)
@@ -188,9 +259,9 @@ namespace cost_estimating.RLC
              * */
             for (int i = indexs.Length - 1; 0 <= i; i--)
             {
-                power = ConvertTo.ParseInt(dt.Rows[indexs[i]][culomnsName[2]].ToString());
-                current = Convert.ToDouble(dt.Rows[indexs[i]]["电流(A)"].ToString());
-                num = ConvertTo.ParseInt(dt.Rows[i][culomnsName[culomnsName.Length-1]].ToString());
+                power = ConvertTo.ParseInt(dt.Rows[indexs[i]][culomnsName_ACthree[2]].ToString());
+                current = Convert.ToDouble(dt.Rows[indexs[i]]["单相电流(A)"].ToString());
+                num = ConvertTo.ParseInt(dt.Rows[i][culomnsName_ACthree[culomnsName_ACthree.Length-1]].ToString());
                 this.DelectRLC(power, current, num);//减已经统计了的总功率、总电流、总数量       
                 dt.Rows.RemoveAt(indexs[i]);
             }
