@@ -10,9 +10,41 @@ namespace cost_estimating.RLC
     /// </summary>
     public class Resistance:BaseRLC
     {
-        public double dValueOfResistance{ get; set; }//阻值
-        public double dResistancePowerSingle { get; set; }//单根电阻功率
-        public double dResistanceValueSingle { get; set; }//单根电阻管阻值
+        public double dValueOfResistance = 0;//单相阻值
+        public double dResistancePowerSingle = 0;//单根电阻功率
+        public double dResistanceValueSingle = 0;//单根电阻管阻值
+        private int parallelingNum = 1;//单相并联数量
+        private int seriesNum = 1;//单相串联数量
+        public int SeriesNum
+        {
+            get
+            {
+                return this.seriesNum;
+            }
+            set
+            {
+                if (value < 1)
+                    value = 1;
+                if (this.iNumSingle % value == 0)
+                {
+                    seriesNum = value;
+                    parallelingNum = this.iNumSingle / value;
+                }
+                else
+                {
+                    throw new Exception("串联数量填写不正确，单相电阻管数量不能整除串联数量");
+                }
+            }
+        }
+
+        public override void setSeriesNum(int value)
+        {
+            this.SeriesNum = value;
+        }
+        public override int getSeriesNum()
+        {
+            return this.SeriesNum;
+        }
         /// <summary>
         /// 总总功率、总单相功率、总电流、总个数的类
         /// </summary>
@@ -26,8 +58,9 @@ namespace cost_estimating.RLC
         /// </summary>
         private Resistance()
         {
-            this.culomnsName = new string[] { "相电压(V)", "三相功率(W)", "单相功率(W)", "电流(A)", "接触器", "导线", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "单相电阻管数量", "三相电阻管数量" };
+            this.culomnsName = new string[] { "线电压(V)", "相电压(V)", "三相功率(W)", "单相功率(W)", "单相电流(A)", "接触器", "导线(mm²)", "单相阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "单相电阻管数量", "三相电阻管数量", "串联数量", "并联数量" };
             this.projectName = "R载部分 ";
+            this.name = "电阻管";
         }
         /// <summary>
         /// 得到电阻实例
@@ -57,14 +90,14 @@ namespace cost_estimating.RLC
         /// <param name="cocontactor">接触器</param>
         /// <param name="wireSize">导线大小</param>
         /// <param name="RNumber">单相电阻管数量</param>
-        public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public override void CalculatingParam()
         {
-            base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
-            //阻值（Ω）=相电压*相电压/单相功率
-            this.dValueOfResistance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 2);
+            //this.seriesNum = seriesNumber;
+            //单相阻值（Ω）=相电压*相电压/单相功率
+            this.dValueOfResistance = Math.Round(this.d_phase_voltage * this.d_phase_voltage / d_single_phase_power, 2);
             
             this.dResistancePowerSingle = this.d_single_phase_power / iNumSingle;//单根电阻管的功率=单相功率/单相电阻管数量
-            this.dResistanceValueSingle = this.dValueOfResistance / iNumSingle;//单相电阻管阻值 = 电阻的阻值 / 单相电阻管数量
+            this.dResistanceValueSingle = this.dValueOfResistance / this.seriesNum * this.parallelingNum;//单相电阻管阻值 = 电阻的阻值 / 串联数量*并联数量
 
             total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
@@ -76,7 +109,8 @@ namespace cost_estimating.RLC
         public override string[] ToStringArr()
         {
             string[] strArr ={
-                                 i_phase_voltage.ToString(),
+                                 d_Line_voltage.ToString(),
+                                 d_phase_voltage.ToString(),
                                  d_three_phase_power.ToString(),
                                  d_single_phase_power.ToString(),
                                  d_Current.ToString(),
@@ -86,7 +120,9 @@ namespace cost_estimating.RLC
                                  dResistancePowerSingle.ToString(),
                                  dResistanceValueSingle.ToString(),
                                  iNumSingle.ToString(),
-                                 iNumThree.ToString()
+                                 iNumThree.ToString(),
+                                 seriesNum.ToString(),
+                                 parallelingNum.ToString(),
                             };
             return strArr;
         }
@@ -99,6 +135,10 @@ namespace cost_estimating.RLC
         public override void DelectRLC(int power, double current, int num)
         {
             total.DelectRLC(power, current, num);
+        }
+        public override void clearStaticData()
+        {
+            total.clear();
         }
     }
 }

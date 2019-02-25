@@ -58,5 +58,15 @@ namespace cost_estimating.RLC
             dTotalCurrent -= current;
             iTotalNumber -= num;
         }
+        /// <summary>
+        /// 类的变量全为0
+        /// </summary>
+        public void clear()
+        {
+            dTotalPower = 0;
+            dTotalSinglePhasePower = 0;
+            dTotalCurrent = 0;
+            iTotalNumber = 0;
+        }
     }
 }

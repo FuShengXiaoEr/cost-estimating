@@ -30,8 +30,9 @@ namespace cost_estimating.RLC
         /// </summary>
         private Capacitance() 
         {
-            this.culomnsName = new string[] { "相电压(V)", "三相功率(var)", "单相功率(var)", "电流(A)", "接触器", "导线", "容抗(Ω)", "电容值(uF)", "单相电容数量", "三相电容数量" };
+            this.culomnsName = new string[] { "线电压(V)", "相电压(V)", "三相功率(var)", "单相功率(var)", "电流(A)", "接触器", "导线(mm²)", "容抗(Ω)", "电容值(uF)", "单相电容数量", "三相电容数量" };
             this.projectName = "C载部分 ";
+            this.name = "电容";
         }
 
         /// <summary>
@@ -57,16 +58,17 @@ namespace cost_estimating.RLC
         /// <summary>
         /// 计算电容值
         /// </summary>
-        /// <param name="i_phase_voltage">相电压</param>
+        /// <param name="voltage">相电压</param>
         /// <param name="d_three_phase_power">三相功率</param>
         /// <param name="cocontactor">接触器</param>
         /// <param name="wireSize">导线大小</param>
         /// <param name="RNumber">单相电阻管数量</param>
-        public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        /// <param name="seriesNum">单相串联数量</param>
+        public override void CalculatingParam()
         {
-            base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
+            //base.CalculatingRLC(voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             //容抗（Ω）=相电压*相电压/单相功率
-            this.capacitiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 2);
+            this.capacitiveReactance = Math.Round(d_phase_voltage * d_phase_voltage / d_single_phase_power, 2);
             this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
             total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
@@ -77,7 +79,8 @@ namespace cost_estimating.RLC
         public override string[] ToStringArr()
         {
             string[] strArr ={
-                                 i_phase_voltage.ToString(),
+                                 d_Line_voltage.ToString(),
+                                 d_phase_voltage.ToString(),
                                  d_three_phase_power.ToString(),
                                  d_single_phase_power.ToString(),
                                  d_Current.ToString(),
@@ -98,6 +101,20 @@ namespace cost_estimating.RLC
         public override void DelectRLC(int power, double current, int num)
         {
             total.DelectRLC(power, current, num);
+        }
+
+        public override void clearStaticData()
+        {
+            total.clear();
+        }
+
+        public override int getSeriesNum()
+        {
+            return 1;
+        }
+
+        public override void setSeriesNum(int value)
+        {
         }
     }
 }

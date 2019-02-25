@@ -124,8 +124,14 @@
   <data name="背景6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\背景6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pink_add26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\pink_add26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="report1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\report1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="round_remove26x26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\round_remove26x26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,7 +145,7 @@
   <data name="round_add26x26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\round_add26x26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_remove26x26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\round_remove26x26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pink_remove26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\pink_remove26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

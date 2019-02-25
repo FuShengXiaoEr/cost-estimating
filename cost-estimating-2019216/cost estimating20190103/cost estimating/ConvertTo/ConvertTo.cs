@@ -20,6 +20,7 @@ namespace cost_estimating
             int.TryParse(intStr, out parseInt);
             return parseInt;
         }
+        
 
         /// <summary>  
         /// 二维数组转换为DataTable  

@@ -27,8 +27,9 @@ namespace cost_estimating.RLC
         private static readonly object _lock = new object();
         private Inductance() 
         {
-            this.culomnsName = new string[] { "相电压(V)", "三相功率(var)", "单相功率(var)", "电流(A)", "接触器", "导线", "感抗(Ω)", "电感值(mH)", "单相电抗数量", "三相电抗数量" };
+            this.culomnsName = new string[] { "线电压(V)", "相电压(V)", "三相功率(var)", "单相功率(var)", "电流(A)", "接触器", "导线(mm²)", "感抗(Ω)", "电感值(mH)", "单相电抗数量", "三相电抗数量" };
             this.projectName = "L载部分 ";
+            this.name = "电感";
         }
 
         public static Inductance GetInstance()
@@ -43,10 +44,10 @@ namespace cost_estimating.RLC
             }
         }
 
-        public override void CalculatingParam(int i_phase_voltage, double d_three_phase_power, string cocontactor, string wireSize, int RNumber)
+        public override void CalculatingParam()
         {
-            base.CalculatingRLC(i_phase_voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
-            this.inductiveReactance = Math.Round(i_phase_voltage * i_phase_voltage / d_single_phase_power, 2);
+            //base.CalculatingRLC(voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
+            this.inductiveReactance = Math.Round(d_phase_voltage * d_phase_voltage / d_single_phase_power, 2);
             this.inductanceValue = Math.Round(inductiveReactance / 3.14 * 10,2);
             total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
@@ -58,7 +59,8 @@ namespace cost_estimating.RLC
         public override string[] ToStringArr()
         {
             string[] strArr ={
-                                 i_phase_voltage.ToString(),
+                                 d_Line_voltage.ToString(),
+                                 d_phase_voltage.ToString(),
                                  d_three_phase_power.ToString(),
                                  d_single_phase_power.ToString(),
                                  d_Current.ToString(),
@@ -80,6 +82,19 @@ namespace cost_estimating.RLC
         {
             total.DelectRLC(power, current, num);
         }
+        public override void clearStaticData()
+        {
+            total.clear();
+        }
 
+
+        public override int getSeriesNum()
+        {
+            return 1;
+        }
+
+        public override void setSeriesNum(int value)
+        {
+        }
     }
 }
