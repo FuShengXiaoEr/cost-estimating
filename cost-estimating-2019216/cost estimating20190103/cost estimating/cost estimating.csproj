@@ -134,6 +134,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\otherTools\ChangeVoltageFrequency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\otherTools\ChangeVoltageFrequency.designer.cs">
+      <DependentUpon>ChangeVoltageFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\otherTools\Complex.cs" />
+    <Compile Include="Windows\otherTools\ThreePhaseElectrical.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\otherTools\ThreePhaseElectrical.designer.cs">
+      <DependentUpon>ThreePhaseElectrical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\otherTools\ThreePhaseGear.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\otherTools\ThreePhaseGear.designer.cs">
+      <DependentUpon>ThreePhaseGear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\otherTools\VoltageCalcualte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\otherTools\VoltageCalcualte.designer.cs">
+      <DependentUpon>VoltageCalcualte.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +181,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\otherTools\ChangeVoltageFrequency.resx">
+      <DependentUpon>ChangeVoltageFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\otherTools\ThreePhaseElectrical.resx">
+      <DependentUpon>ThreePhaseElectrical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\otherTools\ThreePhaseGear.resx">
+      <DependentUpon>ThreePhaseGear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\otherTools\VoltageCalcualte.resx">
+      <DependentUpon>VoltageCalcualte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

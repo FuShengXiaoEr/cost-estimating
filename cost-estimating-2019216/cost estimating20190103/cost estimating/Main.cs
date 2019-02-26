@@ -10,11 +10,11 @@ using System.Windows.Forms;
 namespace cost_estimating
 {
     public partial class Main : Form
-    {       
-        bool material_selection;   //根据bool状态用if来确认打开还是收缩  物料选择的flag
-        bool numercial_computation;//数值计算的收缩flag
-        int material_height = 249; //物料选择时下放空间需要改变的高度
-        int numerical_height = 0;//对数字计算控件高度进行递增递减
+    {     
+        Button[] navBarButtons;//左侧导航栏的按钮
+        Panel[] navBarLists;//左侧导航栏的list列表
+        int[] navBarLists_heights;//左侧导航栏的list列表高度
+        bool[] navBarBtnOpenFlag;////左侧导航栏的list列表展开的标记
  
         public instrument win_i;   //定义仪表选择窗口
         public numerical_gpbwindows win_ng;//定义单击数值计算切换窗口
@@ -24,84 +24,63 @@ namespace cost_estimating
         public Main()
         {
              InitializeComponent();
-             material_height = this.material_listitems.Height;
-             material_selection = false;
-             numercial_computation = false;             
-             navbar_material_change(material_height);              
-             navbar_numerical_change(numerical_height);
+             navBarButtons =new Button[]{this.button_material,this.button_numerical_computation,this.button_OtherTools};
+             navBarLists = new Panel[] { this.material_listitems, this.numerical_listitems, this.otherTools_list };
+             initNavBar();
              win_i = new instrument();
         }
         /// <summary>
-        /// 导航栏伸展变化-物料选择时，数值计算位置移动以及文本控件的显示
+        /// 初始化左侧导航栏
         /// </summary>
-        /// <param name="material_selection">判断物料选择导航栏是打开还是闭合 true:缩 false:伸</param>
-        /// <param name="height_change">打开和闭合时，下放导航栏的变化</param>
-        /// <returns></returns>
-        private void navbar_material_change(int height_change)
+        public void initNavBar()
         {
-            if (material_selection == true)//打开列表
-            {               
-                material_listitems.Visible = true;
-                button_numerical_computation.Top += height_change;
-                numerical_listitems.Top += height_change;
-                button_material.Text = "ˇ物料选择";
-                material_selection = false;
-
-            }
-            else
-            {                
-                material_listitems.Visible = false;
-                button_numerical_computation.Top -= height_change;
-                numerical_listitems.Top -= height_change;
-                button_material.Text = "›物料选择";
-                material_selection = true;                
+            navBarBtnOpenFlag = new bool[] { false, false, false };
+            navBarLists_heights = new int[] {this.material_listitems.Height, this.numerical_listitems.Height, this.otherTools_list.Height };
+            for (int i = 0; i < navBarButtons.Length; i++)
+            {
+                navBar_change(navBarButtons[i]);
             }
         }
-
         /// <summary>
-        /// 导航栏伸展变化-数值计算时，数值计算位置移动以及文本控件的显示
+        /// 左侧导航栏的打开关闭
         /// </summary>
-        /// <param name="numercial_computation">判断数值计算导航栏是打开还是闭合</param>
-        /// <param name="height_change">打开和闭合时，下放导航栏的变化</param>
-        /// <returns></returns>
-        private void navbar_numerical_change(int height_change)
+        /// <param name="btnNavBar"></param>
+        private void navBar_change(Button btnNavBar)
         {
-            if (numercial_computation == false)
+            int index = Array.IndexOf(navBarButtons, btnNavBar);//查找btnNavBar在数组navBarButtons里面的索引值
+            if (navBarBtnOpenFlag[index] == true)//打开列表
             {
-                numerical_listitems.Visible = false;
-                button_numerical_computation.Text = "›数值计算";
-                numercial_computation = true;
+                this.navBarLists[index].Visible = true;
+                btnNavBar.Text = "ˇ" + btnNavBar.Text.Substring(1);
+                for (int i = index + 1; i < navBarButtons.Length; i++)
+                {
+                    this.navBarButtons[i].Top += this.navBarLists_heights[index];
+                    this.navBarLists[i].Top += this.navBarLists_heights[index];
+                }
+                this.navBarBtnOpenFlag[index] = false;
             }
             else
             {
-                numerical_listitems.Visible = true;
-                button_numerical_computation.Text = "ˇ数值计算";
-                numercial_computation = false;
- 
+                this.navBarLists[index].Visible = false;
+                btnNavBar.Text = "›" + btnNavBar.Text.Substring(1);
+                for (int i = index + 1; i < navBarButtons.Length; i++)
+                {
+                    this.navBarButtons[i].Top -= this.navBarLists_heights[index];
+                    this.navBarLists[i].Top -= this.navBarLists_heights[index];
+                }
+                this.navBarBtnOpenFlag[index] = true;
             }
-        }   
-        /// <summary>
-        /// 物料选择按钮事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button_material_Click(object sender, EventArgs e)
-        {  
-            navbar_material_change(material_height); 
-                        
         }
 
         /// <summary>
-        /// 数值计算按钮事件
+        /// 左侧导航栏菜单按钮事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button_numerical_computation_Click(object sender, EventArgs e)
+        private void button_navBar_Click(object sender, EventArgs e)
         {
-            navbar_numerical_change(numerical_height);
-            //childForm.Controls.Clear();
+            navBar_change((sender as Button));            
         }
-        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -201,6 +180,30 @@ namespace cost_estimating
         {
             Form1 testForm = new Form1();
             testForm.Show();
-        }     
+        }
+        /// <summary>
+        /// 其他计算工具
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void otherTools_Click(object sender, EventArgs e)
+        {
+            childForm.Controls.Clear();
+            switch (((Button)sender).Text)
+            {
+                case "三相电参数计算":
+                    childForm.Controls.Add(new ThreePhaseElectrical());
+                    break;
+                case "负载档位RLC范围计算":
+                    childForm.Controls.Add(new ThreePhaseGear());
+                    break;
+                case "不对称负载的计算":
+                    childForm.Controls.Add(new VoltageCalcualte());
+                    break;
+                case "降压变频的计算":
+                    childForm.Controls.Add(new ChangeVoltageFrequency());
+                    break;
+            }
+        }
     }
 }

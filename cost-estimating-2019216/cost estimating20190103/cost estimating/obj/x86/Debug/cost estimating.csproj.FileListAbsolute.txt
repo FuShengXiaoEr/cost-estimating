@@ -120,3 +120,7 @@ E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.cache
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
 E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.ChangeVoltageFrequency.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.ThreePhaseElectrical.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.ThreePhaseGear.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.VoltageCalcualte.resources
