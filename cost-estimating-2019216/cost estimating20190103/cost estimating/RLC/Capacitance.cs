@@ -31,8 +31,8 @@ namespace cost_estimating.RLC
         private Capacitance() 
         {
             this.culomnsName_ACthree = new string[] { "线电压(V)", "相电压(V)", "三相功率(var)", "单相功率(var)", "单相电流(A)", "接触器", "导线(mm²)", "容抗(Ω)", "电容值(uF)", "单相电容数量", "三相电容数量" };
-            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(var)", "电流(A)", "线径(mm²)", "接触器", "容抗(Ω)", "电容值(uF)", "电容数量" };
-            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(var)", "电流(A)", "线径(mm²)", "接触器", "容抗(Ω)", "电容值(uF)", "电容数量" };
+            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(var)", "电流(A)", "接触器", "线径(mm²)", "容抗(Ω)", "电容值(uF)", "电容数量" };
+            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(var)", "电流(A)", "接触器", "线径(mm²)", "容抗(Ω)", "电容值(uF)", "电容数量" };
             this.projectName = "C载部分 ";
             this.name = "电容";
         }
@@ -72,7 +72,14 @@ namespace cost_estimating.RLC
             //容抗（Ω）=相电压*相电压/单相功率
             this.capacitiveReactance = Math.Round(d_phase_voltage * d_phase_voltage / d_single_phase_power, 2);
             this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
-            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
+        }
+
+        public override void AddRows()
+        {
+            this.CalculatingParam();
+            string[] row = this.ToStringArr();
+            this.dt.Rows.Add(row);
+            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumSingle);
         }
         /// <summary>
         /// 得到电容参数数组
@@ -112,7 +119,16 @@ namespace cost_estimating.RLC
         }
         public override string[] GetTotalStringArr()
         {
-            return total.GetTotalStringArr();
+            string[] data = null;
+            if (UType == UTypeArr[2] || UType == UTypeArr[3])
+            {
+                data=total.GetDCTotalStringArr();
+            }
+            else
+            {
+                data= total.GetTotalStringArr();
+            }
+            return data;
         }
 
         public override void DelectRLC(int power, double current, int num)

@@ -22,22 +22,25 @@ namespace cost_estimating.RLC
         /// <param name="d_three_phase_power">总功率</param>
         /// <param name="d_single_phase_power">总单相功率</param>
         /// <param name="d_Current">总电流</param>
-        /// <param name="iNumThree">总电阻/电抗/电容个数</param>
-        public void Total(double d_three_phase_power, double d_single_phase_power, double d_Current, int iNumThree)
+        /// <param name="iNumThree">单相电阻/电抗/电容个数</param>
+        public void Total(double d_three_phase_power, double d_single_phase_power, double d_Current, int iNumSingle)
         {
             dTotalPower +=  d_three_phase_power;
             dTotalSinglePhasePower += d_single_phase_power;
             dTotalCurrent += d_Current;
-            iTotalNumber += iNumThree;
+            iTotalNumber += iNumSingle*3;
         }
-
+        /// <summary>
+        /// 交流单相
+        /// </summary>
+        /// <returns></returns>
         public string[] GetTotalStringArr()
         {
             string[] arr = {
                                "总功率",
                                dTotalPower.ToString(),
                                "总单相功率",
-                               dTotalSinglePhasePower.ToString(),
+                               (dTotalPower/3).ToString(),
                                "总电流",
                                dTotalCurrent.ToString(),
                                "总个数",
@@ -46,17 +49,33 @@ namespace cost_estimating.RLC
             return arr;
         }
         /// <summary>
+        /// 得到直流、交流单相总参数
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetDCTotalStringArr()
+        {
+            string[] arr = {
+                               "总功率",
+                               dTotalSinglePhasePower.ToString(),
+                               "总电流",
+                               dTotalCurrent.ToString(),
+                               "总个数",
+                               (iTotalNumber/3).ToString()
+                           };
+            return arr;
+        }
+        /// <summary>
         /// 删除电阻/电抗/电容
         /// </summary>
         /// <param name="power">总功率</param>
         /// <param name="current">总电流</param>
-        /// <param name="num">总个数</param>
+        /// <param name="num">单相个数</param>
         public void DelectRLC(int power, double current, int num)
         {
             dTotalPower -= power;
-            dTotalSinglePhasePower = dTotalPower / 3;
+            dTotalSinglePhasePower -= power/3;
             dTotalCurrent -= current;
-            iTotalNumber -= num;
+            iTotalNumber -= num*3;
         }
         /// <summary>
         /// 类的变量全为0

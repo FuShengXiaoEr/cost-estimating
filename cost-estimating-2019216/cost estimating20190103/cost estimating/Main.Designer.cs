@@ -53,6 +53,7 @@
             this.button_material = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.childForm.SuspendLayout();
@@ -149,6 +150,7 @@
             // childForm
             // 
             this.childForm.BackColor = System.Drawing.Color.Transparent;
+            this.childForm.Controls.Add(this.label2);
             this.childForm.Controls.Add(this.pictureBox2);
             this.childForm.Location = new System.Drawing.Point(215, 44);
             this.childForm.Name = "childForm";
@@ -158,7 +160,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::cost_estimating.Properties.Resources.pictureBox3;
-            this.pictureBox2.Location = new System.Drawing.Point(862, 605);
+            this.pictureBox2.Location = new System.Drawing.Point(838, 605);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(224, 65);
             this.pictureBox2.TabIndex = 0;
@@ -518,6 +520,16 @@
             this.lineShape1.Y1 = 43;
             this.lineShape1.Y2 = 43;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(1068, 658);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "v1.0";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -531,6 +543,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.childForm.ResumeLayout(false);
+            this.childForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
@@ -567,6 +580,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label label2;
 
 
 

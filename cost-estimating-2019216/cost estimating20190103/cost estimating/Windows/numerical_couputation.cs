@@ -130,8 +130,7 @@ namespace cost_estimating
         {
             try
             {
-                string[] row = RLCParamCalculate();
-                this.baseRLC.dt.Rows.Add(row);
+                this.baseRLC.AddRows();
             }
             catch (Exception ex)
             {
@@ -211,6 +210,8 @@ namespace cost_estimating
             {
                 int index = (sender as ComboBox).SelectedIndex;
                 this.baseRLC.UType = baseRLC.UTypeArr[index];
+                this.textBox_phase_voltage.Text = this.baseRLC.Voltage.ToString();
+                previewView();
             }
             catch (Exception ex)
             {
@@ -294,6 +295,7 @@ namespace cost_estimating
         /// <param name="e"></param>
         private void textBox_singlePhaseNumber_TextChanged(object sender, EventArgs e)
         {
+            int num = this.baseRLC.iNumSingle;
             try
             {
                 if ((sender as TextBox).Text.Trim() != "")
@@ -304,7 +306,10 @@ namespace cost_estimating
             }
             catch (Exception ex)
             {
-                (sender as TextBox).Focus();
+                MessageBox.Show(ex.Message, "警告");
+                this.baseRLC.iNumSingle = num;
+                (sender as TextBox).Text = num.ToString();
+                this.textBox_series.Focus();
             }
         }
         /// <summary>
@@ -342,7 +347,12 @@ namespace cost_estimating
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "警告");
-                (sender as TextBox).Text = this.baseRLC.getSeriesNum().ToString();
+                int value = this.baseRLC.getSeriesNum();
+                if (cBoxSeriesType.SelectedIndex == 1)//并联数量
+                {
+                    value = this.baseRLC.iNumSingle / value;
+                }
+                (sender as TextBox).Text = value.ToString();
                 (sender as TextBox).Focus();
             }
         }
@@ -353,7 +363,14 @@ namespace cost_estimating
         /// <param name="e"></param>
         private void textBox_series_Leave(object sender, EventArgs e)
         {
-            (sender as TextBox).Text = this.baseRLC.getSeriesNum().ToString();
+            if (cBoxSeriesType.SelectedIndex == 0)
+            {
+                (sender as TextBox).Text = this.baseRLC.getSeriesNum().ToString();
+            }
+            else
+            {
+                (sender as TextBox).Text = (this.baseRLC.iNumSingle / this.baseRLC.getSeriesNum()).ToString();
+            }
         }
         /// <summary>
         /// 导线大小

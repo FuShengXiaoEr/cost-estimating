@@ -59,8 +59,8 @@ namespace cost_estimating.RLC
         private Resistance()
         {
             this.culomnsName_ACthree = new string[] { "线电压(V)", "相电压(V)", "三相功率(W)", "单相功率(W)", "单相电流(A)", "接触器", "导线(mm²)", "单相阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "单相电阻管数量", "三相电阻管数量", "串联数量", "并联数量" };
-            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(W)", "电流(A)", "线径(mm²)", "接触器", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "电阻管数量", "串联数量", "并联数量" };
-            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(W)", "电流(A)", "线径(mm²)", "接触器", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "电阻管数量", "串联数量", "并联数量" };
+            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(W)", "电流(A)", "接触器", "线径(mm²)", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "电阻管数量", "串联数量", "并联数量" };
+            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(W)", "电流(A)", "接触器", "线径(mm²)", "阻值(Ω)", "单根电阻管功率(W)", "单根电阻管阻值(Ω)", "电阻管数量", "串联数量", "并联数量" };
             this.projectName = "R载部分 ";
             this.name = "电阻管";
         }
@@ -101,7 +101,13 @@ namespace cost_estimating.RLC
             this.dResistancePowerSingle = this.d_single_phase_power / iNumSingle;//单根电阻管的功率=单相功率/单相电阻管数量
             this.dResistanceValueSingle = this.dValueOfResistance / this.seriesNum * this.parallelingNum;//单相电阻管阻值 = 电阻的阻值 / 串联数量*并联数量
 
-            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
+        }
+        public override void AddRows()
+        {
+            this.CalculatingParam();
+            string[] row = this.ToStringArr();
+            this.dt.Rows.Add(row);
+            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumSingle);
         }
 
         /// <summary>
@@ -149,7 +155,16 @@ namespace cost_estimating.RLC
 
         public override string[] GetTotalStringArr()
         {
-            return total.GetTotalStringArr();
+            string[] data = null;
+            if (UType == UTypeArr[2] || UType == UTypeArr[3])
+            {
+                data=total.GetDCTotalStringArr();
+            }
+            else
+            {
+                data= total.GetTotalStringArr();
+            }
+            return data;
         }
 
         public override void DelectRLC(int power, double current, int num)

@@ -261,15 +261,15 @@ namespace cost_estimating
                     data[i + 1, 0] = (i + 1).ToString();//档位
                     for (int j = 0; j < columns; j++)
                     {
-                        if (dt.Columns[j].DataType == typeof(string))
-                        {
-                            //在obj.ToString()前加单引号是为了防止自动转化格式 
-                            data[i + 1, j + 1] = "'" + dt.Rows[i][j];
-                        }
-                        else
-                        {
+                        //if (dt.Columns[j].DataType == typeof(string))
+                        //{
+                        //    //在obj.ToString()前加单引号是为了防止自动转化格式 
+                        //    data[i + 1, j + 1] = "'" + dt.Rows[i][j];
+                        //}
+                        //else
+                        //{
                             data[i + 1, j + 1] = dt.Rows[i][j].ToString();
-                        }
+                        //}
                     }
                 }
                 return data;

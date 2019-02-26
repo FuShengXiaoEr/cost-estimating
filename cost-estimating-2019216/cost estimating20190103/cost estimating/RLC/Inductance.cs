@@ -28,10 +28,10 @@ namespace cost_estimating.RLC
         private Inductance() 
         {
             this.culomnsName_ACthree = new string[] { "线电压(V)", "相电压(V)", "三相功率(var)", "单相功率(var)", "单相电流(A)", "接触器", "导线(mm²)", "感抗(Ω)", "电感值(mH)", "单相电抗数量", "三相电抗数量" };
-            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(var)", "电流(A)", "线径(mm²)", "接触器", "感抗(Ω)", "电感值(mH)", "电抗数量" };
-            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(var)", "电流(A)", "线径(mm²)", "接触器", "感抗(Ω)", "电感值(mH)", "电抗数量" };
+            this.culomnsName_ACSingle = new string[] { "电压(VAC)", "功率(var)", "电流(A)", "接触器", "线径(mm²)","感抗(Ω)", "电感值(mH)", "电抗数量" };
+            this.culomnsName_DC = new string[] { "电压(VDC)", "功率(var)", "电流(A)", "接触器", "线径(mm²)", "感抗(Ω)", "电感值(mH)", "电抗数量" };
             this.projectName = "L载部分 ";
-            this.name = "电感";
+            this.name = "电抗";
         }
 
         public static Inductance GetInstance()
@@ -51,9 +51,15 @@ namespace cost_estimating.RLC
             //base.CalculatingRLC(voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             this.inductiveReactance = Math.Round(d_phase_voltage * d_phase_voltage / d_single_phase_power, 2);
             this.inductanceValue = Math.Round(inductiveReactance / 3.14 * 10,2);
-            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumThree);
         }
 
+        public override void AddRows()
+        {
+            this.CalculatingParam();
+            string[] row = this.ToStringArr();
+            this.dt.Rows.Add(row);
+            total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumSingle);
+        }
         /// <summary>
         /// 得到电容参数数组
         /// </summary>
@@ -92,9 +98,17 @@ namespace cost_estimating.RLC
         }
         public override string[] GetTotalStringArr()
         {
-            return total.GetTotalStringArr();
+            string[] data = null;
+            if (UType == UTypeArr[2] || UType == UTypeArr[3])
+            {
+                data = total.GetDCTotalStringArr();
+            }
+            else
+            {
+                data = total.GetTotalStringArr();
+            }
+            return data;
         }
-
         public override void DelectRLC(int power, double current, int num)
         {
             total.DelectRLC(power, current, num);

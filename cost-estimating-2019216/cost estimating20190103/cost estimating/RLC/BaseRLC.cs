@@ -259,13 +259,23 @@ namespace cost_estimating.RLC
              * */
             for (int i = indexs.Length - 1; 0 <= i; i--)
             {
-                power = ConvertTo.ParseInt(dt.Rows[indexs[i]][culomnsName_ACthree[2]].ToString());
-                current = Convert.ToDouble(dt.Rows[indexs[i]]["单相电流(A)"].ToString());
-                num = ConvertTo.ParseInt(dt.Rows[i][culomnsName_ACthree[culomnsName_ACthree.Length-1]].ToString());
+                if (UType == UTypeArr[0] || UType == UTypeArr[1])
+                {
+                    power = ConvertTo.ParseInt(dt.Rows[indexs[i]][culomnsName_ACthree[2]].ToString());
+                    current = Convert.ToDouble(dt.Rows[indexs[i]]["单相电流(A)"].ToString());
+                    num = ConvertTo.ParseInt(dt.Rows[indexs[i]]["单相"+this.name + "数量"].ToString());
+                }
+                else
+                {
+                    power =(int) Convert.ToDouble(dt.Rows[indexs[i]][culomnsName_DC[1]].ToString()) * 3;
+                    current = Convert.ToDouble(dt.Rows[indexs[i]]["电流(A)"].ToString());
+                    num = ConvertTo.ParseInt(dt.Rows[indexs[i]][this.name + "数量"].ToString());
+                }
                 this.DelectRLC(power, current, num);//减已经统计了的总功率、总电流、总数量       
                 dt.Rows.RemoveAt(indexs[i]);
             }
         }
+        public abstract void AddRows();
         /// <summary>
         /// 设置电阻的串联数量
         /// </summary>
