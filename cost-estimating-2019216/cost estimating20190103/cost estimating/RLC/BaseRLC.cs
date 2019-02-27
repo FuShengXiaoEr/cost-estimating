@@ -180,7 +180,7 @@ namespace cost_estimating.RLC
                     value = 1;
                 numSingle = value;//单相电阻管数量
                 this.iNumThree = this.numSingle * 3;
-                setSeriesNum(getSeriesNum());//刷新串联数量，因为更改单相数量没有自动改变串联数量
+                setSeriesNum(getSeriesNum());//刷新串联数量，因为更改单相数量没有自动改变串并联数量
             }
         }//单相电阻管数量(电容/电抗默认为1)
         public int iNumThree = 3;//三相电阻管数量
@@ -275,6 +275,19 @@ namespace cost_estimating.RLC
                 dt.Rows.RemoveAt(indexs[i]);
             }
         }
+        /// <summary>
+        /// 把计算的数据放在预览dataTable里面
+        /// </summary>
+        public void previewView()
+        {
+            this.CalculatingParam();
+            string[] row = this.ToStringArr();
+            this.preDt.Rows.Clear();
+            this.preDt.Rows.Add(row);
+        }
+        /// <summary>
+        /// 在最终dataTable表里面添加一行，
+        /// </summary>
         public abstract void AddRows();
         /// <summary>
         /// 设置电阻的串联数量

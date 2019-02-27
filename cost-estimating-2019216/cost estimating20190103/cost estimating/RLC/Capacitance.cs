@@ -76,7 +76,7 @@ namespace cost_estimating.RLC
 
         public override void AddRows()
         {
-            this.CalculatingParam();
+            //this.CalculatingParam();
             string[] row = this.ToStringArr();
             this.dt.Rows.Add(row);
             total.Total(this.d_three_phase_power, this.d_single_phase_power, this.d_Current, this.iNumSingle);

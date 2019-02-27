@@ -116,22 +116,7 @@ namespace cost_estimating
                 e.Handled = true;
             }
         }
-        /// <summary>
-        /// 得到电阻/电容/电抗参数数组
-        /// </summary>
-        /// <param name="i_phase_voltage">相电压</param>
-        /// <param name="d_three_phase_power">三相功率</param>
-        /// <param name="cocontactor">接触器</param>
-        /// <param name="wireSize">导线大小</param>
-        /// <param name="RNumber">单相电阻管数量</param>
-        /// <returns>返回电阻参数数组</returns>
-        private string[] RLCParamCalculate()
-        {
-            baseRLC.CalculatingParam();
-            string[] param = baseRLC.ToStringArr();
-            return param;
-        }
-
+        
         /// <summary>
         /// 新增一行
         /// </summary>
@@ -153,9 +138,7 @@ namespace cost_estimating
         /// </summary>
         private void previewView()
         {
-            string[] row = RLCParamCalculate();
-            this.baseRLC.preDt.Rows.Clear();
-            this.baseRLC.preDt.Rows.Add(row);
+            this.baseRLC.previewView();
             this.dataGridView_preview.Rows[0].Cells[0].Value = "预览";
         }
 
