@@ -45,7 +45,7 @@ namespace cost_estimating
             this.cBox_electricityType.SelectedItem = baseRLC.ElectricityType;
             this.textBox_phase_voltage.Text = baseRLC.Voltage.ToString();
             this.textBox_three_phase_power.Text = baseRLC.D_three_phase_power.ToString();
-            this.textBox_singlePhaseNumber.Text = baseRLC.iNumSingle.ToString();
+            this.textBox_resistance_power_max.Text = baseRLC.DRPowerSingleMax.ToString();
             int seriesNum = this.baseRLC.getSeriesNum();
             if (cBoxSeriesType.SelectedIndex == 1)
             {
@@ -78,12 +78,10 @@ namespace cost_estimating
 
                 if (this.baseRLC.ElectricityType == this.baseRLC.eleTypeArr[2] || this.baseRLC.ElectricityType == this.baseRLC.eleTypeArr[3])
                 {
-                    this.label_resistance_num.Text = this.baseRLC.name + "数量";
                     this.labelPower.Text = "功率";
                 }
                 else
                 {
-                    this.label_resistance_num.Text = "单相" + this.baseRLC.name + "数量";
                     this.labelPower.Text = "三相功率";
                 }
             }
@@ -180,8 +178,7 @@ namespace cost_estimating
             string text = baseRLC.eleTypeArr[(sender as ComboBox).SelectedIndex];
             if (text != baseRLC.ElectricityType)
             {
-                DialogResult dr = MessageBox.Show("更改为\"" + text + "\"将清除现有数据，是否继续？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dr == DialogResult.OK)
+                if (this.baseRLC.dt.Rows.Count == 0)
                 {
                     baseRLC.ElectricityType = baseRLC.eleTypeArr[(sender as ComboBox).SelectedIndex];
                     this.previewView();
@@ -189,7 +186,17 @@ namespace cost_estimating
                 }
                 else
                 {
-                    (sender as ComboBox).SelectedItem = baseRLC.ElectricityType;
+                    DialogResult dr = MessageBox.Show("更改为\"" + text + "\"将清除现有数据，是否继续？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.OK)
+                    {
+                        baseRLC.ElectricityType = baseRLC.eleTypeArr[(sender as ComboBox).SelectedIndex];
+                        this.previewView();
+                        changeParam();
+                    }
+                    else
+                    {
+                        (sender as ComboBox).SelectedItem = baseRLC.ElectricityType;
+                    }
                 }
             }
         }
@@ -232,7 +239,8 @@ namespace cost_estimating
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "警告");
+                //MessageBox.Show(ex.Message, "警告");
+                previewView();
             }
         }
         /// <summary>
@@ -287,23 +295,21 @@ namespace cost_estimating
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_singlePhaseNumber_TextChanged(object sender, EventArgs e)
+        private void textBox_resistance_power_max_TextChanged(object sender, EventArgs e)
         {
-            int num = this.baseRLC.iNumSingle;
             try
             {
                 if ((sender as TextBox).Text.Trim() != "")
                 {
-                    this.baseRLC.iNumSingle = ConvertTo.ParseInt((sender as TextBox).Text.Trim());
+                    this.baseRLC.DRPowerSingleMax = Convert.ToDouble((sender as TextBox).Text.Trim());
                     previewView();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "警告");
-                this.baseRLC.iNumSingle = num;
-                (sender as TextBox).Text = num.ToString();
-                this.textBox_series.Focus();
+                previewView();
+                //MessageBox.Show(ex.Message, "警告");
+                //this.textBox_series.Focus();
             }
         }
         /// <summary>
@@ -340,14 +346,14 @@ namespace cost_estimating
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "警告");
-                int value = this.baseRLC.getSeriesNum();
-                if (cBoxSeriesType.SelectedIndex == 1)//并联数量
-                {
-                    value = this.baseRLC.iNumSingle / value;
-                }
-                (sender as TextBox).Text = value.ToString();
-                (sender as TextBox).Focus();
+                //MessageBox.Show(ex.Message, "警告");
+                //int value = this.baseRLC.getSeriesNum();
+                //if (cBoxSeriesType.SelectedIndex == 1)//并联数量
+                //{
+                //    value = this.baseRLC.iNumSingle / value;
+                //}
+               // (sender as TextBox).Text = value.ToString();
+                //(sender as TextBox).Focus();
             }
         }
         /// <summary>
@@ -391,7 +397,11 @@ namespace cost_estimating
                 (sender as TextBox).Text = this.baseRLC.str_wire;
             }
         }
-
+        /// <summary>
+        /// 串并联数量选择项
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cBoxSeriesType_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -408,6 +418,15 @@ namespace cost_estimating
             catch(Exception ex)
             {
             }
+        }
+        /// <summary>
+        /// 接触器
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox_cocontactor_TextChanged(object sender, EventArgs e)
+        {
+            this.baseRLC.str_cocontactor = (sender as TextBox).Text;
         }
     }       
 }

@@ -31,7 +31,7 @@ namespace cost_estimating.RLC
             iTotalNumber += iNumSingle*3;
         }
         /// <summary>
-        /// 交流单相
+        /// 交流三相
         /// </summary>
         /// <returns></returns>
         public string[] GetTotalStringArr()

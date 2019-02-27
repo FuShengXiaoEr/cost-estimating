@@ -13,37 +13,28 @@ namespace cost_estimating.RLC
         public double dValueOfResistance = 0;//单相阻值
         public double dResistancePowerSingle = 0;//单根电阻功率
         public double dResistanceValueSingle = 0;//单根电阻管阻值
+
+        //private double dRPowerSingle_Max = 1670;//单根电阻管功率最大值，根据最大功率计算单相电阻管的数量，每根电阻管的价格一样，所以功率在稳定性能允许的范围内最大化能减少成本
         private int parallelingNum = 1;//单相并联数量
         private int seriesNum = 1;//单相串联数量
-        public int SeriesNum
-        {
-            get
-            {
-                return this.seriesNum;
-            }
-            set
-            {
-                if (value < 1)
-                    value = 1;
-                if (this.iNumSingle % value == 0)
-                {
-                    seriesNum = value;
-                    parallelingNum = this.iNumSingle / value;
-                }
-                else
-                {
-                    throw new Exception("串联数量填写不正确，单相电阻管数量不能整除串联数量");
-                }
-            }
-        }
 
         public override void setSeriesNum(int value)
         {
-            this.SeriesNum = value;
+            if (value < 1)
+                value = 1;
+            if (this.iNumSingle % value == 0)
+            {
+                seriesNum = value;
+                parallelingNum = this.iNumSingle / value;
+            }
+            else
+            {
+                throw new Exception("串并联数量填写不正确，单相电阻管数量不能整除串联数量");
+            }
         }
         public override int getSeriesNum()
         {
-            return this.SeriesNum;
+            return this.seriesNum;
         }
         /// <summary>
         /// 总总功率、总单相功率、总电流、总个数的类
@@ -97,7 +88,7 @@ namespace cost_estimating.RLC
             //this.seriesNum = seriesNumber;
             //单相阻值（Ω）=相电压*相电压/单相功率
             this.dValueOfResistance = Math.Round(this.d_phase_voltage * this.d_phase_voltage / d_single_phase_power, 2);
-            
+
             this.dResistancePowerSingle = this.d_single_phase_power / iNumSingle;//单根电阻管的功率=单相功率/单相电阻管数量
             this.dResistanceValueSingle = this.dValueOfResistance / this.seriesNum * this.parallelingNum;//单相电阻管阻值 = 电阻的阻值 / 串联数量*并联数量
 

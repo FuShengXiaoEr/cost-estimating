@@ -153,6 +153,7 @@ namespace cost_estimating.RLC
                     this.d_single_phase_power = value;
                     this.d_three_phase_power = value * 3;
                 }
+                this.iNumSingle = (int)Math.Ceiling(this.d_single_phase_power / this.dRPowerSingleMax); //只要有小数都加1
                 setCurrent();
             }
         }
@@ -168,7 +169,7 @@ namespace cost_estimating.RLC
                 d_Current = Math.Round(d_single_phase_power / d_phase_voltage, 2);
             this.str_wire = CalculatedWire.CalculatedWireSize(d_Current);
         }
-        public string str_cocontactor = "LC1D09";//接触器,默认LC1D09
+        public string str_cocontactor = "";//接触器,默认LC1D09
         public string str_wire = "1.5";//导线,默认1.5mm2
         private int numSingle = 1;
         public int iNumSingle 
@@ -180,11 +181,43 @@ namespace cost_estimating.RLC
                     value = 1;
                 numSingle = value;//单相电阻管数量
                 this.iNumThree = this.numSingle * 3;
-                setSeriesNum(getSeriesNum());//刷新串联数量，因为更改单相数量没有自动改变串并联数量
+                try
+                {
+                    setSeriesNum(getSeriesNum());//刷新串联数量，因为更改单相数量没有自动改变串并联数量
+                }
+                catch(Exception ex1)
+                {
+                    setSeriesNum(1);
+                    throw new Exception("串联数量不正确，已自动调整为1");
+                }
             }
         }//单相电阻管数量(电容/电抗默认为1)
         public int iNumThree = 3;//三相电阻管数量
 
+        private double dRPowerSingleMax = 1670;//单根电阻管功率最大值，根据最大功率计算单相电阻管的数量，
+                                   //每根电阻管的价格一样，所以功率在稳定性能允许的范围内最大化能减少成本
+        public double DRPowerSingleMax
+        {
+            get
+            {
+                return this.dRPowerSingleMax;
+            }
+            set
+            {
+                try
+                {
+                    if (this.name == "电阻管")
+                    {
+                        this.dRPowerSingleMax = value;
+                        this.iNumSingle = (int)Math.Ceiling(this.d_single_phase_power / value); //只要有小数都加1
+                    }
+                }
+                catch (Exception ex2)
+                {
+                    throw ex2;
+                }
+            }
+        }
 
 
         public BaseRLC() { }
@@ -213,6 +246,7 @@ namespace cost_estimating.RLC
             this.preDt.Clear();
             this.clearStaticData();
         }
+        /*
         /// <summary>
         /// 计算电阻/电容/电感公共参数
         /// </summary>
@@ -230,6 +264,7 @@ namespace cost_estimating.RLC
             //阻值（Ω）=相电压*相电压/单相功率
             iNumSingle = RNumber;
         }
+         * */
         /// <summary>
         /// 得到电阻/电抗/电容的总功率、总单相功率、总电流、总个数的string数组
         /// </summary>
