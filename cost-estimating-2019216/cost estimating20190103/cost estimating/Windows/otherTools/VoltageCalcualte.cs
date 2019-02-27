@@ -78,15 +78,18 @@ namespace cost_estimating
                 min = contentA > contentB ? contentB : contentA;
                 min = min > contentC ? contentC : min;
 
-                result = Math.Round((max - min) / max, 3, MidpointRounding.AwayFromZero);
+                result = Math.Round((max - min) / max, 3, MidpointRounding.AwayFromZero)*100;
 
                 if (result <= percent)
                 {
                     result_2.Text = "三相可以同时投入！";
+                    this.result_2.ForeColor = System.Drawing.Color.Green;
+;
                 }
                 else
                 {
                     result_2.Text = "三相无法同时投入！";
+                    this.result_2.ForeColor = System.Drawing.Color.Maroon;
                 }
             }
             else

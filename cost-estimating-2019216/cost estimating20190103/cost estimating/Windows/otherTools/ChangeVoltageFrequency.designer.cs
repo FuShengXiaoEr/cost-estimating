@@ -316,8 +316,8 @@
             this.rectangleShape2.BackColor = System.Drawing.Color.Transparent;
             this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.rectangleShape2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(164)))), ((int)(((byte)(196)))));
-            this.rectangleShape2.FillColor = System.Drawing.Color.OldLace;
-            this.rectangleShape2.FillGradientColor = System.Drawing.Color.FloralWhite;
+            this.rectangleShape2.FillColor = System.Drawing.Color.FloralWhite;
+            this.rectangleShape2.FillGradientColor = System.Drawing.Color.Ivory;
             this.rectangleShape2.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal;
             this.rectangleShape2.Location = new System.Drawing.Point(597, 408);
             this.rectangleShape2.Name = "rectangleShape2";
@@ -342,7 +342,7 @@
             // result_2
             // 
             this.result_2.AutoSize = true;
-            this.result_2.BackColor = System.Drawing.Color.FloralWhite;
+            this.result_2.BackColor = System.Drawing.Color.Transparent;
             this.result_2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.result_2.Location = new System.Drawing.Point(604, 460);
             this.result_2.Name = "result_2";
@@ -352,7 +352,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FloralWhite;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label15.Location = new System.Drawing.Point(604, 420);
             this.label15.Name = "label15";

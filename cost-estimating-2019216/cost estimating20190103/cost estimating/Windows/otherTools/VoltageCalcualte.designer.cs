@@ -252,6 +252,9 @@
             // 
             // ovalShape1
             // 
+            this.ovalShape1.FillColor = System.Drawing.Color.FloralWhite;
+            this.ovalShape1.FillGradientColor = System.Drawing.Color.FloralWhite;
+            this.ovalShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal;
             this.ovalShape1.Location = new System.Drawing.Point(616, 373);
             this.ovalShape1.Name = "ovalShape1";
             this.ovalShape1.Size = new System.Drawing.Size(408, 174);
@@ -426,10 +429,10 @@
             // result_2
             // 
             this.result_2.AutoSize = true;
-            this.result_2.BackColor = System.Drawing.Color.FloralWhite;
+            this.result_2.BackColor = System.Drawing.Color.Transparent;
             this.result_2.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.result_2.ForeColor = System.Drawing.Color.Maroon;
-            this.result_2.Location = new System.Drawing.Point(650, 442);
+            this.result_2.Location = new System.Drawing.Point(650, 440);
             this.result_2.Name = "result_2";
             this.result_2.Size = new System.Drawing.Size(0, 42);
             this.result_2.TabIndex = 42;

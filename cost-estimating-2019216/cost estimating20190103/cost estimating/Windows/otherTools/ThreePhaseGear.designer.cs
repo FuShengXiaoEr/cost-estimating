@@ -78,8 +78,9 @@
             // result_2
             // 
             this.result_2.AutoSize = true;
+            this.result_2.BackColor = System.Drawing.Color.Transparent;
             this.result_2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.result_2.Location = new System.Drawing.Point(425, 384);
+            this.result_2.Location = new System.Drawing.Point(525, 384);
             this.result_2.Name = "result_2";
             this.result_2.Size = new System.Drawing.Size(0, 31);
             this.result_2.TabIndex = 21;
@@ -87,6 +88,7 @@
             // result_1
             // 
             this.result_1.AutoSize = true;
+            this.result_1.BackColor = System.Drawing.Color.Transparent;
             this.result_1.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.result_1.Location = new System.Drawing.Point(83, 384);
             this.result_1.Name = "result_1";
@@ -303,6 +305,8 @@
             // 
             // rectangleShape1
             // 
+            this.rectangleShape1.FillColor = System.Drawing.Color.FloralWhite;
+            this.rectangleShape1.FillGradientColor = System.Drawing.Color.FloralWhite;
             this.rectangleShape1.Location = new System.Drawing.Point(61, 358);
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.Size = new System.Drawing.Size(979, 251);

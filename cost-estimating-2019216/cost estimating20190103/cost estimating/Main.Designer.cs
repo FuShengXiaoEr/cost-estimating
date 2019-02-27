@@ -73,7 +73,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::cost_estimating.Properties.Resources.背景6;
+            this.panel1.BackgroundImage = global::cost_estimating.Properties.Resources.背景61;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label9);
@@ -173,7 +173,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "v2.0";
+            this.label2.Text = "v2.1";
             // 
             // pictureBox2
             // 
