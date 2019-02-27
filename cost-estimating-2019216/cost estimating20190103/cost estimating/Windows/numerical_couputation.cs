@@ -103,8 +103,19 @@ namespace cost_estimating
             this.cBox_electricityType.SelectedIndex = 0;
             this.cBoxSeriesType.SelectedIndex = 0;
         }
-        
 
+        /// <summary>
+        /// 限定textBox只能输入数字
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
         /// <summary>
         /// 得到电阻/电容/电抗参数数组
         /// </summary>
