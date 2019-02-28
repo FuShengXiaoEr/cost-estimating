@@ -10,6 +10,75 @@ namespace cost_estimating.RLC
         public static string CalculatedWireSize(double dCurrent)
         {
             string wire = "1.5";
+            if (dCurrent < 9)
+            {
+                wire = "1";
+            }
+            else if (dCurrent < 13.5)
+            {
+                wire = "1.5";
+            }
+            else if (dCurrent < 22.5)
+            {
+                wire = "2.5";
+            }
+            else if (dCurrent < 32)
+            {
+                wire = "4";
+            }
+            else if (dCurrent < 42)
+            {
+                wire = "6";
+            }
+            else if (dCurrent < 60)
+            {
+                wire = "10";
+            }
+            else if (dCurrent < 80)
+            {
+                wire = "16";
+            }
+            else if (dCurrent < 100)
+            {
+                wire = "25";
+            }
+            else if (dCurrent < 122.5)
+            {
+                wire = "35";
+            }
+            else if (dCurrent < 150)
+            {
+                wire = "50";
+            }
+            else if (dCurrent < 210)
+            {
+                wire = "70";
+            }
+            else if (dCurrent < 237.5)
+            {
+                wire = "95";
+            }
+            else if (dCurrent < 250)
+            {
+                wire = "120";
+            }
+            else if (dCurrent < 300)
+            {
+                wire = "150";
+            }
+            else if (dCurrent < 360)
+            {
+                wire = "180";
+            }
+            else
+            {
+                wire = "大于180";
+            }
+
+            return wire;
+
+
+            /*
             double dvalue = dCurrent / 5;
             if (dvalue <= 10)
             {
@@ -81,8 +150,7 @@ namespace cost_estimating.RLC
                 {
                     wire = "大于180";
                 }
-            }
-            return wire;
+            }*/
         }
     }
 }

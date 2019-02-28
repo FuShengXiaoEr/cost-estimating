@@ -54,6 +54,7 @@ namespace cost_estimating
             this.textBox_series.Text = seriesNum.ToString();
             this.textBox_wire.Text = this.baseRLC.str_wire;
             this.textBox_cocontactor.Text = this.baseRLC.str_cocontactor;
+            this.textBox_frequency.Text = this.baseRLC.frequency.ToString();
         }
         /// <summary>
         /// 预留，直接修改RLCtype的值改变label_resistance_num.Text
@@ -70,10 +71,14 @@ namespace cost_estimating
                 if (value == "电阻管")
                 {
                     this.label3.Text = "W";
+                    this.panel4.Visible = false;
+                    this.panel3.Visible = true;
                 }
                 else
                 {
                     this.label3.Text = "var";
+                    this.panel3.Visible = false;
+                    this.panel4.Visible = true;
                 }
 
                 if (this.baseRLC.ElectricityType == this.baseRLC.eleTypeArr[2] || this.baseRLC.ElectricityType == this.baseRLC.eleTypeArr[3])
@@ -427,6 +432,34 @@ namespace cost_estimating
         private void textBox_cocontactor_TextChanged(object sender, EventArgs e)
         {
             this.baseRLC.str_cocontactor = (sender as TextBox).Text;
+        }
+        /// <summary>
+        /// 电容电抗的频率
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox_frequency_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((sender as TextBox).Text.Trim() != "")
+                {
+                    this.baseRLC.frequency = Convert.ToDouble((sender as TextBox).Text.Trim());
+                    previewView();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        /// <summary>
+        /// 当频率没输入值的时候，把内存里面的值显示出来
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox_frequency_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as TextBox).Text = this.baseRLC.frequency.ToString();
         }
     }       
 }

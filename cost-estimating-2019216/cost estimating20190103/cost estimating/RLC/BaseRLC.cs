@@ -219,6 +219,10 @@ namespace cost_estimating.RLC
             }
         }
 
+        /// <summary>
+        /// 频率,默认50Hz
+        /// </summary>
+        public double frequency = 50;
 
         public BaseRLC() { }
         public string[] ToStringArr()
