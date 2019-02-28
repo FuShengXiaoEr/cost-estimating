@@ -1,0 +1,28 @@
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\bin\Release\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\bin\Release\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\bin\Release\MySql.Data.dll
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Form1.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Form2.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Main.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.DataGridViewWithCheck.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.numerical_gpbwindows.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.instrument.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Properties.Resources.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost estimating.csproj.GenerateResource.Cache
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.BOM.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\bin\Release\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\bin\Release\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\bin\Release\MySql.Data.dll
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Form1.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Form2.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Main.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.DataGridViewWithCheck.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.BOM.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.numerical_gpbwindows.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.instrument.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost_estimating.Properties.Resources.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Release\cost estimating.csproj.GenerateResource.Cache

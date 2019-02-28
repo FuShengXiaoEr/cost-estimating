@@ -1,0 +1,118 @@
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\bin\Debug\cost estimating.exe
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\bin\Debug\cost estimating.pdb
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.exe
+d:\documents\visual studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181221\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\documents\visual studio 2010\Projects\cost estimating20181221\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\bin\Debug\cost estimating.exe
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\bin\Debug\cost estimating.pdb
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\documents\visual studio 2010\Projects\cost estimating20181222\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20181224\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\Visual Studio 2010\Projects\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\GitHub\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\GitHub\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+E:\yanXM\VStest\RLCCostEstimationSystem\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\cost-estimating\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019216\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form2.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Windows.BOM.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019220\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\bin\Debug\cost estimating.exe
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\bin\Debug\cost estimating.pdb
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\bin\Debug\MySql.Data.dll
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csprojResolveAssemblyReference.cache
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Form1.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Main.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.DataGridViewWithCheck.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.BOM.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.numerical_gpbwindows.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.instrument.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost_estimating.Properties.Resources.resources
+C:\Users\rd42\Desktop\成本计算软件开发\cost-estimating-2019225\cost estimating20190103\cost estimating\obj\x86\Debug\cost estimating.csproj.GenerateResource.Cache
