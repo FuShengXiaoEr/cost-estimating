@@ -15,11 +15,9 @@ namespace cost_estimating.RLC
         /// </summary>
         public double inductiveReactance { get; set; }
         /// <summary>
-        /// 电感值mH= 感抗/（2*3.14*频率）*1000
+        /// 电感值，= 感抗/3.14*10
         /// </summary>
         public double inductanceValue { get; set; }
-
-
         /// <summary>
         /// 总总功率、总单相功率、总电流、总个数的类
         /// </summary>
@@ -52,7 +50,7 @@ namespace cost_estimating.RLC
         {
             //base.CalculatingRLC(voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             this.inductiveReactance = Math.Round(d_phase_voltage * d_phase_voltage / d_single_phase_power, 2);
-            this.inductanceValue = Math.Round(this.inductiveReactance /(Math.PI*this.frequency)*500,2);
+            this.inductanceValue = Math.Round(inductiveReactance / 3.14 * 10,2);
         }
 
         public override void AddRows()

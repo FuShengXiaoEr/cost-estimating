@@ -71,9 +71,7 @@ namespace cost_estimating.RLC
             //base.CalculatingRLC(voltage, d_three_phase_power, cocontactor, wireSize, RNumber);
             //容抗（Ω）=相电压*相电压/单相功率
             this.capacitiveReactance = Math.Round(d_phase_voltage * d_phase_voltage / d_single_phase_power, 2);
-            //this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
-            //电容(F)=1/(2*PI*f*Rc)，f(频率)，Rc(容抗)
-            this.capacitanceValue = Math.Round((1 / (Math.PI * this.frequency * this.capacitiveReactance)) * 500000, 2);
+            this.capacitanceValue=Math.Round((1/(this.capacitiveReactance*3.14))*10000,2);
         }
 
         public override void AddRows()
