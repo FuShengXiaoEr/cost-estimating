@@ -153,7 +153,10 @@ namespace cost_estimating.RLC
                     this.d_single_phase_power = value;
                     this.d_three_phase_power = value * 3;
                 }
-                this.iNumSingle = (int)Math.Ceiling(this.d_single_phase_power / this.dRPowerSingleMax); //只要有小数都加1
+                if (this.R_PowerMax_or_SingleNum == this.R_PowerMax_or_SingleNum_Arr[0])
+                {
+                    this.iNumSingle = (int)Math.Ceiling(this.d_single_phase_power / this.dRPowerSingleMax); //只要有小数都加1
+                }
                 setCurrent();
             }
         }
@@ -194,22 +197,40 @@ namespace cost_estimating.RLC
         }//单相电阻管数量(电容/电抗默认为1)
         public int iNumThree = 3;//三相电阻管数量
 
+        public string[] R_PowerMax_or_SingleNum_Arr = new string[] { "电阻管功率最大值", "单相电阻管数量" };
+        public string R_PowerMax_or_SingleNum = "电阻管功率最大值";
         private double dRPowerSingleMax = 1670;//单根电阻管功率最大值，根据最大功率计算单相电阻管的数量，
                                    //每根电阻管的价格一样，所以功率在稳定性能允许的范围内最大化能减少成本
         public double DRPowerSingleMax
         {
             get
             {
-                return this.dRPowerSingleMax;
+                double value = 0;
+                if (R_PowerMax_or_SingleNum == this.R_PowerMax_or_SingleNum_Arr[0])
+                {
+                    value = this.dRPowerSingleMax;
+                }
+                else
+                {
+                    value = this.iNumSingle;
+                }
+                return value;
             }
             set
             {
                 try
                 {
-                    if (this.name == "电阻管")
+                    if (this.name == "电阻管"&&value!=0)
                     {
-                        this.dRPowerSingleMax = value;
-                        this.iNumSingle = (int)Math.Ceiling(this.d_single_phase_power / value); //只要有小数都加1
+                        if (R_PowerMax_or_SingleNum == this.R_PowerMax_or_SingleNum_Arr[0])
+                        {
+                            this.dRPowerSingleMax = value;
+                            this.iNumSingle = (int)Math.Ceiling(this.d_single_phase_power / value); //只要有小数都加1
+                        }
+                        else
+                        {
+                            this.iNumSingle = (int)value;
+                        }
                     }
                 }
                 catch (Exception ex2)

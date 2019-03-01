@@ -41,8 +41,8 @@
             this.preview = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cBox_label_resistance_power_max = new System.Windows.Forms.ComboBox();
             this.cBoxSeriesType = new System.Windows.Forms.ComboBox();
-            this.label_resistance_power_max = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_series = new System.Windows.Forms.TextBox();
             this.textBox_resistance_power_max = new System.Windows.Forms.TextBox();
@@ -233,8 +233,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cBox_label_resistance_power_max);
             this.panel3.Controls.Add(this.cBoxSeriesType);
-            this.panel3.Controls.Add(this.label_resistance_power_max);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.textBox_series);
             this.panel3.Controls.Add(this.textBox_resistance_power_max);
@@ -243,6 +243,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(262, 103);
             this.panel3.TabIndex = 19;
+            // 
+            // cBox_label_resistance_power_max
+            // 
+            this.cBox_label_resistance_power_max.BackColor = System.Drawing.Color.Silver;
+            this.cBox_label_resistance_power_max.DropDownHeight = 100;
+            this.cBox_label_resistance_power_max.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBox_label_resistance_power_max.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cBox_label_resistance_power_max.FormattingEnabled = true;
+            this.cBox_label_resistance_power_max.IntegralHeight = false;
+            this.cBox_label_resistance_power_max.Location = new System.Drawing.Point(3, 12);
+            this.cBox_label_resistance_power_max.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.cBox_label_resistance_power_max.Name = "cBox_label_resistance_power_max";
+            this.cBox_label_resistance_power_max.Size = new System.Drawing.Size(151, 29);
+            this.cBox_label_resistance_power_max.TabIndex = 19;
+            this.cBox_label_resistance_power_max.SelectedIndexChanged += new System.EventHandler(this.cBox_label_resistance_power_max_SelectedIndexChanged);
             // 
             // cBoxSeriesType
             // 
@@ -258,27 +273,15 @@
             this.cBoxSeriesType.Location = new System.Drawing.Point(3, 63);
             this.cBoxSeriesType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.cBoxSeriesType.Name = "cBoxSeriesType";
-            this.cBoxSeriesType.Size = new System.Drawing.Size(136, 29);
+            this.cBoxSeriesType.Size = new System.Drawing.Size(151, 29);
             this.cBoxSeriesType.TabIndex = 15;
             this.cBoxSeriesType.SelectedIndexChanged += new System.EventHandler(this.cBoxSeriesType_SelectedIndexChanged);
-            // 
-            // label_resistance_power_max
-            // 
-            this.label_resistance_power_max.BackColor = System.Drawing.Color.Silver;
-            this.label_resistance_power_max.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label_resistance_power_max.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_resistance_power_max.Location = new System.Drawing.Point(3, 11);
-            this.label_resistance_power_max.Name = "label_resistance_power_max";
-            this.label_resistance_power_max.Size = new System.Drawing.Size(136, 33);
-            this.label_resistance_power_max.TabIndex = 16;
-            this.label_resistance_power_max.Text = "电阻管功率最大值";
-            this.label_resistance_power_max.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(219, 18);
+            this.label2.Location = new System.Drawing.Point(234, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 21);
             this.label2.TabIndex = 6;
@@ -287,7 +290,7 @@
             // textBox_series
             // 
             this.textBox_series.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_series.Location = new System.Drawing.Point(139, 63);
+            this.textBox_series.Location = new System.Drawing.Point(150, 63);
             this.textBox_series.Name = "textBox_series";
             this.textBox_series.Size = new System.Drawing.Size(77, 29);
             this.textBox_series.TabIndex = 17;
@@ -300,7 +303,7 @@
             // textBox_resistance_power_max
             // 
             this.textBox_resistance_power_max.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_resistance_power_max.Location = new System.Drawing.Point(139, 14);
+            this.textBox_resistance_power_max.Location = new System.Drawing.Point(154, 12);
             this.textBox_resistance_power_max.Name = "textBox_resistance_power_max";
             this.textBox_resistance_power_max.Size = new System.Drawing.Size(80, 29);
             this.textBox_resistance_power_max.TabIndex = 18;
@@ -618,7 +621,6 @@
         private System.Windows.Forms.TextBox textBox_series;
         private System.Windows.Forms.TextBox textBox_resistance_power_max;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button label_resistance_power_max;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button labelPower;
         private System.Windows.Forms.ComboBox cBoxSeriesType;
@@ -629,5 +631,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_frequency;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cBox_label_resistance_power_max;
     }
 }

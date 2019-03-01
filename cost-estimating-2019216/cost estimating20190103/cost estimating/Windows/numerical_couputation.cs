@@ -38,6 +38,10 @@ namespace cost_estimating
         private void changeParam()
         {
             this.dataGridView_Resistance.DataSource = this.baseRLC.dt;
+            for (int i = 0; i < this.dataGridView_Resistance.Columns.Count; i++)
+            {
+                this.dataGridView_Resistance.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;//设置列不能自动排序
+            }
             this.dataGridView_preview.DataSource = this.baseRLC.preDt;
             previewView();
             this.RLCtype = baseRLC.name;
@@ -105,6 +109,8 @@ namespace cost_estimating
             this.cBox_electricityType.Items.AddRange(baseRLC.eleTypeArr);
             this.cBox_electricityType.SelectedIndex = 0;
             this.cBoxSeriesType.SelectedIndex = 0;
+            this.cBox_label_resistance_power_max.Items.AddRange(this.baseRLC.R_PowerMax_or_SingleNum_Arr);
+            this.cBox_label_resistance_power_max.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -296,7 +302,7 @@ namespace cost_estimating
             }
         }
         /// <summary>
-        /// 单相数量值改变
+        /// 电阻管功率最大值改变/单相数量值改变
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -460,6 +466,16 @@ namespace cost_estimating
         private void textBox_frequency_MouseLeave(object sender, EventArgs e)
         {
             (sender as TextBox).Text = this.baseRLC.frequency.ToString();
+        }
+        /// <summary>
+        /// 选择修改 电阻管功率最大值 还是 单相电阻管数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cBox_label_resistance_power_max_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.baseRLC.R_PowerMax_or_SingleNum = this.baseRLC.R_PowerMax_or_SingleNum_Arr[(sender as ComboBox).SelectedIndex];
+            this.textBox_resistance_power_max.Text = baseRLC.DRPowerSingleMax.ToString();
         }
     }       
 }
